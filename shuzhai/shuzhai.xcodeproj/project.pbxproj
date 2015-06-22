@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC4E1B241B38C282009D9CDE /* GuillotineMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E1B201B38C282009D9CDE /* GuillotineMenuSegue.swift */; };
+		FC4E1B251B38C282009D9CDE /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E1B211B38C282009D9CDE /* GuillotineMenuTransitionAnimation.swift */; };
+		FC4E1B261B38C282009D9CDE /* GuillotineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E1B221B38C282009D9CDE /* GuillotineMenuViewController.swift */; };
+		FC4E1B271B38C282009D9CDE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E1B231B38C282009D9CDE /* UIViewExtension.swift */; };
 		FCCE5C321B3494C300A78CAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE5C311B3494C300A78CAF /* AppDelegate.swift */; };
 		FCCE5C341B3494C300A78CAF /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE5C331B3494C300A78CAF /* MasterViewController.swift */; };
 		FCCE5C361B3494C300A78CAF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE5C351B3494C300A78CAF /* DetailViewController.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC4E1B201B38C282009D9CDE /* GuillotineMenuSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuSegue.swift; sourceTree = "<group>"; };
+		FC4E1B211B38C282009D9CDE /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
+		FC4E1B221B38C282009D9CDE /* GuillotineMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuViewController.swift; sourceTree = "<group>"; };
+		FC4E1B231B38C282009D9CDE /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FCCE5C2C1B3494C300A78CAF /* shuzhai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shuzhai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCE5C301B3494C300A78CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCE5C311B3494C300A78CAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +72,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC4E1B1F1B38C282009D9CDE /* GuillotineMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FC4E1B201B38C282009D9CDE /* GuillotineMenuSegue.swift */,
+				FC4E1B211B38C282009D9CDE /* GuillotineMenuTransitionAnimation.swift */,
+				FC4E1B221B38C282009D9CDE /* GuillotineMenuViewController.swift */,
+				FC4E1B231B38C282009D9CDE /* UIViewExtension.swift */,
+			);
+			path = GuillotineMenu;
+			sourceTree = "<group>";
+		};
 		FCCE5C231B3494C300A78CAF = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +104,7 @@
 		FCCE5C2E1B3494C300A78CAF /* shuzhai */ = {
 			isa = PBXGroup;
 			children = (
+				FC4E1B1F1B38C282009D9CDE /* GuillotineMenu */,
 				FCCE5C311B3494C300A78CAF /* AppDelegate.swift */,
 				FCCE5C331B3494C300A78CAF /* MasterViewController.swift */,
 				FCCE5C351B3494C300A78CAF /* DetailViewController.swift */,
@@ -225,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4E1B241B38C282009D9CDE /* GuillotineMenuSegue.swift in Sources */,
+				FC4E1B261B38C282009D9CDE /* GuillotineMenuViewController.swift in Sources */,
 				FCCE5C361B3494C300A78CAF /* DetailViewController.swift in Sources */,
+				FC4E1B251B38C282009D9CDE /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				FCCE5C571B34C28200A78CAF /* TabButtonViewController.swift in Sources */,
 				FCCE5C541B34B0EF00A78CAF /* BaseViewController.swift in Sources */,
+				FC4E1B271B38C282009D9CDE /* UIViewExtension.swift in Sources */,
 				FCCE5C341B3494C300A78CAF /* MasterViewController.swift in Sources */,
 				FCCE5C321B3494C300A78CAF /* AppDelegate.swift in Sources */,
 			);
@@ -425,6 +449,7 @@
 				FCCE5C4F1B3494C300A78CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCCE5C501B3494C300A78CAF /* Build configuration list for PBXNativeTarget "shuzhaiTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +458,7 @@
 				FCCE5C521B3494C300A78CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
