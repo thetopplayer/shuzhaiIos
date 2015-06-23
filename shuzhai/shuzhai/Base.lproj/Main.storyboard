@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -42,7 +42,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3KS-aR-zfs" kind="custom" customClass="GuillotineMenuSegue" id="yMT-Ez-0dw"/>
+                                    <segue destination="3KS-aR-zfs" kind="custom" customClass="GuillotineMenuSegue" customModule="shuzhai" id="yMT-Ez-0dw"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -233,7 +233,7 @@
     <resources>
         <image name="ic_activity@3x.png" width="75" height="57"/>
         <image name="ic_feed@3x.png" width="63" height="66"/>
-        <image name="ic_menuRotated@3x.png" width="750" height="432"/>
+        <image name="ic_menuRotated@3x.png" width="30" height="44"/>
         <image name="ic_profile@3x.png" width="51" height="72"/>
         <image name="ic_settings@3x.png" width="69" height="69"/>
     </resources>

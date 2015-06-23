@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.hidden = true
+        //self.navigationController?.navigationBar.hidden = true
         tabButtonViewController = TabButtonViewController(nibName:"TabButtonViewController", bundle:nil)
         self.view.addSubview(tabButtonViewController.view)
         
