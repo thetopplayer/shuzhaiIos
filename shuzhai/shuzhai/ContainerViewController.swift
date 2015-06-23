@@ -31,7 +31,7 @@ class ContainerViewController: UIViewController {
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        self.currentViewController = segue.destinationViewController;
+        self.currentViewController = segue.destinationViewController as! UIViewController;
     }
     
     private func swapTwoViewControllers(fromController:UIViewController, toViewController:UIViewController){

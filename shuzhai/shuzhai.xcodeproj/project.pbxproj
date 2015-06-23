@@ -29,8 +29,6 @@
 		FCCE5C3E1B3494C300A78CAF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCE5C3C1B3494C300A78CAF /* LaunchScreen.xib */; };
 		FCCE5C4A1B3494C300A78CAF /* shuzhaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE5C491B3494C300A78CAF /* shuzhaiTests.swift */; };
 		FCCE5C541B34B0EF00A78CAF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE5C531B34B0EF00A78CAF /* BaseViewController.swift */; };
-		FCCE5C571B34C28200A78CAF /* TabButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE5C551B34C28200A78CAF /* TabButtonViewController.swift */; };
-		FCCE5C581B34C28200A78CAF /* TabButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCE5C561B34C28200A78CAF /* TabButtonViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +68,6 @@
 		FCCE5C481B3494C300A78CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCE5C491B3494C300A78CAF /* shuzhaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shuzhaiTests.swift; sourceTree = "<group>"; };
 		FCCE5C531B34B0EF00A78CAF /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		FCCE5C551B34C28200A78CAF /* TabButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabButtonViewController.swift; sourceTree = "<group>"; };
-		FCCE5C561B34C28200A78CAF /* TabButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabButtonViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +143,6 @@
 				FCCE5C331B3494C300A78CAF /* MasterViewController.swift */,
 				FCCE5C351B3494C300A78CAF /* DetailViewController.swift */,
 				FCCE5C531B34B0EF00A78CAF /* BaseViewController.swift */,
-				FCCE5C551B34C28200A78CAF /* TabButtonViewController.swift */,
-				FCCE5C561B34C28200A78CAF /* TabButtonViewController.xib */,
 				FCCE5C371B3494C300A78CAF /* Main.storyboard */,
 				FCCE5C3A1B3494C300A78CAF /* Images.xcassets */,
 				FCCE5C3C1B3494C300A78CAF /* LaunchScreen.xib */,
@@ -266,7 +260,6 @@
 				45D86C791B390BC300225BDD /* content_1@3x.png in Resources */,
 				FCCE5C3E1B3494C300A78CAF /* LaunchScreen.xib in Resources */,
 				45D86C7C1B390BC300225BDD /* ic_feed@3x.png in Resources */,
-				FCCE5C581B34C28200A78CAF /* TabButtonViewController.xib in Resources */,
 				45D86C7F1B390BC300225BDD /* ic_profile@3x.png in Resources */,
 				FCCE5C3B1B3494C300A78CAF /* Images.xcassets in Resources */,
 				45D86C7E1B390BC300225BDD /* ic_menuRotated@3x.png in Resources */,
@@ -296,7 +289,6 @@
 				45D86C841B39167A00225BDD /* ContainerViewController.swift in Sources */,
 				FCCE5C361B3494C300A78CAF /* DetailViewController.swift in Sources */,
 				FC4E1B251B38C282009D9CDE /* GuillotineMenuTransitionAnimation.swift in Sources */,
-				FCCE5C571B34C28200A78CAF /* TabButtonViewController.swift in Sources */,
 				45D86C861B391DC000225BDD /* ClassEnums.swift in Sources */,
 				FCCE5C541B34B0EF00A78CAF /* BaseViewController.swift in Sources */,
 				FC4E1B271B38C282009D9CDE /* UIViewExtension.swift in Sources */,

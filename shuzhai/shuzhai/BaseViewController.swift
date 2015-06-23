@@ -11,14 +11,11 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    var tabButtonViewController:TabButtonViewController!
     @IBOutlet var barButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.hidden = true
-        tabButtonViewController = TabButtonViewController(nibName:"TabButtonViewController", bundle:nil)
-        self.view.addSubview(tabButtonViewController.view)
         
         let navBar = self.navigationController!.navigationBar
         navBar.barTintColor = UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)

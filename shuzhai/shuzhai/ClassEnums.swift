@@ -12,10 +12,5 @@ class ClassEnums {
     enum MainContentsControllers : String {
         case DailyReading = "segueDailyReading", UserProfile = "segueUserProfile"
         static let allValues = [DailyReading, UserProfile]
-        
-        func compare(compareValue:MainContentsControllers -> Boolean)
-        {
-            return self.rawValue == compareV
-        }
     }
 }
