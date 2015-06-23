@@ -34,12 +34,15 @@ class BaseViewController: UIViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Your Menu View Controller vew must know the following data for the proper animatio
-        let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
-        destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
-        destinationVC.hostTitleText = self.navigationItem.title
-        destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
-        destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
+        if segue.identifier == "mainMenuSegue"{
+            // Your Menu View Controller vew must know the following data for the proper animatio
+            let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
+            destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
+            destinationVC.hostTitleText = self.navigationItem.title
+            destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
+            destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
+        }
+
     }
     
 
