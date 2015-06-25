@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -35,7 +35,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nul-rG-4QF">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <connections>
-                                    <segue destination="X13-mB-ZAG" kind="embed" id="Mhi-Nr-RR7"/>
+                                    <segue destination="X13-mB-ZAG" kind="embed" identifier="containerView" id="Mhi-Nr-RR7"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -189,8 +189,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectionButtonClicked:" destination="3KS-aR-zfs" eventType="touchUpInside" id="Ovq-Ni-Vf9"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3F-6r-Qct">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3F-6r-Qct">
                                         <rect key="frame" x="50" y="56" width="200" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Vlk-jY-QUh"/>
@@ -202,8 +205,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectionButtonClicked:" destination="3KS-aR-zfs" eventType="touchUpInside" id="ovW-ao-mHn"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMe-GS-hAh">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMe-GS-hAh">
                                         <rect key="frame" x="50" y="105" width="200" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="keq-Rc-9Lg"/>
@@ -215,6 +221,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectionButtonClicked:" destination="3KS-aR-zfs" eventType="touchUpInside" id="JFT-hO-FGm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -239,15 +248,20 @@
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="firstButton" destination="bKz-uV-fMS" id="h7q-NC-Wsy"/>
+                        <outlet property="secondButton" destination="G3F-6r-Qct" id="o98-KU-LGB"/>
+                        <outlet property="thirdButton" destination="mMe-GS-hAh" id="J0X-kY-O3e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kE4-Gx-oVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="600" y="760"/>
         </scene>
-        <!--View Controller-->
+        <!--Container View Controller-->
         <scene sceneID="8Iy-CU-2N9">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="X13-mB-ZAG" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="X13-mB-ZAG" customClass="ContainerViewController" customModule="shuzhai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="siZ-x4-MdL"/>
                         <viewControllerLayoutGuide type="bottom" id="Yk8-pz-Xof"/>
@@ -259,18 +273,18 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <segue destination="Z0G-vy-XCV" kind="custom" identifier="segueDailyReading" id="rEQ-Yo-4LJ"/>
-                        <segue destination="JsF-eL-12f" kind="custom" identifier="segueUserProfile" id="37d-Po-dLi"/>
+                        <segue destination="Z0G-vy-XCV" kind="custom" identifier="segueDailyReading" customClass="EmptySegue" customModule="shuzhai" customModuleProvider="target" id="rEQ-Yo-4LJ"/>
+                        <segue destination="JsF-eL-12f" kind="custom" identifier="segueUserProfile" customClass="EmptySegue" customModule="shuzhai" id="37d-Po-dLi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDT-VO-eH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148" y="1651"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="WY0-le-pBN">
             <objects>
-                <viewController id="JsF-eL-12f" sceneMemberID="viewController">
+                <viewController id="JsF-eL-12f" customClass="ProfileViewController" customModule="shuzhai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LKZ-ww-e6o"/>
                         <viewControllerLayoutGuide type="bottom" id="OCw-vv-QtU"/>
@@ -278,17 +292,17 @@
                     <view key="view" contentMode="scaleToFill" id="G75-fw-Ck9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.78039215689999997" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvC-Es-88l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="284" y="2426"/>
         </scene>
-        <!--View Controller-->
+        <!--Story View Controller-->
         <scene sceneID="kYL-1W-55n">
             <objects>
-                <viewController id="Z0G-vy-XCV" sceneMemberID="viewController">
+                <viewController id="Z0G-vy-XCV" customClass="StoryViewController" customModule="shuzhai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ncd-fe-MDH"/>
                         <viewControllerLayoutGuide type="bottom" id="tLO-pN-clc"/>
@@ -296,7 +310,7 @@
                     <view key="view" contentMode="scaleToFill" id="nXx-37-lB4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mb9-M8-Xaj" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -32,7 +32,7 @@ class GuillotineTransitionAnimation: NSObject {
     private let vectorDY: CGFloat = 1500
     private let vectorDx: CGFloat = 0.0
     private let initialMenuRotationAngle: CGFloat = -90
-    private let menuElasticity: CGFloat = 0.4
+    private let menuElasticity: CGFloat = 0.2
     
     private var statusbarHeight: CGFloat!
     private var navigationBarHeight: CGFloat!
@@ -41,6 +41,7 @@ class GuillotineTransitionAnimation: NSObject {
     
     private var anchorPoint: CGPoint!
     private var animationContext: UIViewControllerContextTransitioning!
+    
     
     init(_ mode: Mode) {
         self.mode = mode

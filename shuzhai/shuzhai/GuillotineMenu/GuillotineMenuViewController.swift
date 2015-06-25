@@ -17,10 +17,25 @@ class GuillotineMenuViewController: UIViewController {
     var menuButtonLeadingConstraint: NSLayoutConstraint!
     var menuButtonTopConstraint: NSLayoutConstraint!
     
+    weak var referredContainerViewController:UIViewController!
+    
+    dynamic var selectedButton:NSInteger = 0
+    
     private let menuButtonLandscapeLeadingConstant: CGFloat = 1
     private let menuButtonPortraitLeadingConstant: CGFloat = 7
     private let hostNavigationBarHeightLandscape: CGFloat = 32
     private let hostNavigationBarHeightPortrait: CGFloat = 44
+    
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
+    
+    
+    @IBAction func selectionButtonClicked(sender:UIButton){
+        selectedButton = sender.tag
+        closeMenuButtonTapped()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +71,9 @@ class GuillotineMenuViewController: UIViewController {
     
 // MARK: Actions
     func closeMenuButtonTapped() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.removeObserver(self.referredContainerViewController, forKeyPath:"selectedButton")
+        })
     }
     
     func setMenuButtonWithImage(image: UIImage) {
@@ -113,4 +130,6 @@ extension GuillotineMenuViewController: GuillotineAnimationProtocol {
     func hostTitle () -> NSString {
         return hostTitleText
     }
+    
+    
 }

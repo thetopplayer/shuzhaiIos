@@ -9,9 +9,12 @@
 import UIKit
 
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController,GuillotineAnimationDelegate {
 
     @IBOutlet var barButton: UIButton!
+    
+    var containerViewController:UIViewController?
+    var mycontext  = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +41,23 @@ class BaseViewController: UIViewController {
             destinationVC.hostTitleText = self.navigationItem.title
             destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
             destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
+            
+            
+            if self.containerViewController != nil{
+                destinationVC.addObserver(self.containerViewController!, forKeyPath: "selectedButton", options: .New, context: &mycontext)
+                destinationVC.referredContainerViewController = self.containerViewController!
+            }
+        }
+        
+        if segue.identifier == "containerView"{
+            self.containerViewController = segue.destinationViewController as! ContainerViewController
         }
 
     }
     
+    func menuDidFinishDismissal() {
+        println("-----")
+    }
 
     /*
     // MARK: - Navigation

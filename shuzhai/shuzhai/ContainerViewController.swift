@@ -18,6 +18,8 @@ class ContainerViewController: UIViewController {
     
     var currentViewController: UIViewController!
     
+    var subControllerDict = [String: UIViewController]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.performSegueWithIdentifier(self.currentSegueController.rawValue, sender: nil)
@@ -32,6 +34,35 @@ class ContainerViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.currentViewController = segue.destinationViewController as! UIViewController;
+        if subControllerDict[segue.identifier!] == nil{
+            subControllerDict[segue.identifier!] = self.currentViewController
+        }
+        
+        if (self.childViewControllers.count > 0) {
+            self.swapTwoViewControllers(self.childViewControllers[0] as! UIViewController, toViewController: self.currentViewController)
+        }else
+        {
+            self.addChildViewController(self.currentViewController)
+            var dstView: UIView = self.currentViewController.view
+            dstView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+            dstView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+            self.view.addSubview(dstView)
+            segue.destinationViewController.didMoveToParentViewController(self)
+        }
+        
+    }
+    
+
+    
+    private func getUIControllerFromControllerEnum(controllerEnum: ClassEnums.MainContentsControllers)->UIViewController?
+    {
+        var enumValue = controllerEnum.rawValue
+        
+        if let tmpController = self.subControllerDict[enumValue]{
+            return tmpController
+        }else{
+            return nil
+        }
     }
     
     private func swapTwoViewControllers(fromController:UIViewController, toViewController:UIViewController){
@@ -46,21 +77,46 @@ class ContainerViewController: UIViewController {
         
     }
     
-    func swapViewControllers(dstController: ClassEnums.MainContentsControllers){
+    func swapViewControllers(dstControllerEnum: ClassEnums.MainContentsControllers){
         
         if self.transitionInProgress{
             return
         }
         
         self.transitionInProgress = true
-        if dstController.rawValue != self.currentSegueController.rawValue
-        {
-            
-        }
-
         
+        var dstController: UIViewController? = getUIControllerFromControllerEnum(dstControllerEnum)
+        if (dstControllerEnum.rawValue != self.currentSegueController.rawValue && dstController != nil)
+        {
+            self.swapTwoViewControllers(self.currentViewController, toViewController: dstController!)
+            self.currentViewController = dstController
+        }
+        
+        self.performSegueWithIdentifier(dstControllerEnum.rawValue, sender: nil)
         
     }
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        println(keyPath)
+        println("detectedchagnes")
+        if keyPath == "selectedButton"{
+            var newValue:NSInteger = change[NSKeyValueChangeNewKey] as! NSInteger
+            switch newValue {
+                
+            case 0:
+                swapViewControllers(ClassEnums.MainContentsControllers.DailyReading)
+                break
+            case 1:
+                swapViewControllers(ClassEnums.MainContentsControllers.UserProfile)
+                break
+            default:
+                break
+            }
+            
+        }
+        println(subControllerDict)
+    }
+    
     
     /*
     // MARK: - Navigation
@@ -73,3 +129,4 @@ class ContainerViewController: UIViewController {
     */
 
 }
+

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452330B71B3B9F5900995F31 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452330B61B3B9F5900995F31 /* StoryViewController.swift */; };
+		452330B91B3B9F6400995F31 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452330B81B3B9F6400995F31 /* ProfileViewController.swift */; };
+		452330BF1B3BB42600995F31 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452330BE1B3BB42600995F31 /* EmptySegue.swift */; };
 		45D86C6F1B390A5300225BDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCE5C371B3494C300A78CAF /* Main.storyboard */; };
 		45D86C791B390BC300225BDD /* content_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D86C711B390BC300225BDD /* content_1@3x.png */; };
 		45D86C7A1B390BC300225BDD /* content_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D86C721B390BC300225BDD /* content_2@3x.png */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		452330B61B3B9F5900995F31 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		452330B81B3B9F6400995F31 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		452330BE1B3BB42600995F31 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		45D86C711B390BC300225BDD /* content_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "content_1@3x.png"; sourceTree = "<group>"; };
 		45D86C721B390BC300225BDD /* content_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "content_2@3x.png"; sourceTree = "<group>"; };
 		45D86C731B390BC300225BDD /* ic_activity@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_activity@3x.png"; sourceTree = "<group>"; };
@@ -88,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		452330BA1B3BB3E600995F31 /* CustomSegues */ = {
+			isa = PBXGroup;
+			children = (
+				452330BE1B3BB42600995F31 /* EmptySegue.swift */,
+			);
+			name = CustomSegues;
+			sourceTree = "<group>";
+		};
 		45D86C701B390BC300225BDD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +150,10 @@
 		FCCE5C2E1B3494C300A78CAF /* shuzhai */ = {
 			isa = PBXGroup;
 			children = (
+				452330BA1B3BB3E600995F31 /* CustomSegues */,
 				45D86C831B39167A00225BDD /* ContainerViewController.swift */,
+				452330B61B3B9F5900995F31 /* StoryViewController.swift */,
+				452330B81B3B9F6400995F31 /* ProfileViewController.swift */,
 				45D86C851B391DC000225BDD /* ClassEnums.swift */,
 				FC4E1B1F1B38C282009D9CDE /* GuillotineMenu */,
 				FCCE5C311B3494C300A78CAF /* AppDelegate.swift */,
@@ -288,10 +305,13 @@
 				FC4E1B261B38C282009D9CDE /* GuillotineMenuViewController.swift in Sources */,
 				45D86C841B39167A00225BDD /* ContainerViewController.swift in Sources */,
 				FCCE5C361B3494C300A78CAF /* DetailViewController.swift in Sources */,
+				452330BF1B3BB42600995F31 /* EmptySegue.swift in Sources */,
 				FC4E1B251B38C282009D9CDE /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				45D86C861B391DC000225BDD /* ClassEnums.swift in Sources */,
+				452330B91B3B9F6400995F31 /* ProfileViewController.swift in Sources */,
 				FCCE5C541B34B0EF00A78CAF /* BaseViewController.swift in Sources */,
 				FC4E1B271B38C282009D9CDE /* UIViewExtension.swift in Sources */,
+				452330B71B3B9F5900995F31 /* StoryViewController.swift in Sources */,
 				FCCE5C341B3494C300A78CAF /* MasterViewController.swift in Sources */,
 				FCCE5C321B3494C300A78CAF /* AppDelegate.swift in Sources */,
 			);
@@ -420,9 +440,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = shuzhai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -430,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = shuzhai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
