@@ -11,7 +11,7 @@ import UIKit
 
 class BaseViewController: UIViewController,GuillotineAnimationDelegate {
 
-    @IBOutlet var barButton: UIButton!
+    @IBOutlet var tableView: UITableView!
     
     var containerViewController:UIViewController?
     var mycontext  = 0
@@ -34,20 +34,20 @@ class BaseViewController: UIViewController,GuillotineAnimationDelegate {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "mainMenuSegue"{
-            // Your Menu View Controller vew must know the following data for the proper animatio
-            let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
-            destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
-            destinationVC.hostTitleText = self.navigationItem.title
-            destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
-            destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
-            
-            
-            if self.containerViewController != nil{
-                destinationVC.addObserver(self.containerViewController!, forKeyPath: "selectedButton", options: .New, context: &mycontext)
-                destinationVC.referredContainerViewController = self.containerViewController!
-            }
-        }
+//        if segue.identifier == "mainMenuSegue"{
+//            // Your Menu View Controller vew must know the following data for the proper animatio
+//            let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
+//            destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
+//            destinationVC.hostTitleText = self.navigationItem.title
+//            destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
+//            destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
+//            
+//            
+//            if self.containerViewController != nil{
+//                destinationVC.addObserver(self.containerViewController!, forKeyPath: "selectedButton", options: .New, context: &mycontext)
+//                destinationVC.referredContainerViewController = self.containerViewController!
+//            }
+//        }
         
         if segue.identifier == "containerView"{
             self.containerViewController = segue.destinationViewController as! ContainerViewController
