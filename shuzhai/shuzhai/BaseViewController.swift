@@ -18,11 +18,15 @@ class BaseViewController: UIViewController,GuillotineAnimationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.navigationBar.hidden = true
+        self.navigationController?.navigationBar.hidden = true
         
         let navBar = self.navigationController!.navigationBar
         navBar.barTintColor = UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 40.0
+        tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0)
 
         // Do any additional setup after loading the view.
     }
@@ -34,20 +38,6 @@ class BaseViewController: UIViewController,GuillotineAnimationDelegate {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "mainMenuSegue"{
-//            // Your Menu View Controller vew must know the following data for the proper animatio
-//            let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
-//            destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
-//            destinationVC.hostTitleText = self.navigationItem.title
-//            destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
-//            destinationVC.setMenuButtonWithImage(barButton.imageView!.image!)
-//            
-//            
-//            if self.containerViewController != nil{
-//                destinationVC.addObserver(self.containerViewController!, forKeyPath: "selectedButton", options: .New, context: &mycontext)
-//                destinationVC.referredContainerViewController = self.containerViewController!
-//            }
-//        }
         
         if segue.identifier == "containerView"{
             self.containerViewController = segue.destinationViewController as! ContainerViewController
@@ -59,6 +49,39 @@ class BaseViewController: UIViewController,GuillotineAnimationDelegate {
         println("-----")
     }
 
+    
+    // table delegate 
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0{
+            let identifier = "ProfileCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! UITableViewCell
+            return cell
+        }else{
+            
+            let identifier = "SelectionCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! UITableViewCell
+            return cell
+        }
+        
+    }
+    
+//    func tableView(tableView: UITableView!, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat
+//    {
+//        if indexPath.row == 0{
+//           return 100.0
+//        }else{
+//            return 44.0
+//        }
+//
+//    }
+    
     /*
     // MARK: - Navigation
 
