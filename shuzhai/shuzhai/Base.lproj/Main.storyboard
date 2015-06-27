@@ -33,6 +33,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nul-rG-4QF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="X13-mB-ZAG" kind="embed" identifier="containerView" id="Mhi-Nr-RR7"/>
+                                </connections>
+                            </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SQk-mp-eHK">
                                 <rect key="frame" x="0.0" y="0.0" width="270" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,23 +51,17 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                            </tableView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nul-rG-4QF">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
-                                    <segue destination="X13-mB-ZAG" kind="embed" identifier="containerView" id="Mhi-Nr-RR7"/>
+                                    <outlet property="dataSource" destination="3Id-q2-HVj" id="Vut-VF-Gaw"/>
+                                    <outlet property="delegate" destination="3Id-q2-HVj" id="vfN-O0-Mo9"/>
                                 </connections>
-                            </containerView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SQk-mp-eHK" firstAttribute="top" secondItem="Ml7-dl-oXL" secondAttribute="bottom" constant="-20" id="6Vy-Uu-z77"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nul-rG-4QF" secondAttribute="trailing" constant="-16" id="I8A-rz-Een"/>
-                            <constraint firstItem="Nul-rG-4QF" firstAttribute="leading" secondItem="JVr-n4-ELc" secondAttribute="leadingMargin" constant="-16" id="P3c-LE-yRa"/>
                             <constraint firstItem="1bv-9W-hTt" firstAttribute="top" secondItem="SQk-mp-eHK" secondAttribute="bottom" id="X1g-Vs-1BC"/>
-                            <constraint firstItem="1bv-9W-hTt" firstAttribute="top" secondItem="Nul-rG-4QF" secondAttribute="bottom" id="ZQp-ZF-x5y"/>
                             <constraint firstItem="SQk-mp-eHK" firstAttribute="leading" secondItem="JVr-n4-ELc" secondAttribute="leadingMargin" constant="-16" id="bBO-eh-lzx"/>
-                            <constraint firstItem="Nul-rG-4QF" firstAttribute="top" secondItem="Ml7-dl-oXL" secondAttribute="bottom" constant="-20" id="qpL-ZW-QmG"/>
                             <constraint firstItem="SQk-mp-eHK" firstAttribute="width" secondItem="JVr-n4-ELc" secondAttribute="width" multiplier="0.45" id="xmL-GK-qqq"/>
                         </constraints>
                     </view>

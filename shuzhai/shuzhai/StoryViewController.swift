@@ -8,19 +8,10 @@
 
 import UIKit
 
-
-class StoryViewController: UIViewController,G8TesseractDelegate {
+class StoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var tesseract:G8Tesseract = G8Tesseract(language:"chi_sim");
-        //tesseract.language = "eng+ita";
-        tesseract.delegate = self;
-        tesseract.charWhitelist = "01234567890";
-        tesseract.image = UIImage(named: "1.png");
-        tesseract.recognize();
-        NSLog("%@", tesseract.recognizedText);
 
         // Do any additional setup after loading the view.
     }
