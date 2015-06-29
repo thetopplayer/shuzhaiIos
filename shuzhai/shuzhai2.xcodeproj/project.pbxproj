@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */; };
-		45E608731B3F9F2E004B3F50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E608721B3F9F2E004B3F50 /* DetailViewController.swift */; };
 		45E608761B3F9F2E004B3F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E608741B3F9F2E004B3F50 /* Main.storyboard */; };
 		45E608781B3F9F2E004B3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E608771B3F9F2E004B3F50 /* Images.xcassets */; };
 		45E6087B1B3F9F2E004B3F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E608791B3F9F2E004B3F50 /* LaunchScreen.xib */; };
@@ -22,6 +21,7 @@
 		45E608A01B3FA095004B3F50 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6089B1B3FA095004B3F50 /* ProfileViewController.swift */; };
 		45E608A11B3FA095004B3F50 /* ClassEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6089C1B3FA095004B3F50 /* ClassEnums.swift */; };
 		45E608A71B3FA3E4004B3F50 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E608A61B3FA3E4004B3F50 /* BaseViewController.swift */; };
+		45E608AC1B408948004B3F50 /* StoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E608AA1B408948004B3F50 /* StoryPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		45E608691B3F9F2E004B3F50 /* shuzhai2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shuzhai2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E6086D1B3F9F2E004B3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45E608721B3F9F2E004B3F50 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		45E608751B3F9F2E004B3F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45E608771B3F9F2E004B3F50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45E6087A1B3F9F2E004B3F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		45E6089B1B3FA095004B3F50 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		45E6089C1B3FA095004B3F50 /* ClassEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassEnums.swift; sourceTree = "<group>"; };
 		45E608A61B3FA3E4004B3F50 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		45E608AA1B408948004B3F50 /* StoryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,16 +95,12 @@
 		45E6086B1B3F9F2E004B3F50 /* shuzhai2 */ = {
 			isa = PBXGroup;
 			children = (
-				45E608981B3FA095004B3F50 /* ContainerViewController.swift */,
-				45E608991B3FA095004B3F50 /* ContainerSubbaseViewController.swift */,
-				45E6089A1B3FA095004B3F50 /* StoryViewController.swift */,
+				45E608A91B40891F004B3F50 /* StoryViewControllers */,
+				45E608A81B4088ED004B3F50 /* BaseControllers */,
 				45E6089B1B3FA095004B3F50 /* ProfileViewController.swift */,
-				45E6089C1B3FA095004B3F50 /* ClassEnums.swift */,
-				45E608A61B3FA3E4004B3F50 /* BaseViewController.swift */,
 				45E608951B3FA06E004B3F50 /* CustomSegues */,
 				45E608901B3FA053004B3F50 /* Resources */,
 				45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */,
-				45E608721B3F9F2E004B3F50 /* DetailViewController.swift */,
 				45E608741B3F9F2E004B3F50 /* Main.storyboard */,
 				45E608771B3F9F2E004B3F50 /* Images.xcassets */,
 				45E608791B3F9F2E004B3F50 /* LaunchScreen.xib */,
@@ -153,6 +149,26 @@
 				45E608961B3FA07F004B3F50 /* EmptySegue.swift */,
 			);
 			name = CustomSegues;
+			sourceTree = "<group>";
+		};
+		45E608A81B4088ED004B3F50 /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45E608981B3FA095004B3F50 /* ContainerViewController.swift */,
+				45E608991B3FA095004B3F50 /* ContainerSubbaseViewController.swift */,
+				45E6089C1B3FA095004B3F50 /* ClassEnums.swift */,
+				45E608A61B3FA3E4004B3F50 /* BaseViewController.swift */,
+			);
+			name = BaseControllers;
+			sourceTree = "<group>";
+		};
+		45E608A91B40891F004B3F50 /* StoryViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45E6089A1B3FA095004B3F50 /* StoryViewController.swift */,
+				45E608AA1B408948004B3F50 /* StoryPageViewController.swift */,
+			);
+			name = StoryViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,10 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E6089E1B3FA095004B3F50 /* ContainerSubbaseViewController.swift in Sources */,
-				45E608731B3F9F2E004B3F50 /* DetailViewController.swift in Sources */,
 				45E6089D1B3FA095004B3F50 /* ContainerViewController.swift in Sources */,
 				45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */,
 				45E6089F1B3FA095004B3F50 /* StoryViewController.swift in Sources */,
+				45E608AC1B408948004B3F50 /* StoryPageViewController.swift in Sources */,
 				45E608A71B3FA3E4004B3F50 /* BaseViewController.swift in Sources */,
 				45E608A01B3FA095004B3F50 /* ProfileViewController.swift in Sources */,
 				45E608A11B3FA095004B3F50 /* ClassEnums.swift in Sources */,
@@ -461,6 +477,7 @@
 				45E6088C1B3F9F2F004B3F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45E6088D1B3F9F2F004B3F50 /* Build configuration list for PBXNativeTarget "shuzhai2Tests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +486,7 @@
 				45E6088F1B3F9F2F004B3F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

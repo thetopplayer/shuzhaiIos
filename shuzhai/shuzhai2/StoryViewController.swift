@@ -10,11 +10,47 @@ import UIKit
 
 class StoryViewController: ContainerSubbaseViewController {
 
-    @IBOutlet var storyScrollView:UIScrollView?;
+    @IBOutlet var storyScrollView:UIScrollView?
+    var contentView:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //storyScrollView?.contentSize = CGSizeMake((self.storyScrollView?.frame.size.width)!*2, (self.storyScrollView?.frame.size.height)!)
+        
+        println(self.storyScrollView?.frame.width)
+        println(self.storyScrollView?.frame.height)
+        println(self.storyScrollView?.constraints())
+        
+        if let resultController = storyboard.instantiateViewControllerWithIdentifier("StoryPageID") as? StoryPageViewController {
+            
+            contentView = UIView()
+            contentView?.backgroundColor = UIColor.redColor()
+            self.storyScrollView?.addSubview(contentView!)
+            
+            let views:[NSObject:NSObject] = ["beeView":contentView!]
+            var metrics:[NSObject:NSObject] = ["height" : 600, "width" : 900]
 
+           var widthConstraints =  NSLayoutConstraint.constraintsWithVisualFormat("V:|[beeView(height)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+            
+            self.storyScrollView?.addConstraints(widthConstraints)
+        
+            
+            
+            //resultController.view.frame = CGRectMake(0, 0, (self.storyScrollView?.frame.size.width)!,(self.storyScrollView?.frame.size.height)!)
+        
+            //self.storyScrollView?.addSubview(resultController.view)
+            
+            
+            //self.view.addSubview(resultController.view)
+            //self.navigationController?.pushViewController(resultController, animated: true)
+            //presentViewController(resultController, animated: true, completion: nil)
+        }
+        
+        
+
+        
         // Do any additional setup after loading the view.
     }
 

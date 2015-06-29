@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="64"/>
+            <point key="canvasLocation" x="-78.933333333333337" y="60.586666666666666"/>
         </scene>
         <!--Base View Controller-->
         <scene sceneID="HLK-bH-QO3">
@@ -30,11 +30,11 @@
                         <viewControllerLayoutGuide type="bottom" id="GNB-Pg-dQ6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HJ5-Ap-L88">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hko-rB-EQC">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="192" height="568"/>
                                 <color key="backgroundColor" red="0.0" green="0.35686274509999999" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="103" id="4Y1-h7-AlS">
@@ -103,7 +103,7 @@
                                 </connections>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spY-Q2-e3U">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <segue destination="79W-ou-moS" kind="embed" identifier="containerView" id="QKm-NS-t0R"/>
                                 </connections>
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQ8-gM-AW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805" y="82"/>
+            <point key="canvasLocation" x="429.33333333333331" y="77.626666666666665"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="MEM-Iq-CG3">
@@ -141,7 +141,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0Ew-Za-BcW"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gGP-wu-TAS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBM-c7-tL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805" y="823"/>
+            <point key="canvasLocation" x="429.33333333333331" y="779.10666666666668"/>
         </scene>
         <!--Story View Controller-->
         <scene sceneID="Hjz-gi-PdS">
@@ -164,7 +164,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8y0-SI-tx3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Npx-X3-MpL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqX-q8-zcQ">
@@ -177,17 +177,23 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kog-PC-Nt9">
-                                <rect key="frame" x="8" y="532" width="584" height="60"/>
+                                <rect key="frame" x="8" y="503" width="304" height="57"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXk-4f-sXK">
-                                <rect key="frame" x="8" y="87" width="584" height="424"/>
+                                <rect key="frame" x="8" y="87" width="304" height="395"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7By-nP-5r1">
-                                        <rect key="frame" x="0.0" y="0.0" width="584" height="424"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7By-nP-5r1">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="395"/>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7By-nP-5r1" secondAttribute="trailing" id="J6V-hI-6ht"/>
+                                    <constraint firstItem="7By-nP-5r1" firstAttribute="top" secondItem="hXk-4f-sXK" secondAttribute="top" id="Zk9-sj-Ep6"/>
+                                    <constraint firstItem="7By-nP-5r1" firstAttribute="leading" secondItem="hXk-4f-sXK" secondAttribute="leading" id="dcH-A2-BnJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="7By-nP-5r1" secondAttribute="bottom" id="uwC-k8-LGF"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzi-ai-5Tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="1534"/>
+            <point key="canvasLocation" x="286.93333333333334" y="1452.1866666666667"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="yh8-2x-1U1">
@@ -223,7 +229,7 @@
                         <viewControllerLayoutGuide type="bottom" id="j3q-bQ-luj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SsG-pb-bsO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mu-aW-C2V">
@@ -242,13 +248,13 @@
                                         <rect key="frame" x="0.0" y="76" width="584" height="194"/>
                                         <color key="backgroundColor" red="0.0" green="0.35686274509999999" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ev8-ra-0ga">
-                                        <rect key="frame" x="0.0" y="0.0" width="584" height="77"/>
-                                        <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUv-Zi-S2F">
                                         <rect key="frame" x="0.0" y="248" width="584" height="181"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ev8-ra-0ga">
+                                        <rect key="frame" x="0.0" y="0.0" width="584" height="77"/>
+                                        <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -276,11 +282,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0A0-cN-Jfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="1536"/>
+            <point key="canvasLocation" x="637.86666666666667" y="1454.0799999999999"/>
+        </scene>
+        <!--Story Page View Controller-->
+        <scene sceneID="PiH-0u-Ggu">
+            <objects>
+                <viewController storyboardIdentifier="StoryPageID" id="KHb-Dt-yRT" customClass="StoryPageViewController" customModule="shuzhai2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tWO-VX-S6l"/>
+                        <viewControllerLayoutGuide type="bottom" id="wOI-0C-0d4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eir-c4-7bQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yz-Q8-sLc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="round-profile-pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-LH-xwq">
+                                <rect key="frame" x="0.0" y="108" width="600" height="240"/>
+                                <color key="backgroundColor" red="0.0" green="0.35686274509999999" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvU-Mb-jxT">
+                                <rect key="frame" x="0.0" y="348" width="600" height="252"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8yz-Q8-sLc" secondAttribute="trailing" constant="-16" id="1R5-8B-0fW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wvU-Mb-jxT" secondAttribute="trailing" constant="-16" id="1kG-HK-oZY"/>
+                            <constraint firstItem="WgU-LH-xwq" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="4Le-nk-p0b"/>
+                            <constraint firstItem="wvU-Mb-jxT" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="FuQ-DA-FcS"/>
+                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="K54-WH-bva"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WgU-LH-xwq" secondAttribute="trailing" constant="-16" id="kzt-Q0-o8z"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ff-gw-PHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="1452"/>
         </scene>
     </scenes>
     <resources>
         <image name="Hamburger.png" width="28" height="24"/>
         <image name="round-profile-pic.png" width="300" height="306"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
