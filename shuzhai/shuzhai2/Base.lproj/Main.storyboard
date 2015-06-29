@@ -158,7 +158,7 @@
         <!--Story View Controller-->
         <scene sceneID="Hjz-gi-PdS">
             <objects>
-                <viewController id="RRv-Qr-Six" customClass="StoryViewController" customModule="shuzhai2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RRv-Qr-Six" customClass="StoryViewController" customModule="shuzhai2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UpC-Cs-JUA"/>
                         <viewControllerLayoutGuide type="bottom" id="8y0-SI-tx3"/>
@@ -187,7 +187,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="395"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7By-nP-5r1" secondAttribute="trailing" id="J6V-hI-6ht"/>
                                     <constraint firstItem="7By-nP-5r1" firstAttribute="top" secondItem="hXk-4f-sXK" secondAttribute="top" id="Zk9-sj-Ep6"/>
@@ -212,6 +212,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="contentView" destination="hXk-4f-sXK" id="DiV-ic-kvV"/>
                         <outlet property="menuButton" destination="RqX-q8-zcQ" id="GZS-3W-PgX"/>
                         <outlet property="storyScrollView" destination="7By-nP-5r1" id="RMR-qW-CZI"/>
                     </connections>
@@ -309,14 +310,18 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.78039215689999997" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="8yz-Q8-sLc" secondAttribute="trailing" constant="-16" id="1R5-8B-0fW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wvU-Mb-jxT" secondAttribute="trailing" constant="-16" id="1kG-HK-oZY"/>
                             <constraint firstItem="WgU-LH-xwq" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="4Le-nk-p0b"/>
                             <constraint firstItem="wvU-Mb-jxT" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="FuQ-DA-FcS"/>
-                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="K54-WH-bva"/>
+                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="top" secondItem="tWO-VX-S6l" secondAttribute="bottom" id="KaR-4S-aRs"/>
+                            <constraint firstItem="WgU-LH-xwq" firstAttribute="top" secondItem="8yz-Q8-sLc" secondAttribute="bottom" id="QRu-2Q-FYv"/>
+                            <constraint firstAttribute="trailing" secondItem="WgU-LH-xwq" secondAttribute="trailing" id="bTD-SU-cr0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WgU-LH-xwq" secondAttribute="trailing" constant="-16" id="kzt-Q0-o8z"/>
+                            <constraint firstAttribute="trailing" secondItem="8yz-Q8-sLc" secondAttribute="trailing" id="pCb-C8-47l"/>
+                            <constraint firstItem="WgU-LH-xwq" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leading" id="sNc-Tl-xEE"/>
+                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leading" id="zpu-QR-Ndk"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

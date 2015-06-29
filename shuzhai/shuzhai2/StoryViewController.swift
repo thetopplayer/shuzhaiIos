@@ -11,13 +11,13 @@ import UIKit
 class StoryViewController: ContainerSubbaseViewController {
 
     @IBOutlet var storyScrollView:UIScrollView?
-    var contentView:UIView?
+    @IBOutlet var contentView:UIView?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        //storyScrollView?.contentSize = CGSizeMake((self.storyScrollView?.frame.size.width)!*2, (self.storyScrollView?.frame.size.height)!)
+        storyScrollView?.contentSize = CGSizeMake((self.storyScrollView?.frame.size.width)!*2, (self.storyScrollView?.frame.size.height)!)
         
         println(self.storyScrollView?.frame.width)
         println(self.storyScrollView?.frame.height)
@@ -25,32 +25,29 @@ class StoryViewController: ContainerSubbaseViewController {
         
         if let resultController = storyboard.instantiateViewControllerWithIdentifier("StoryPageID") as? StoryPageViewController {
             
-            contentView = UIView()
-            contentView?.backgroundColor = UIColor.redColor()
-            self.storyScrollView?.addSubview(contentView!)
             
-            let views:[NSObject:NSObject] = ["beeView":contentView!]
-            var metrics:[NSObject:NSObject] = ["height" : 600, "width" : 900]
-
-           var widthConstraints =  NSLayoutConstraint.constraintsWithVisualFormat("V:|[beeView(height)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+            resultController.view.frame = CGRectMake(0, 0, (self.storyScrollView?.frame.size.width)!,(self.storyScrollView?.frame.size.height)!)
             
-            self.storyScrollView?.addConstraints(widthConstraints)
-        
+            self.storyScrollView?.addSubview(resultController.view)
+            
+            self.view.addConstraint(NSLayoutConstraint(item: resultController.view, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.contentView, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
             
             
-            //resultController.view.frame = CGRectMake(0, 0, (self.storyScrollView?.frame.size.width)!,(self.storyScrollView?.frame.size.height)!)
-        
-            //self.storyScrollView?.addSubview(resultController.view)
-            
-            
-            //self.view.addSubview(resultController.view)
-            //self.navigationController?.pushViewController(resultController, animated: true)
-            //presentViewController(resultController, animated: true, completion: nil)
         }
         
-        
+        if let resultController = storyboard.instantiateViewControllerWithIdentifier("StoryPageID") as? StoryPageViewController {
+            
+            
+            resultController.view.frame = CGRectMake((self.storyScrollView?.frame.size.width)!, 0, (self.storyScrollView?.frame.size.width)!,(self.storyScrollView?.frame.size.height)!)
+            
+            self.storyScrollView?.addSubview(resultController.view)
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
 
-        
         // Do any additional setup after loading the view.
     }
 
