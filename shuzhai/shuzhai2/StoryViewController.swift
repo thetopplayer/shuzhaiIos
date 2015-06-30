@@ -8,40 +8,16 @@
 
 import UIKit
 
-class StoryViewController: ContainerSubbaseViewController {
+class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
-    @IBOutlet var storyScrollView:UIScrollView?
-    @IBOutlet var contentView:UIView?
-    let storyMargin:CGFloat = 8.0
+    @IBOutlet var collectionView:UICollectionView?
+    
+    private let reuseIdentifier = "StoryPageItemCell"
+    private let sectionInsets = UIEdgeInsets(top: 10, left: 10.0, bottom: 10.0, right: 10.0)
     
     override func viewDidAppear(animated: Bool) {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        storyScrollView?.contentSize = CGSizeMake(((self.storyScrollView?.frame.size.width)!*2 + self.storyMargin*4), (self.storyScrollView?.frame.size.height)!)
-        
-        println(self.storyScrollView?.frame.width)
-        println(self.storyScrollView?.frame.height)
-        println(self.storyScrollView?.constraints())
-        
-        if let resultController = storyboard.instantiateViewControllerWithIdentifier("StoryPageID") as? StoryPageViewController {
-            
-            resultController.view.frame = CGRectMake(0, 0, ((self.storyScrollView?.frame.size.width )! - self.storyMargin*2),(self.storyScrollView?.frame.size.height)!)
-            
-            self.storyScrollView?.addSubview(resultController.view)
-            
-            self.view.addConstraint(NSLayoutConstraint(item: resultController.view, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.contentView, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
-            
-            
-        }
-        
-        if let resultController = storyboard.instantiateViewControllerWithIdentifier("StoryPageID") as? StoryPageViewController {
-            
-            
-            resultController.view.frame = CGRectMake((self.storyScrollView?.frame.size.width)!+self.storyMargin*3, 0, ((self.storyScrollView?.frame.size.width )! - self.storyMargin*2),(self.storyScrollView?.frame.size.height)!)
-            
-            self.storyScrollView?.addSubview(resultController.view)
-        }
     }
     
     override func viewDidLoad() {
@@ -56,7 +32,22 @@ class StoryViewController: ContainerSubbaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
+        //cell.backgroundColor = UIColor.blackColor()
+        // Configure the cell
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -67,4 +58,22 @@ class StoryViewController: ContainerSubbaseViewController {
     }
     */
 
+}
+
+
+extension StoryViewController : UICollectionViewDelegateFlowLayout {
+    //1
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            
+            return CGSize(width: collectionView.frame.width-20, height: collectionView.frame.height)
+    }
+    
+    //3
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return sectionInsets
+    }
 }
