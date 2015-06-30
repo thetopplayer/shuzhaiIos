@@ -181,13 +181,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXk-4f-sXK">
-                                <rect key="frame" x="8" y="87" width="304" height="395"/>
+                                <rect key="frame" x="0.0" y="87" width="320" height="395"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7By-nP-5r1">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="395"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7By-nP-5r1" secondAttribute="trailing" id="J6V-hI-6ht"/>
                                     <constraint firstItem="7By-nP-5r1" firstAttribute="top" secondItem="hXk-4f-sXK" secondAttribute="top" id="Zk9-sj-Ep6"/>
@@ -199,15 +199,15 @@
                         <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Kog-PC-Nt9" firstAttribute="top" secondItem="hXk-4f-sXK" secondAttribute="bottom" constant="21" id="89K-7b-v6p"/>
+                            <constraint firstItem="hXk-4f-sXK" firstAttribute="leading" secondItem="Npx-X3-MpL" secondAttribute="leading" id="DMy-9k-hY3"/>
                             <constraint firstItem="RqX-q8-zcQ" firstAttribute="top" secondItem="UpC-Cs-JUA" secondAttribute="bottom" constant="23" id="JWC-MA-AfZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kog-PC-Nt9" secondAttribute="trailing" constant="-8" id="QKy-Bs-DZZ"/>
                             <constraint firstItem="8y0-SI-tx3" firstAttribute="top" secondItem="Kog-PC-Nt9" secondAttribute="bottom" constant="8" id="Z8O-21-96E"/>
                             <constraint firstItem="RqX-q8-zcQ" firstAttribute="leading" secondItem="Npx-X3-MpL" secondAttribute="leading" constant="16" id="aN6-jD-9XH"/>
+                            <constraint firstAttribute="trailing" secondItem="hXk-4f-sXK" secondAttribute="trailing" id="bde-B1-voJ"/>
                             <constraint firstItem="Kog-PC-Nt9" firstAttribute="height" secondItem="Npx-X3-MpL" secondAttribute="height" multiplier="0.1" id="chf-Xy-5BH"/>
                             <constraint firstItem="Kog-PC-Nt9" firstAttribute="leading" secondItem="Npx-X3-MpL" secondAttribute="leadingMargin" constant="-8" id="i0q-82-ZzJ"/>
                             <constraint firstItem="hXk-4f-sXK" firstAttribute="top" secondItem="RqX-q8-zcQ" secondAttribute="bottom" constant="20" id="k07-kP-vsM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hXk-4f-sXK" secondAttribute="trailing" constant="-8" id="tWh-XG-2MQ"/>
-                            <constraint firstItem="hXk-4f-sXK" firstAttribute="leading" secondItem="Npx-X3-MpL" secondAttribute="leadingMargin" constant="-8" id="zqd-dL-3zx"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzi-ai-5Tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286.93333333333334" y="1452.1866666666667"/>
+            <point key="canvasLocation" x="286" y="1452"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="yh8-2x-1U1">
@@ -297,31 +297,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yz-Q8-sLc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yz-Q8-sLc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="112.5"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="round-profile-pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-LH-xwq">
-                                <rect key="frame" x="0.0" y="108" width="600" height="240"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="round-profile-pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-LH-xwq">
+                                <rect key="frame" x="0.0" y="112" width="600" height="240"/>
                                 <color key="backgroundColor" red="0.0" green="0.35686274509999999" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvU-Mb-jxT">
-                                <rect key="frame" x="0.0" y="348" width="600" height="252"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.78039215689999997" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="wvU-Mb-jxT" secondAttribute="trailing" constant="-16" id="1kG-HK-oZY"/>
-                            <constraint firstItem="WgU-LH-xwq" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="4Le-nk-p0b"/>
-                            <constraint firstItem="wvU-Mb-jxT" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leadingMargin" constant="-16" id="FuQ-DA-FcS"/>
-                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="top" secondItem="tWO-VX-S6l" secondAttribute="bottom" id="KaR-4S-aRs"/>
-                            <constraint firstItem="WgU-LH-xwq" firstAttribute="top" secondItem="8yz-Q8-sLc" secondAttribute="bottom" id="QRu-2Q-FYv"/>
-                            <constraint firstAttribute="trailing" secondItem="WgU-LH-xwq" secondAttribute="trailing" id="bTD-SU-cr0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WgU-LH-xwq" secondAttribute="trailing" constant="-16" id="kzt-Q0-o8z"/>
-                            <constraint firstAttribute="trailing" secondItem="8yz-Q8-sLc" secondAttribute="trailing" id="pCb-C8-47l"/>
-                            <constraint firstItem="WgU-LH-xwq" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leading" id="sNc-Tl-xEE"/>
-                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leading" id="zpu-QR-Ndk"/>
+                            <constraint firstAttribute="trailing" secondItem="8yz-Q8-sLc" secondAttribute="trailing" id="Aro-t2-deg"/>
+                            <constraint firstItem="WgU-LH-xwq" firstAttribute="top" secondItem="8yz-Q8-sLc" secondAttribute="bottom" constant="-0.5" id="Eld-pF-vVZ"/>
+                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="height" secondItem="eir-c4-7bQ" secondAttribute="height" multiplier="0.2" id="VTs-a9-ciH"/>
+                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leading" id="Zdt-OS-mfP"/>
+                            <constraint firstItem="8yz-Q8-sLc" firstAttribute="top" secondItem="tWO-VX-S6l" secondAttribute="bottom" id="nAA-US-rkx"/>
+                            <constraint firstItem="WgU-LH-xwq" firstAttribute="leading" secondItem="eir-c4-7bQ" secondAttribute="leading" id="w9b-SF-gkr"/>
+                            <constraint firstAttribute="trailing" secondItem="WgU-LH-xwq" secondAttribute="trailing" id="x3m-a8-oAY"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

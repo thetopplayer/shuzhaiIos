@@ -12,12 +12,13 @@ class StoryViewController: ContainerSubbaseViewController {
 
     @IBOutlet var storyScrollView:UIScrollView?
     @IBOutlet var contentView:UIView?
+    let storyMargin:CGFloat = 8.0
     
     override func viewDidAppear(animated: Bool) {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        storyScrollView?.contentSize = CGSizeMake((self.storyScrollView?.frame.size.width)!*2, (self.storyScrollView?.frame.size.height)!)
+        storyScrollView?.contentSize = CGSizeMake(((self.storyScrollView?.frame.size.width)!*2 + self.storyMargin*4), (self.storyScrollView?.frame.size.height)!)
         
         println(self.storyScrollView?.frame.width)
         println(self.storyScrollView?.frame.height)
@@ -25,8 +26,7 @@ class StoryViewController: ContainerSubbaseViewController {
         
         if let resultController = storyboard.instantiateViewControllerWithIdentifier("StoryPageID") as? StoryPageViewController {
             
-            
-            resultController.view.frame = CGRectMake(0, 0, (self.storyScrollView?.frame.size.width)!,(self.storyScrollView?.frame.size.height)!)
+            resultController.view.frame = CGRectMake(0, 0, ((self.storyScrollView?.frame.size.width )! - self.storyMargin*2),(self.storyScrollView?.frame.size.height)!)
             
             self.storyScrollView?.addSubview(resultController.view)
             
@@ -38,7 +38,7 @@ class StoryViewController: ContainerSubbaseViewController {
         if let resultController = storyboard.instantiateViewControllerWithIdentifier("StoryPageID") as? StoryPageViewController {
             
             
-            resultController.view.frame = CGRectMake((self.storyScrollView?.frame.size.width)!, 0, (self.storyScrollView?.frame.size.width)!,(self.storyScrollView?.frame.size.height)!)
+            resultController.view.frame = CGRectMake((self.storyScrollView?.frame.size.width)!+self.storyMargin*3, 0, ((self.storyScrollView?.frame.size.width )! - self.storyMargin*2),(self.storyScrollView?.frame.size.height)!)
             
             self.storyScrollView?.addSubview(resultController.view)
         }
