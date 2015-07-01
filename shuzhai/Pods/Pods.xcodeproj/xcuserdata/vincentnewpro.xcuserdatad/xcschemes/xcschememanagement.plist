@@ -4,7 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-EasyAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ImageLoader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>78813E673C0287697711694D</key>
+		<key>1ED8513AF66605337E5BBFDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D1F6C9655315ACEAC8E18939</key>
+		<key>6C69A96F66743BFBE96C9161</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B429A7A81EA509772FF5F9A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9C0399B2CAE6828F2CBCC7F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5DA112EFFC8394912DFB095</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE44D15F9459E903D2D87A5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
