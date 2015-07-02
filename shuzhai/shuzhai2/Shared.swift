@@ -14,6 +14,7 @@ struct GlobalVariables {
     static var dailyStoryUrl = "http://104.131.79.31/onebook/book/getSingleRecommendationBook.form"
     static var mutilStoryUrl = "http://104.131.79.31/onebook/book/getMultipleRecommendationBook.form"
     static var readingFetchDefaultNumb = 5
+    static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
 
 
@@ -44,8 +45,6 @@ class DataManager: NSObject {
         dateFormatter.dateFormat = "yyyy-MM-dd" // superset of OP's format
         let todayStr = dateFormatter.stringFromDate(today!)
         let ndaysAgoStr = dateFormatter.stringFromDate(ndaysAgo!)
-
-        
         
         Alamofire.request(.POST, GlobalVariables.mutilStoryUrl, parameters: ["startDate": ndaysAgoStr,"endDate":todayStr])
             .responseArray { (response: [DailyReading]?, error: NSError?) in

@@ -30,6 +30,12 @@ class ContainerSubbaseViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("openMenuNotification", object: nil)
     }
     
+    func setButtonIconByIndex(index:Int)
+    {
+        var imageName = String(format: "Berger%d", index+1)
+        self.menuButton?.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+    }
+    
     /*
     // MARK: - Navigation
 
