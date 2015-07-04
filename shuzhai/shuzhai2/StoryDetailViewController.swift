@@ -12,11 +12,14 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
 
     @IBOutlet var closeButton:UIButton?
     @IBOutlet var tableView:UITableView?
+
+    var dailyReadingBook:DaliyReadingBook?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.tableView?.estimatedRowHeight = 100.0
+        self.tableView?.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +28,9 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        self.tableView!.reloadData()
+    }
     
     @IBAction func closeView()
     {
@@ -32,7 +38,7 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -40,7 +46,34 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView!.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        
+        var cell:UITableViewCell!
+        
+        if indexPath.row==0
+        {
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("cell") as! TitleTableViewCell
+            cell.titleLabel?.text = dailyReadingBook?.sectionTitle
+            return cell
+        }
+        
+        if indexPath.row==1
+        {
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("profileCell") as! UITableViewCell
+            //cell.titleLabel?.text = dailyReadingBook?.sectionTitle
+            return cell
+        }
+        
+        if indexPath.row == 2
+        {
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("textBodyCell") as! StoryTextBodyCell
+            //cell.titleLabel?.text = dailyReadingBook?.sectionTitle
+            //cell.textBodyLabel?.text = dailyReadingBook?.textBody
+            var text:String = dailyReadingBook!.textBody!
+            cell.textBodyView?.text = text
+            println(text)
+            return cell
+        }
+        
         
         return cell
     }
@@ -49,12 +82,40 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
         if indexPath.row == 0
         {
             return tableView.bounds.height / CGFloat(3.5)
+        }else if indexPath.row == 1
+        {
+            return 50
         }else
         {
-            return 44
+         let storytextCell : StoryTextBodyCell? = self.tableView!.cellForRowAtIndexPath(indexPath) as? StoryTextBodyCell
+            return storytextCell!.getConfiguredCellHeight()
         }
+        
+    }
+
+    
+    func heightForBasicCellAtIndexPath(indexPath:NSIndexPath) -> CGFloat
+    {
+        var storytextCell : StoryTextBodyCell? = self.tableView?.dequeueReusableCellWithIdentifier("textBodyCell") as? StoryTextBodyCell
+        
+        self.configureBasicCell(storytextCell!, indexPath: indexPath)
+        return self.calculateHeightForConfiguredSizingCell(storytextCell!)
     }
     
+    func configureBasicCell(cell:StoryTextBodyCell,indexPath:NSIndexPath)
+    {
+       // cell.textBodyLabel?.text = dailyReadingBook?.textBody
+    }
+    
+    
+    func calculateHeightForConfiguredSizingCell(sizingCell:UITableViewCell) -> CGFloat
+    {
+        sizingCell.setNeedsLayout()
+        sizingCell.layoutIfNeeded()
+        var size: CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        return size.height
+    }
+
 
     /*
     // MARK: - Navigation

@@ -19,8 +19,13 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
     @IBOutlet var bookCreatorNameLabel:UILabel?
     @IBOutlet var collectionContainerView:UIView?
     @IBOutlet var pageController:UIPageControl?
+    @IBOutlet var bannerImgView:UIImageView?
+    @IBOutlet var addNewImgView:UIButton?
+
     
     let backGroundColors:[UIColor] = GlobalVariables.defaultColorGroup
+    var outLineColor = UIColor(red:0.74, green:0.76, blue:0.78, alpha:1.0)
+
     
     var bookDataArray : [DailyReading]=[]
     var currentIndex  = 0
@@ -37,6 +42,20 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
     {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
+        self.bannerImgView?.image = UIImage(named: String(format: "Banner%d",1))
+        
+        
+        // set outline color 
+        
+        self.userInfoView?.layer.borderColor = self.outLineColor.CGColor
+        self.userInfoView?.layer.borderWidth = 1
+        self.userInfoView?.layer.cornerRadius = 3.0
+        self.userInfoView?.layer.shadowColor = self.outLineColor.CGColor
+        self.userInfoView?.layer.shadowOpacity = 0.8
+        self.userInfoView?.layer.shadowRadius = 3.0
+        self.addNewImgView?.setImage(UIImage(named: String(format: "addNew%d",0)), forState: .Normal)
+
+        
         
         DataManager.fetchNumberOfBooks({ (todayReadings, error) -> Void in
             
@@ -54,7 +73,18 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
             })
     
     }
-
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        
+        if(segue.identifier == "BookDetailSegue")
+        {
+            
+            var controller = (segue.destinationViewController as! StoryDetailViewController)
+            controller.dailyReadingBook = (sender as! DailyReading).bookInfoVO
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -80,8 +110,10 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("BookDetailSegue", sender: self)
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        var dailyReadying:DailyReading = self.bookDataArray[indexPath.row]
+        self.performSegueWithIdentifier("BookDetailSegue", sender: dailyReadying)
     }
     
     
@@ -99,17 +131,17 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
         cell.bookSectionTitleLabel?.text = dailyReadying.bookInfoVO?.sectionTitle
         cell.layer.borderWidth=1.0
         cell.layer.cornerRadius = 3.0
-        cell.layer.borderColor = self.backGroundColors[indexPath.row].CGColor
+        cell.layer.borderColor = UIColor .clearColor().CGColor//self.outLineColor.CGColor
+        cell.bookTitleLabel?.textColor = self.backGroundColors[indexPath.row]
     }
     
     func setOutLayColorByIndex(index:Int)
     {
         var currentColor = self.backGroundColors[index]
         var borderWidth:CGFloat = 1
-        self.userInfoView?.layer.borderColor = currentColor.CGColor
-        self.userInfoView?.layer.borderWidth = borderWidth
-        self.userInfoView?.layer.cornerRadius = 3.0
         self.setButtonIconByIndex(index)
+        self.bannerImgView?.image = UIImage(named: String(format: "Banner%d",index+1))
+        self.addNewImgView?.setImage(UIImage(named: String(format: "addNew%d",index+1)), forState: .Normal)
     }
     
     
@@ -147,17 +179,18 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
             
             self.setOutLayColorByIndex(self.currentIndex)
             self.updateUserInfoViewWithIndex(cellToSwipe)
+            self.setOutLayColorByIndex(self.currentIndex)
             
-            UIView.animateAndChainWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                self.userInfoView?.alpha = 0
-                self.setOutLayColorByIndex(self.currentIndex)
-                }, completion: {(finished) -> Void in
-                    // update user info
-                    self.updateUserInfoViewWithIndex(cellToSwipe)
-                }
-                ).animateWithDuration(0.5,animations: { () -> Void in
-                   self.userInfoView?.alpha = 1
-                })
+//            UIView.animateAndChainWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+//                self.userInfoView?.alpha = 0
+//                
+//                }, completion: {(finished) -> Void in
+//                    // update user info
+//                    self.updateUserInfoViewWithIndex(cellToSwipe)
+//                }
+//                ).animateWithDuration(0.5,animations: { () -> Void in
+//                   self.userInfoView?.alpha = 1
+//                })
         }
     }
     
@@ -165,6 +198,7 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
         var dailyReading = self.bookDataArray[index]
         var name = dailyReading.bookInfoVO?.creator_userName
         self.bookCreatorNameLabel?.text =  name
+        self.bookCreatorNameLabel?.textColor = self.backGroundColors[index]
     }
     
     

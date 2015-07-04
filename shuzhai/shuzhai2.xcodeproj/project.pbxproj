@@ -29,6 +29,18 @@
 		45B5E74E1B44EC2D0054D7A8 /* addNew5.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7471B44EC2D0054D7A8 /* addNew5.png */; };
 		45B5E74F1B44EC2D0054D7A8 /* addNew6.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7481B44EC2D0054D7A8 /* addNew6.png */; };
 		45B5E7501B44EC2D0054D7A8 /* addNew7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7491B44EC2D0054D7A8 /* addNew7.png */; };
+		45B5E7591B485A830054D7A8 /* Banner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7521B485A830054D7A8 /* Banner1.png */; };
+		45B5E75A1B485A830054D7A8 /* Banner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7531B485A830054D7A8 /* Banner2.png */; };
+		45B5E75B1B485A830054D7A8 /* Banner3.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7541B485A830054D7A8 /* Banner3.png */; };
+		45B5E75C1B485A830054D7A8 /* Banner4.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7551B485A830054D7A8 /* Banner4.png */; };
+		45B5E75D1B485A830054D7A8 /* Banner5.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7561B485A830054D7A8 /* Banner5.png */; };
+		45B5E75E1B485A830054D7A8 /* Banner6.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7571B485A830054D7A8 /* Banner6.png */; };
+		45B5E75F1B485A830054D7A8 /* Banner7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7581B485A830054D7A8 /* Banner7.png */; };
+		45B5E7621B4864020054D7A8 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7611B4864020054D7A8 /* TitleTableViewCell.swift */; };
+		45B5E7671B486DDD0054D7A8 /* StoryLikeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7641B486DDD0054D7A8 /* StoryLikeIcon.png */; };
+		45B5E7681B486DDD0054D7A8 /* StoryMarkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7651B486DDD0054D7A8 /* StoryMarkIcon.png */; };
+		45B5E76B1B486E0B0054D7A8 /* StoryShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E76A1B486E0B0054D7A8 /* StoryShareIcon.png */; };
+		45B5E76D1B487CBF0054D7A8 /* StoryTextBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */; };
 		45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */; };
 		45E608761B3F9F2E004B3F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E608741B3F9F2E004B3F50 /* Main.storyboard */; };
 		45E608781B3F9F2E004B3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E608771B3F9F2E004B3F50 /* Images.xcassets */; };
@@ -81,6 +93,18 @@
 		45B5E7471B44EC2D0054D7A8 /* addNew5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNew5.png; sourceTree = "<group>"; };
 		45B5E7481B44EC2D0054D7A8 /* addNew6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNew6.png; sourceTree = "<group>"; };
 		45B5E7491B44EC2D0054D7A8 /* addNew7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNew7.png; sourceTree = "<group>"; };
+		45B5E7521B485A830054D7A8 /* Banner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner1.png; sourceTree = "<group>"; };
+		45B5E7531B485A830054D7A8 /* Banner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner2.png; sourceTree = "<group>"; };
+		45B5E7541B485A830054D7A8 /* Banner3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner3.png; sourceTree = "<group>"; };
+		45B5E7551B485A830054D7A8 /* Banner4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner4.png; sourceTree = "<group>"; };
+		45B5E7561B485A830054D7A8 /* Banner5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner5.png; sourceTree = "<group>"; };
+		45B5E7571B485A830054D7A8 /* Banner6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner6.png; sourceTree = "<group>"; };
+		45B5E7581B485A830054D7A8 /* Banner7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner7.png; sourceTree = "<group>"; };
+		45B5E7611B4864020054D7A8 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		45B5E7641B486DDD0054D7A8 /* StoryLikeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StoryLikeIcon.png; sourceTree = "<group>"; };
+		45B5E7651B486DDD0054D7A8 /* StoryMarkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StoryMarkIcon.png; sourceTree = "<group>"; };
+		45B5E76A1B486E0B0054D7A8 /* StoryShareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StoryShareIcon.png; sourceTree = "<group>"; };
+		45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTextBodyCell.swift; sourceTree = "<group>"; };
 		45E608691B3F9F2E004B3F50 /* shuzhai2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shuzhai2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E6086D1B3F9F2E004B3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +202,40 @@
 			name = AddNewIcon;
 			sourceTree = "<group>";
 		};
+		45B5E7511B4859AD0054D7A8 /* Banners */ = {
+			isa = PBXGroup;
+			children = (
+				45B5E7521B485A830054D7A8 /* Banner1.png */,
+				45B5E7531B485A830054D7A8 /* Banner2.png */,
+				45B5E7541B485A830054D7A8 /* Banner3.png */,
+				45B5E7551B485A830054D7A8 /* Banner4.png */,
+				45B5E7561B485A830054D7A8 /* Banner5.png */,
+				45B5E7571B485A830054D7A8 /* Banner6.png */,
+				45B5E7581B485A830054D7A8 /* Banner7.png */,
+			);
+			name = Banners;
+			sourceTree = "<group>";
+		};
+		45B5E7601B4863AE0054D7A8 /* StoryDetailsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				45B5E72F1B44CC5F0054D7A8 /* StoryDetailViewController.swift */,
+				45B5E7611B4864020054D7A8 /* TitleTableViewCell.swift */,
+				45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */,
+			);
+			name = StoryDetailsTableView;
+			sourceTree = "<group>";
+		};
+		45B5E7631B486D7E0054D7A8 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				45B5E7641B486DDD0054D7A8 /* StoryLikeIcon.png */,
+				45B5E7651B486DDD0054D7A8 /* StoryMarkIcon.png */,
+				45B5E76A1B486E0B0054D7A8 /* StoryShareIcon.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		45E608601B3F9F2E004B3F50 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +303,8 @@
 		45E608901B3FA053004B3F50 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				45B5E7631B486D7E0054D7A8 /* Icons */,
+				45B5E7511B4859AD0054D7A8 /* Banners */,
 				45B5E7421B44EB0C0054D7A8 /* AddNewIcon */,
 				45B5E7331B44E7850054D7A8 /* BergerIcon */,
 				45B5E7311B44D2A00054D7A8 /* 82.jpg */,
@@ -277,10 +337,10 @@
 		45E608A91B40891F004B3F50 /* StoryViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				45B5E7601B4863AE0054D7A8 /* StoryDetailsTableView */,
 				45E6089A1B3FA095004B3F50 /* StoryViewController.swift */,
 				45E608AA1B408948004B3F50 /* StoryPageViewController.swift */,
 				45B5E7261B437E670054D7A8 /* StoryPageCell.swift */,
-				45B5E72F1B44CC5F0054D7A8 /* StoryDetailViewController.swift */,
 			);
 			name = StoryViewControllers;
 			sourceTree = "<group>";
@@ -377,19 +437,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B5E75E1B485A830054D7A8 /* Banner6.png in Resources */,
 				45B5E74A1B44EC2D0054D7A8 /* addNew1.png in Resources */,
+				45B5E75D1B485A830054D7A8 /* Banner5.png in Resources */,
 				45B5E7411B44EB040054D7A8 /* Berger7.png in Resources */,
 				45B5E72E1B44C0070054D7A8 /* Rectangle 37.png in Resources */,
+				45B5E76B1B486E0B0054D7A8 /* StoryShareIcon.png in Resources */,
 				45B5E74D1B44EC2D0054D7A8 /* addNew4.png in Resources */,
 				45B5E74B1B44EC2D0054D7A8 /* addNew2.png in Resources */,
 				45B5E7371B44EA3D0054D7A8 /* Berger2.png in Resources */,
 				45B5E74E1B44EC2D0054D7A8 /* addNew5.png in Resources */,
 				45B5E74C1B44EC2D0054D7A8 /* addNew3.png in Resources */,
+				45B5E75C1B485A830054D7A8 /* Banner4.png in Resources */,
 				45B5E7351B44E97F0054D7A8 /* Berger1.png in Resources */,
+				45B5E7591B485A830054D7A8 /* Banner1.png in Resources */,
 				45E608761B3F9F2E004B3F50 /* Main.storyboard in Resources */,
 				45B5E7321B44D2A00054D7A8 /* 82.jpg in Resources */,
+				45B5E75F1B485A830054D7A8 /* Banner7.png in Resources */,
+				45B5E7671B486DDD0054D7A8 /* StoryLikeIcon.png in Resources */,
 				45B5E73E1B44EB040054D7A8 /* Berger4.png in Resources */,
 				45B5E73F1B44EB040054D7A8 /* Berger5.png in Resources */,
+				45B5E75A1B485A830054D7A8 /* Banner2.png in Resources */,
+				45B5E75B1B485A830054D7A8 /* Banner3.png in Resources */,
+				45B5E7681B486DDD0054D7A8 /* StoryMarkIcon.png in Resources */,
 				45E608931B3FA053004B3F50 /* Hamburger.png in Resources */,
 				45E608941B3FA053004B3F50 /* round-profile-pic.png in Resources */,
 				45B5E7501B44EC2D0054D7A8 /* addNew7.png in Resources */,
@@ -471,10 +541,12 @@
 				45E6089D1B3FA095004B3F50 /* ContainerViewController.swift in Sources */,
 				45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */,
 				45B5E7271B437E670054D7A8 /* StoryPageCell.swift in Sources */,
+				45B5E7621B4864020054D7A8 /* TitleTableViewCell.swift in Sources */,
 				45E6089F1B3FA095004B3F50 /* StoryViewController.swift in Sources */,
 				45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */,
 				45E608AC1B408948004B3F50 /* StoryPageViewController.swift in Sources */,
 				45E608A71B3FA3E4004B3F50 /* BaseViewController.swift in Sources */,
+				45B5E76D1B487CBF0054D7A8 /* StoryTextBodyCell.swift in Sources */,
 				45E608A01B3FA095004B3F50 /* ProfileViewController.swift in Sources */,
 				45E608A11B3FA095004B3F50 /* ClassEnums.swift in Sources */,
 				45E608971B3FA07F004B3F50 /* EmptySegue.swift in Sources */,
