@@ -8,6 +8,31 @@
 
 import UIKit
 
+
+extension UIImage {
+    var highestQualityJPEGNSData:NSData { return UIImageJPEGRepresentation(self, 1.0) }
+    var highQualityJPEGNSData:NSData    { return UIImageJPEGRepresentation(self, 0.75)}
+    var mediumQualityJPEGNSData:NSData  { return UIImageJPEGRepresentation(self, 0.5) }
+    var lowQualityJPEGNSData:NSData     { return UIImageJPEGRepresentation(self, 0.25)}
+    var lowestQualityJPEGNSData:NSData  { return UIImageJPEGRepresentation(self, 0.0) }
+    var autoResizeToDataWithSize800x600:NSData
+    {
+        var newSize:CGSize = CGSize(width: 600,height: 800)
+        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        
+        self.drawInRect(rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let imageData = UIImageJPEGRepresentation(newImage, 0.75)
+        return imageData
+    }
+}
+
+
+
+
+
 extension UIColor {
     convenience init(r: Int, g:Int , b:Int) {
         self.init(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1.0)

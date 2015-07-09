@@ -11,7 +11,7 @@
 		45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */; };
 		45B5E7271B437E670054D7A8 /* StoryPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7261B437E670054D7A8 /* StoryPageCell.swift */; };
 		45B5E7291B4389FC0054D7A8 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7281B4389FC0054D7A8 /* Shared.swift */; };
-		45B5E72C1B44BBD80054D7A8 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E72B1B44BBD80054D7A8 /* UIColorExtensions.swift */; };
+		45B5E72C1B44BBD80054D7A8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E72B1B44BBD80054D7A8 /* Extensions.swift */; };
 		45B5E72E1B44C0070054D7A8 /* Rectangle 37.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E72D1B44C0070054D7A8 /* Rectangle 37.png */; };
 		45B5E7301B44CC5F0054D7A8 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E72F1B44CC5F0054D7A8 /* StoryDetailViewController.swift */; };
 		45B5E7321B44D2A00054D7A8 /* 82.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E7311B44D2A00054D7A8 /* 82.jpg */; };
@@ -43,6 +43,16 @@
 		45B5E76D1B487CBF0054D7A8 /* StoryTextBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */; };
 		45B5E77A1B49F78D0054D7A8 /* StoryUtilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7791B49F78D0054D7A8 /* StoryUtilCell.swift */; };
 		45E383AD1B4DF6F400265DDE /* GlobalObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */; };
+		45E383AF1B4E04BB00265DDE /* camera131.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383AE1B4E04BB00265DDE /* camera131.png */; };
+		45E383B31B4E05F600265DDE /* camera90.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383B01B4E05F600265DDE /* camera90.png */; };
+		45E383B41B4E05F600265DDE /* notepads1.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383B11B4E05F600265DDE /* notepads1.png */; };
+		45E383B51B4E05F600265DDE /* round68.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383B21B4E05F600265DDE /* round68.png */; };
+		45E383B71B4E085E00265DDE /* UploadBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383B61B4E085E00265DDE /* UploadBookViewController.swift */; };
+		45E383B91B4E0D6E00265DDE /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383B81B4E0D6E00265DDE /* ImageUploadViewController.swift */; };
+		45E383BD1B4E0F9000265DDE /* plus7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383BC1B4E0F9000265DDE /* plus7.png */; };
+		45E383BF1B4E1CCD00265DDE /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383BE1B4E1CCD00265DDE /* ImagePreviewCell.swift */; };
+		45E383C11B4E37E300265DDE /* BaiduOCRRetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */; };
+		45E383C31B4E389100265DDE /* BaiduOCRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */; };
 		45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */; };
 		45E608761B3F9F2E004B3F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E608741B3F9F2E004B3F50 /* Main.storyboard */; };
 		45E608781B3F9F2E004B3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E608771B3F9F2E004B3F50 /* Images.xcassets */; };
@@ -77,7 +87,7 @@
 		45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaliyReadingBook.swift; sourceTree = "<group>"; };
 		45B5E7261B437E670054D7A8 /* StoryPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPageCell.swift; sourceTree = "<group>"; };
 		45B5E7281B4389FC0054D7A8 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
-		45B5E72B1B44BBD80054D7A8 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		45B5E72B1B44BBD80054D7A8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		45B5E72D1B44C0070054D7A8 /* Rectangle 37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle 37.png"; sourceTree = "<group>"; };
 		45B5E72F1B44CC5F0054D7A8 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		45B5E7311B44D2A00054D7A8 /* 82.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 82.jpg; sourceTree = "<group>"; };
@@ -110,6 +120,16 @@
 		45B5E76E1B4894AF0054D7A8 /* shuzhai2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shuzhai2-Bridging-Header.h"; sourceTree = "<group>"; };
 		45B5E7791B49F78D0054D7A8 /* StoryUtilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryUtilCell.swift; sourceTree = "<group>"; };
 		45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalObservable.swift; sourceTree = "<group>"; };
+		45E383AE1B4E04BB00265DDE /* camera131.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera131.png; sourceTree = "<group>"; };
+		45E383B01B4E05F600265DDE /* camera90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera90.png; sourceTree = "<group>"; };
+		45E383B11B4E05F600265DDE /* notepads1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notepads1.png; sourceTree = "<group>"; };
+		45E383B21B4E05F600265DDE /* round68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round68.png; sourceTree = "<group>"; };
+		45E383B61B4E085E00265DDE /* UploadBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadBookViewController.swift; sourceTree = "<group>"; };
+		45E383B81B4E0D6E00265DDE /* ImageUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
+		45E383BC1B4E0F9000265DDE /* plus7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus7.png; sourceTree = "<group>"; };
+		45E383BE1B4E1CCD00265DDE /* ImagePreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
+		45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaiduOCRRetData.swift; sourceTree = "<group>"; };
+		45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaiduOCRResponse.swift; sourceTree = "<group>"; };
 		45E608691B3F9F2E004B3F50 /* shuzhai2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shuzhai2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E6086D1B3F9F2E004B3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +186,8 @@
 			children = (
 				45B5E7221B43740F0054D7A8 /* DailyReading.swift */,
 				45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */,
+				45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */,
+				45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */,
 				45B5E7281B4389FC0054D7A8 /* Shared.swift */,
 			);
 			name = DataManager;
@@ -174,7 +196,7 @@
 		45B5E72A1B44BBBB0054D7A8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				45B5E72B1B44BBD80054D7A8 /* UIColorExtensions.swift */,
+				45B5E72B1B44BBD80054D7A8 /* Extensions.swift */,
 				45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */,
 			);
 			name = Utils;
@@ -236,6 +258,11 @@
 		45B5E7631B486D7E0054D7A8 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				45E383BC1B4E0F9000265DDE /* plus7.png */,
+				45E383B01B4E05F600265DDE /* camera90.png */,
+				45E383B11B4E05F600265DDE /* notepads1.png */,
+				45E383B21B4E05F600265DDE /* round68.png */,
+				45E383AE1B4E04BB00265DDE /* camera131.png */,
 				45B5E7641B486DDD0054D7A8 /* StoryLikeIcon.png */,
 				45B5E7651B486DDD0054D7A8 /* StoryMarkIcon.png */,
 				45B5E76A1B486E0B0054D7A8 /* StoryShareIcon.png */,
@@ -254,6 +281,9 @@
 		45E383AB1B4CB15900265DDE /* UploadBookViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				45E383B61B4E085E00265DDE /* UploadBookViewController.swift */,
+				45E383B81B4E0D6E00265DDE /* ImageUploadViewController.swift */,
+				45E383BE1B4E1CCD00265DDE /* ImagePreviewCell.swift */,
 			);
 			name = UploadBookViewControllers;
 			sourceTree = "<group>";
@@ -462,7 +492,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B5E75E1B485A830054D7A8 /* Banner6.png in Resources */,
+				45E383B41B4E05F600265DDE /* notepads1.png in Resources */,
 				45B5E74A1B44EC2D0054D7A8 /* addNew1.png in Resources */,
+				45E383B51B4E05F600265DDE /* round68.png in Resources */,
 				45B5E75D1B485A830054D7A8 /* Banner5.png in Resources */,
 				45B5E7411B44EB040054D7A8 /* Berger7.png in Resources */,
 				45B5E72E1B44C0070054D7A8 /* Rectangle 37.png in Resources */,
@@ -482,15 +514,18 @@
 				45B5E73E1B44EB040054D7A8 /* Berger4.png in Resources */,
 				45B5E73F1B44EB040054D7A8 /* Berger5.png in Resources */,
 				45B5E75A1B485A830054D7A8 /* Banner2.png in Resources */,
+				45E383BD1B4E0F9000265DDE /* plus7.png in Resources */,
 				45B5E75B1B485A830054D7A8 /* Banner3.png in Resources */,
 				45B5E7681B486DDD0054D7A8 /* StoryMarkIcon.png in Resources */,
 				45E608931B3FA053004B3F50 /* Hamburger.png in Resources */,
 				45E608941B3FA053004B3F50 /* round-profile-pic.png in Resources */,
+				45E383B31B4E05F600265DDE /* camera90.png in Resources */,
 				45B5E7501B44EC2D0054D7A8 /* addNew7.png in Resources */,
 				45B5E74F1B44EC2D0054D7A8 /* addNew6.png in Resources */,
 				45E6087B1B3F9F2E004B3F50 /* LaunchScreen.xib in Resources */,
 				45B5E73D1B44EB040054D7A8 /* Berger3.png in Resources */,
 				45B5E7401B44EB040054D7A8 /* Berger6.png in Resources */,
+				45E383AF1B4E04BB00265DDE /* camera131.png in Resources */,
 				45E608781B3F9F2E004B3F50 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,23 +594,28 @@
 			files = (
 				45B5E7291B4389FC0054D7A8 /* Shared.swift in Sources */,
 				45B5E7301B44CC5F0054D7A8 /* StoryDetailViewController.swift in Sources */,
-				45B5E72C1B44BBD80054D7A8 /* UIColorExtensions.swift in Sources */,
+				45B5E72C1B44BBD80054D7A8 /* Extensions.swift in Sources */,
 				45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */,
+				45E383B71B4E085E00265DDE /* UploadBookViewController.swift in Sources */,
 				45E6089E1B3FA095004B3F50 /* ContainerSubbaseViewController.swift in Sources */,
 				45E6089D1B3FA095004B3F50 /* ContainerViewController.swift in Sources */,
 				45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */,
 				45B5E7271B437E670054D7A8 /* StoryPageCell.swift in Sources */,
+				45E383B91B4E0D6E00265DDE /* ImageUploadViewController.swift in Sources */,
 				45B5E7621B4864020054D7A8 /* TitleTableViewCell.swift in Sources */,
 				45E6089F1B3FA095004B3F50 /* StoryViewController.swift in Sources */,
+				45E383BF1B4E1CCD00265DDE /* ImagePreviewCell.swift in Sources */,
 				45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */,
 				45E608AC1B408948004B3F50 /* StoryPageViewController.swift in Sources */,
 				45E608A71B3FA3E4004B3F50 /* BaseViewController.swift in Sources */,
 				45B5E76D1B487CBF0054D7A8 /* StoryTextBodyCell.swift in Sources */,
+				45E383C31B4E389100265DDE /* BaiduOCRResponse.swift in Sources */,
 				45E608A01B3FA095004B3F50 /* ProfileViewController.swift in Sources */,
 				45B5E77A1B49F78D0054D7A8 /* StoryUtilCell.swift in Sources */,
 				45E608A11B3FA095004B3F50 /* ClassEnums.swift in Sources */,
 				45E608971B3FA07F004B3F50 /* EmptySegue.swift in Sources */,
 				45E383AD1B4DF6F400265DDE /* GlobalObservable.swift in Sources */,
+				45E383C11B4E37E300265DDE /* BaiduOCRRetData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

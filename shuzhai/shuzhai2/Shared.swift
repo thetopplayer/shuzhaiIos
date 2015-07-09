@@ -13,6 +13,7 @@ import AlamofireObjectMapper
 struct GlobalVariables {
     static var dailyStoryUrl = "http://104.131.79.31/onebook/book/getSingleRecommendationBook.form"
     static var mutilStoryUrl = "http://104.131.79.31/onebook/book/getMultipleRecommendationBook.form"
+    static var baiduOCRUrl = "http://apis.baidu.com/apistore/idlocr/ocr"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -57,5 +58,23 @@ class DataManager: NSObject {
                     completionHandler(nil,error)
                 }
         }
+    }
+    
+    static func fetchResultFromBaiduOCR(image:UIImage,completionHandler:(BaiduOCRResponse?,NSError?)->Void){
+        
+        let base64String = image.autoResizeToDataWithSize800x600.base64EncodedStringWithOptions(.allZeros)
+        let paramters = ["fromdevice":"iPhone","detecttype":"LocateRecognize","languagetype":"CHN_ENG","imagetype":"1","image":base64String]
+        Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["apikey":"e6a34edc9cae321d7919d40931e4c497"]
+        Alamofire.request(.POST, GlobalVariables.baiduOCRUrl, parameters: paramters)
+            .responseObject { (response: BaiduOCRResponse?, error: NSError?) in
+                if response != nil
+                {
+                    completionHandler(response,nil)
+                }else
+                {
+                    completionHandler(nil,error)
+                }
+        }
+    
     }
 }

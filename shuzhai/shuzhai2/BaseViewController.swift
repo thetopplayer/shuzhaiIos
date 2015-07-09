@@ -124,6 +124,10 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
             self.containerViewController!.swapViewControllers(ClassEnums.MainContentsControllers.UserProfile)
         }
         
+        if indexPath.row==3{
+            self.containerViewController!.swapViewControllers(ClassEnums.MainContentsControllers.Upload)
+        }
+        
         // close the menu
         GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 0
         
