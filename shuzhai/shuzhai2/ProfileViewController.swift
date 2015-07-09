@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: ContainerSubbaseViewController {
 
+    @IBOutlet var tableView:UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

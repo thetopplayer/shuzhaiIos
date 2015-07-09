@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import ImageLoader
 
 class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet var closeButton:UIButton?
     @IBOutlet var tableView:UITableView?
 
+    
     var dailyReadingBook:DaliyReadingBook?
+    var textViewDict:[NSIndexPath:UITextView] = Dictionary<NSIndexPath, UITextView>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView?.estimatedRowHeight = 100.0
         self.tableView?.rowHeight = UITableViewAutomaticDimension
+        
         // Do any additional setup after loading the view.
     }
 
@@ -53,13 +57,24 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
         {
             var cell = self.tableView!.dequeueReusableCellWithIdentifier("cell") as! TitleTableViewCell
             cell.titleLabel?.text = dailyReadingBook?.sectionTitle
+            var imgUrl = self.dailyReadingBook?.imgsUrl?.first
+            cell.storyImgView?.load(NSURL(string: imgUrl!)!, placeholder:UIImage(named: "82.jpg"))
             return cell
         }
         
         if indexPath.row==1
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("profileCell") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("profileCell") as! StoryUtilCell
             //cell.titleLabel?.text = dailyReadingBook?.sectionTitle
+            var imgUrl = self.dailyReadingBook?.creator_profileImg
+            //cell.profileImg?.load(NSURL(string: imgUrl!)!, placeholder: UIImage(named: "round-profile-plc"))
+            //cell.profileImg!.load(NSURL(string: imgUrl!)!, placeholder:UIImage(named: "round-profile-plc"))
+            println(self.dailyReadingBook?.creator_nikeName)
+            var a:String = self.dailyReadingBook!.bookTitle!
+            if let useName = self.dailyReadingBook?.creator_userName{
+                cell.userNameLabel?.text = useName
+            }
+            
             return cell
         }
         
@@ -70,6 +85,8 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
             //cell.textBodyLabel?.text = dailyReadingBook?.textBody
             var text:String = dailyReadingBook!.textBody!
             cell.textBodyView?.text = text
+            cell.textBodyView?.setContentOffset(CGPointMake(0, 100), animated: false)
+            self.textViewDict[indexPath] = cell.textBodyView
             println(text)
             return cell
         }
@@ -87,34 +104,25 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
             return 50
         }else
         {
-         let storytextCell : StoryTextBodyCell? = self.tableView!.cellForRowAtIndexPath(indexPath) as? StoryTextBodyCell
-            return storytextCell!.getConfiguredCellHeight()
+            return self.textViewHeightForHeightFOrRowAtIndexPath(indexPath)
         }
         
     }
+    
+    func textViewHeightForHeightFOrRowAtIndexPath(indexPath:NSIndexPath) -> CGFloat
+    {
+        var calculationView = self.textViewDict[indexPath]
+        var textViewWidth = calculationView?.frame.size.width
+        if calculationView?.attributedText == nil
+        {
+           
+        }
+        var size = calculationView?.sizeThatFits(CGSizeMake(textViewWidth!, CGFloat.max))
+        return size!.height
+    }
 
     
-    func heightForBasicCellAtIndexPath(indexPath:NSIndexPath) -> CGFloat
-    {
-        var storytextCell : StoryTextBodyCell? = self.tableView?.dequeueReusableCellWithIdentifier("textBodyCell") as? StoryTextBodyCell
-        
-        self.configureBasicCell(storytextCell!, indexPath: indexPath)
-        return self.calculateHeightForConfiguredSizingCell(storytextCell!)
-    }
-    
-    func configureBasicCell(cell:StoryTextBodyCell,indexPath:NSIndexPath)
-    {
-       // cell.textBodyLabel?.text = dailyReadingBook?.textBody
-    }
-    
-    
-    func calculateHeightForConfiguredSizingCell(sizingCell:UITableViewCell) -> CGFloat
-    {
-        sizingCell.setNeedsLayout()
-        sizingCell.layoutIfNeeded()
-        var size: CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-        return size.height
-    }
+
 
 
     /*

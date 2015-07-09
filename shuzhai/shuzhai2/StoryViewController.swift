@@ -21,10 +21,16 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
     @IBOutlet var pageController:UIPageControl?
     @IBOutlet var bannerImgView:UIImageView?
     @IBOutlet var addNewImgView:UIButton?
+    @IBOutlet var dateLabel:UILabel?
+    
+    var sliderCloseButton: UIButton = UIButton()
+    private var kvoStoryContext: UInt8 = 2
+
 
     
     let backGroundColors:[UIColor] = GlobalVariables.defaultColorGroup
     var outLineColor = UIColor(red:0.74, green:0.76, blue:0.78, alpha:1.0)
+    var dateLabelValues : [String] = []
 
     
     var bookDataArray : [DailyReading]=[]
@@ -61,17 +67,28 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
             
                 if let todayReadings = todayReadings {
                     self.bookDataArray.extend(todayReadings)
-                    self.collectionView?.reloadData()
-                    self.updateUserInfoViewWithIndex(0)
                     self.setOutLayColorByIndex(0)
                     self.pageController?.numberOfPages = todayReadings.count
+                    self.dateLabelValues = self.generateDateLabelValuesByNumbOfDays(todayReadings.count)
+                    self.updateUserInfoViewWithIndex(0)
+                    self.dateLabel?.text = self.dateLabelValues[0]
+                    self.collectionView?.reloadData()
                 }else
                 {
                     println(error)
                 }
 
             })
-    
+        
+        // setup slider invisible button
+        sliderCloseButton.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
+        sliderCloseButton.addTarget(self, action: "sliderButtonPressed", forControlEvents: .TouchUpInside)
+        sliderCloseButton.hidden = true
+        sliderCloseButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        self.view.addSubview(sliderCloseButton)
+        
+        GlobalObservable.sharedInstance.addObserver(self, forKeyPath: "mainMenuOpenAndCloseStatus", options: .New, context: &kvoStoryContext)
+        
     }
     
     
@@ -146,27 +163,22 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
     
     
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func generateDateLabelValuesByNumbOfDays(numbOfDays:NSInteger)->[String]
+    {
+        let calendar = NSCalendar.currentCalendar()
+        var valueArray : [String] = ["今天"]
+        let today = calendar.dateByAddingUnit(.CalendarUnitDay, value: 0, toDate: NSDate(), options: nil)
+        for var index = 1;index < numbOfDays;index++
+        {
+            let ndaysAgo = calendar.dateByAddingUnit(.CalendarUnitDay, value: -index, toDate: NSDate(), options: nil)
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay, fromDate: ndaysAgo!)
+            let dateStr = String(format:"%d月%d日",components.month,components.day)
+            valueArray.append(dateStr)
+        }
+        
+        return valueArray
     }
-    */
-    
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        println(scrollView.contentOffset)
-//        var pageWidth = self.collectionView?.bounds.width
-//        var ratio = sin(Double( scrollView.contentOffset.x / (pageWidth!)) * 2 * M_PI)
-//        var actuallValue = 100.0 * ratio
-//        self.userInfoView?.setTranslatesAutoresizingMaskIntoConstraints(true)
-//        self.userInfoView?.center.y += CGFloat(actuallValue)
-//        //println(self.collectionView?.bounds.width)
-//        println(actuallValue)
-//    }
 
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
@@ -181,16 +193,6 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
             self.updateUserInfoViewWithIndex(cellToSwipe)
             self.setOutLayColorByIndex(self.currentIndex)
             
-//            UIView.animateAndChainWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-//                self.userInfoView?.alpha = 0
-//                
-//                }, completion: {(finished) -> Void in
-//                    // update user info
-//                    self.updateUserInfoViewWithIndex(cellToSwipe)
-//                }
-//                ).animateWithDuration(0.5,animations: { () -> Void in
-//                   self.userInfoView?.alpha = 1
-//                })
         }
     }
     
@@ -199,10 +201,33 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
         var name = dailyReading.bookInfoVO?.creator_userName
         self.bookCreatorNameLabel?.text =  name
         self.bookCreatorNameLabel?.textColor = self.backGroundColors[index]
+        self.dateLabel?.text = self.dateLabelValues[index]
     }
     
     
-
+    func sliderButtonPressed()
+    {
+        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 0
+    }
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject],context: UnsafeMutablePointer<Void>) {
+        if context == &kvoStoryContext {
+            if let newValue: AnyObject = change[NSKeyValueChangeNewKey] {
+                if newValue as! Int == 1
+                {
+                    self.sliderCloseButton.hidden = false
+                }else
+                {
+                    self.sliderCloseButton.hidden = true
+                }
+            }
+        }
+    }
+    
+    deinit {
+        GlobalObservable.sharedInstance.removeObserver(self, forKeyPath: "mainMenuOpenAndCloseStatus", context: &kvoStoryContext)
+    }
+    
 }
 
 

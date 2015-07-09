@@ -26,8 +26,8 @@ class ContainerSubbaseViewController: UIViewController {
 
     @IBAction func menuButtonClicked(sender:UIButton)
     {
-        println("hello")
-        NSNotificationCenter.defaultCenter().postNotificationName("openMenuNotification", object: nil)
+        //println("hello")
+        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 1
     }
     
     func setButtonIconByIndex(index:Int)

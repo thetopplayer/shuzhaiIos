@@ -10,7 +10,7 @@ import UIKit
 
 class ClassEnums {
     enum MainContentsControllers : String {
-        case DailyReading = "segueDailyReading", UserProfile = "segueUserProfile"
-        static let allValues = [DailyReading, UserProfile]
+        case DailyReading = "segueDailyReading", UserProfile = "segueUserProfile", Upload = "segueUpload"
+        static let allValues = [DailyReading, UserProfile,Upload]
     }
 }

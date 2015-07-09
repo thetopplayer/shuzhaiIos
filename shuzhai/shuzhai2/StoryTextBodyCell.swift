@@ -9,12 +9,16 @@
 import UIKit
 
 class StoryTextBodyCell: UITableViewCell {
-
+    
     @IBOutlet var textBodyView:UITextView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -23,14 +27,5 @@ class StoryTextBodyCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func getConfiguredCellHeight() -> CGFloat
-    {
-        var size:CGSize? = textBodyView?.frame.size
-        if let size1 = size{
-            var sizeThatShouldFitTheContent:CGSize = self.textBodyView!.sizeThatFits(size1)
-            return sizeThatShouldFitTheContent.height;
-        }
-        return CGSizeZero.height
-    }
 
 }

@@ -11,6 +11,7 @@ import UIKit
 class TitleTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel:UILabel?
+    @IBOutlet var storyImgView:UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()

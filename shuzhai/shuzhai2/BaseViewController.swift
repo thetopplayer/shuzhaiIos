@@ -14,6 +14,8 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet var tableView: UITableView!
     @IBOutlet var containerView:UIView!
     
+    private var kvoContext: UInt8 = 1
+    
     var containerViewController:ContainerViewController?
     var menuCellIdentifiers = ["ProfileCell","SelectionCell","SelectionCell","SelectionCell","SelectionCell"]
     var mycontext  = 2
@@ -32,10 +34,9 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
         tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0)
         tableView.delegate = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openSideMenu", name:"openMenuNotification", object: nil)
-    
+        //let options = NSKeyValueObservingOptions([.New, .Old])
+        GlobalObservable.sharedInstance.addObserver(self, forKeyPath: "mainMenuOpenAndCloseStatus", options: .New, context: &kvoContext)
         
-
         // Do any additional setup after loading the view.
     }
 
@@ -59,7 +60,6 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
     //
     func openSideMenu(){
-        
         if !sideMenuOpened{
             UIView.animateWithDuration(0.3, delay:0, options: .CurveEaseOut, animations:  {
                 self.containerView.layer.position.x  += self.view.bounds.width*0.55
@@ -89,7 +89,7 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -100,9 +100,14 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let identifier = "ProfileCell"
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! UITableViewCell
             return cell
-        }else{
+        }else if indexPath.row == 1{
             
             let identifier = "SelectionCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! UITableViewCell
+            return cell
+        }else
+        {
+            let indentifier = "UploadCell"
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! UITableViewCell
             return cell
         }
@@ -111,8 +116,6 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        println(indexPath.row)
-        
         if indexPath.row==1{
             self.containerViewController!.swapViewControllers(ClassEnums.MainContentsControllers.DailyReading)
         }
@@ -120,8 +123,31 @@ class BaseViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if indexPath.row==2{
             self.containerViewController!.swapViewControllers(ClassEnums.MainContentsControllers.UserProfile)
         }
-
-        closeSideMenu()
+        
+        // close the menu
+        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 0
+        
+    }
+    
+    
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject],context: UnsafeMutablePointer<Void>) {
+            if context == &kvoContext {
+                if let newValue: AnyObject = change[NSKeyValueChangeNewKey] {
+                    if newValue as! Int == 1
+                    {
+                        self.openSideMenu()
+                    }else
+                    {
+                        self.closeSideMenu()
+                    }
+                }
+            }
+    }
+    
+    
+    deinit {
+        GlobalObservable.sharedInstance.removeObserver(self, forKeyPath: "mainMenuOpenAndCloseStatus", context: &kvoContext)
     }
     
 //    func tableView(tableView: UITableView!, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat

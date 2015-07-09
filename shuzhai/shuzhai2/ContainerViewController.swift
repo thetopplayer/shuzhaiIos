@@ -96,26 +96,6 @@ class ContainerViewController: UIViewController {
         
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        println(keyPath)
-        println("detectedchagnes")
-        if keyPath == "selectedButton"{
-            var newValue:NSInteger = change[NSKeyValueChangeNewKey] as! NSInteger
-            switch newValue {
-                
-            case 0:
-                swapViewControllers(ClassEnums.MainContentsControllers.DailyReading)
-                break
-            case 1:
-                swapViewControllers(ClassEnums.MainContentsControllers.UserProfile)
-                break
-            default:
-                break
-            }
-            
-        }
-        println(subControllerDict)
-    }
     
     
     /*
