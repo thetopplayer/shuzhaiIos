@@ -49,6 +49,8 @@ public enum ParameterEncoding {
         A query string to be set as or appended to any existing URL query for `GET`, `HEAD`, and `DELETE` requests, or set as the body for requests with any other HTTP method. The `Content-Type` HTTP header field of an encoded request with HTTP body is set to `application/x-www-form-urlencoded`. Since there is no published specification for how to encode collection types, the convention of appending `[]` to the key for array values (`foo[]=1&foo[]=2`), and appending the key surrounded by square brackets for nested dictionary values (`foo[bar]=baz`).
     */
     case URL
+    
+    case TEXT
 
     /**
         Uses `NSJSONSerialization` to create a JSON representation of the parameters object, which is set as the body of the request. The `Content-Type` HTTP header field of an encoded request is set to `application/json`.
@@ -82,11 +84,28 @@ public enum ParameterEncoding {
         var error: NSError? = nil
 
         switch self {
+        
+        case .TEXT:
+            func query(parameters: [String: AnyObject]) -> String {
+                var components: [(String, String)] = []
+                for key in sorted(Array(parameters.keys), <) {
+                    let value: String! = parameters[key] as! String
+                    var componentsArray: [(String, String)] = []
+                    components += self.simpleQueryComponents(key, value)
+                }
+                
+                return join("&", components.map{"\($0)=\($1)"} as [String])
+            }
+
+            //mutableURLRequest.setValue("text/html", forHTTPHeaderField: "Content-Type")
+            mutableURLRequest.HTTPBody = query(parameters!).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        
         case .URL:
             func query(parameters: [String: AnyObject]) -> String {
                 var components: [(String, String)] = []
                 for key in sorted(Array(parameters.keys), <) {
                     let value: AnyObject! = parameters[key]
+                    var components: [(String, String)] = []
                     components += self.queryComponents(key, value)
                 }
 
@@ -148,6 +167,25 @@ public enum ParameterEncoding {
         }
 
         return components
+    }
+    
+    func simpleQueryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
+    
+        var components: [(String, String)] = []
+        if let dictionary = value as? [String: AnyObject] {
+            for (nestedKey, value) in dictionary {
+                components += simpleQueryComponents("\(key)[\(nestedKey)]", value)
+            }
+        } else if let array = value as? [AnyObject] {
+            for value in array {
+                components += simpleQueryComponents("\(key)[]", value)
+            }
+        } else {
+            components.extend([(key, "\(value)")])
+        }
+        
+        return components
+    
     }
 
     /**

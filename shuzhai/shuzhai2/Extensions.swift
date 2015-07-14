@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 
 extension UIImage {
@@ -30,7 +31,12 @@ extension UIImage {
 }
 
 
-
+extension Request {
+    public func debugLog() -> Self {
+        debugPrint(self)
+        return self
+    }
+}
 
 
 extension UIColor {

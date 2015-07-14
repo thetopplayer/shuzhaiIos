@@ -91,6 +91,7 @@ class ImageUploadViewController: UIViewController , UIImagePickerControllerDeleg
                 if let response:BaiduOCRResponse = result{
                     for retdata:BaiduOCRRetData in response.retData!
                     {
+                        println(retdata.word!)
                         resultString+=retdata.word!
                     }
                 }

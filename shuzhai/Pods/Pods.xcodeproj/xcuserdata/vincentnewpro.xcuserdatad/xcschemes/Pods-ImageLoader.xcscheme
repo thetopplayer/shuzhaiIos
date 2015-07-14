@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9DD86F59AA3ED4ABF6649CA"
+               BlueprintIdentifier = "D3A5E38B4A93FCDB827F24C5"
                BuildableName = "ImageLoader.framework"
                BlueprintName = "Pods-ImageLoader"
                ReferencedContainer = "container:Pods.xcodeproj">
