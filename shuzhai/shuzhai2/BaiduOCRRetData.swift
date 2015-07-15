@@ -10,10 +10,10 @@ import UIKit
 import ObjectMapper
 
 class BaiduOCRRetData: Mappable {
-    var rect_top:Float?
-    var rect_left:Float?
-    var rect_width:Float?
-    var rect_height:Float?
+    var rect_top:String?
+    var rect_left:String?
+    var rect_width:String?
+    var rect_height:String?
     var word:String?
     
     required init?(_ map: Map) {

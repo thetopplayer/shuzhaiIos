@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 
 class BaiduOCRResponse: Mappable {
-    var errNum:[String:Int]?
+    var errNum:[String:String]?
     var errMsg:String?
     var querySign:String?
     var retData:[BaiduOCRRetData]?

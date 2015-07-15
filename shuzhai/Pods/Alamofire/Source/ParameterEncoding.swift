@@ -85,21 +85,6 @@ public enum ParameterEncoding {
 
         switch self {
         
-        case .TEXT:
-            func query(parameters: [String: AnyObject]) -> String {
-                var components: [(String, String)] = []
-                for key in sorted(Array(parameters.keys), <) {
-                    let value: String! = parameters[key] as! String
-                    var componentsArray: [(String, String)] = []
-                    components += self.simpleQueryComponents(key, value)
-                }
-                
-                return join("&", components.map{"\($0)=\($1)"} as [String])
-            }
-
-            //mutableURLRequest.setValue("text/html", forHTTPHeaderField: "Content-Type")
-            mutableURLRequest.HTTPBody = query(parameters!).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        
         case .URL:
             func query(parameters: [String: AnyObject]) -> String {
                 var components: [(String, String)] = []
@@ -147,6 +132,22 @@ public enum ParameterEncoding {
             }
         case .Custom(let closure):
             return closure(mutableURLRequest, parameters)
+            
+        case .TEXT:
+            func query(parameters: [String: AnyObject]) -> String {
+                var components: [(String, String)] = []
+                for key in sorted(Array(parameters.keys), <) {
+                    let value: String! = parameters[key] as! String
+                    var componentsArray: [(String, String)] = []
+                    components += self.simpleQueryComponents(key, value)
+                }
+                
+                return join("&", components.map{"\($0)=\($1)"} as [String])
+            }
+            
+            mutableURLRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            mutableURLRequest.HTTPBody = query(parameters!).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+            break
         }
 
         return (mutableURLRequest, error)
