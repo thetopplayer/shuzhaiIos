@@ -10,6 +10,7 @@ import UIKit
 
 class RegistEditTableViewCell: UITableViewCell {
    
+    @IBOutlet var textField:UITextField?
     
     override func awakeFromNib() {
         super.awakeFromNib()

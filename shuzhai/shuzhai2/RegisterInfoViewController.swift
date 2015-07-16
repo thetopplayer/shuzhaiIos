@@ -12,6 +12,10 @@ class RegisterInfoViewController: UIViewController {
 
     @IBOutlet var tableView:UITableView?
     
+    var userNameCell:RegistEditTableViewCell?
+    var userPasswordCell:RegistEditTableViewCell?
+    var userEmailCell:RegistEditTableViewCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
@@ -39,19 +43,22 @@ class RegisterInfoViewController: UIViewController {
         
         if indexPath.row==0
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userNameCell") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userNameCell") as! RegistEditTableViewCell
+            self.userNameCell = cell;
             return cell
         }
         
         if indexPath.row==1
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userEmailCell") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userEmailCell") as! RegistEditTableViewCell
+            self.userEmailCell = cell
             return cell
         }
         
         if indexPath.row==2
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userPasswordCell") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userPasswordCell") as! RegistEditTableViewCell
+            self.userPasswordCell = cell
             return cell
         }
         
@@ -69,9 +76,35 @@ class RegisterInfoViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        if indexPath.row == 3
+        {
+            println(self.userEmailCell?.textField?.text)
+            if(self.userEmailCell?.textField?.text=="" || self.userNameCell?.textField?.text=="" || self.userPasswordCell?.textField?.text=="")
+            {
+                var alert = UIAlertController(title: "牛读", message: "Sorry,请填写您的信息", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }else
+            {
+                let userEmail = self.userEmailCell?.textField?.text
+                if !isValidEmail(userEmail!)
+                {
+                    var alert = UIAlertController(title: "牛读", message: "Sorry,请填正确的邮件地址", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    return
+                }
+                
+            }
+        }
     }
     
+    func isValidEmail(testStr:String) -> Bool {
+        // println("validate calendar: \(testStr)")
+        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(testStr)
+    }
 
     /*
     // MARK: - Navigation

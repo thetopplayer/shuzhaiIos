@@ -17,6 +17,8 @@ struct GlobalVariables {
     static var dailyStoryUrl = "http://104.131.79.31/onebook/book/getSingleRecommendationBook.form"
     static var mutilStoryUrl = "http://104.131.79.31/onebook/book/getMultipleRecommendationBook.form"
     static var baiduOCRUrl = "http://apis.baidu.com/apistore/idlocr/ocr"
+    static var createUserUrl = "http://104.131.79.31/onebook/user/createUser.form"
+    static var loginUserUrl = "http://104.131.79.31/onebook/user/createUser.form"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -47,6 +49,13 @@ enum Router: URLRequestConvertible {
         
         return URLRequest.0
     }
+}
+
+enum LoginStatus{
+    case userCreated
+    case userLogin
+    case userExsistError
+    case userCreationFailedError
 }
 
 class DataManager: NSObject {
@@ -110,7 +119,55 @@ class DataManager: NSObject {
                 completionHandler(ocrResponse,error)
                 println(ocrResponse)
             }
-        }
+    }
+    
+    static func createOrLoginNewUser(userName:String,userEmail:String,userPassword:String,funcCompletionHandler:(Bool,AnyObject?,LoginStatus)->Void)
+    {
+        var paramters = ["username":userName,"password":userPassword,"email":userEmail]
+        Alamofire.request(.POST, GlobalVariables.createUserUrl, parameters: paramters,encoding:ParameterEncoding.TEXT)
+            .debugLog()
+            .responseJSON(options: NSJSONReadingOptions.allZeros) { (_, _, json, error) -> Void in
+                if error == nil
+                {
+                    var response = json as! NSDictionary
+                    var success = response.objectForKey("response") as! Bool
+                    var message: AnyObject? = response.objectForKey("message")
+                
+                    if (success == false && message?.isEqual("existing user") == true)
+                    {
+                        // go to login user
+                        Alamofire.request(.POST,GlobalVariables.loginUserUrl,parameters: paramters,encoding: ParameterEncoding.TEXT)
+                        .responseJSON(options: NSJSONReadingOptions.allZeros, completionHandler: { (_, _, jsonLogin, errorLogin) -> Void in
+                            var response = json as! NSDictionary
+                            var success = response.objectForKey("response") as! Bool
+                            var message: AnyObject? = response.objectForKey("message")
+                            
+                            if success
+                            {
+                                funcCompletionHandler(success,message,.userLogin)
+                            }else
+                            {
+                                funcCompletionHandler(success,message,.userExsistError)
+                            }
+                        })
+                        
+                    }else if success
+                    {
+                        funcCompletionHandler(success,message,.userCreated)
+                    }else
+                    {
+                        funcCompletionHandler(success,message,.userCreationFailedError)
+                    }
+                   
+                }else
+                {
+                    funcCompletionHandler(false,"",.userCreationFailedError)
+                }
+            }
+ 
+    }
+    
+
     
     
     static func jsParser(json:String) -> String
