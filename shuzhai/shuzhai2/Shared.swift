@@ -18,7 +18,7 @@ struct GlobalVariables {
     static var mutilStoryUrl = "http://104.131.79.31/onebook/book/getMultipleRecommendationBook.form"
     static var baiduOCRUrl = "http://apis.baidu.com/apistore/idlocr/ocr"
     static var createUserUrl = "http://104.131.79.31/onebook/user/createUser.form"
-    static var loginUserUrl = "http://104.131.79.31/onebook/user/createUser.form"
+    static var loginUserUrl = "http://104.131.79.31/onebook/user/userLogin.form"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -57,6 +57,28 @@ enum LoginStatus{
     case userExsistError
     case userCreationFailedError
 }
+
+class Util:NSObject{
+
+    static func getLocalUserAuthentication()->String?
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey("userAuthentication")
+        {
+            return name
+        }
+        return nil
+    }
+    
+    static func setLocalUserAnthentication(anthentication:String)
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(anthentication, forKey: "userAuthentication")
+    }
+
+
+}
+
 
 class DataManager: NSObject {
     static func fetchTodayBook(completionHandler:(DailyReading?,NSError?)->Void){
@@ -153,7 +175,22 @@ class DataManager: NSObject {
                         
                     }else if success
                     {
-                        funcCompletionHandler(success,message,.userCreated)
+                        //funcCompletionHandler(success,message,.userCreated)
+                        // go to login user
+                        Alamofire.request(.POST,GlobalVariables.loginUserUrl,parameters: paramters,encoding: ParameterEncoding.TEXT)
+                            .responseJSON(options: NSJSONReadingOptions.allZeros, completionHandler: { (_, _, jsonLogin, errorLogin) -> Void in
+                                var response = jsonLogin as! NSDictionary
+                                var success = response.objectForKey("response") as! Bool
+                                var message: AnyObject? = response.objectForKey("message")
+                                
+                                if success
+                                {
+                                    funcCompletionHandler(success,message,.userLogin)
+                                }else
+                                {
+                                    funcCompletionHandler(success,message,.userExsistError)
+                                }
+                            })
                     }else
                     {
                         funcCompletionHandler(success,message,.userCreationFailedError)

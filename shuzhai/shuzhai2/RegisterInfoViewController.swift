@@ -84,9 +84,12 @@ class RegisterInfoViewController: UIViewController {
                 var alert = UIAlertController(title: "牛读", message: "Sorry,请填写您的信息", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
+                return
             }else
             {
                 let userEmail = self.userEmailCell?.textField?.text
+                let userName = self.userNameCell?.textField?.text
+                let userPassword = self.userPasswordCell?.textField?.text
                 if !isValidEmail(userEmail!)
                 {
                     var alert = UIAlertController(title: "牛读", message: "Sorry,请填正确的邮件地址", preferredStyle: UIAlertControllerStyle.Alert)
@@ -94,6 +97,21 @@ class RegisterInfoViewController: UIViewController {
                     self.presentViewController(alert, animated: true, completion: nil)
                     return
                 }
+                
+                DataManager.createOrLoginNewUser(userName!, userEmail: userEmail!, userPassword: userPassword!, funcCompletionHandler: { (success, message, status) -> Void in
+                    if success
+                    {
+                        println(message)
+                        var messageJson = message as! NSDictionary
+                        var authentication: AnyObject? = messageJson["authenticationCode"]
+                        Util.setLocalUserAnthentication(authentication as! String)
+                        
+                    }else
+                    {
+                        println(message)
+                    }
+                })
+
                 
             }
         }
@@ -105,6 +123,8 @@ class RegisterInfoViewController: UIViewController {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluateWithObject(testStr)
     }
+    
+
 
     /*
     // MARK: - Navigation
