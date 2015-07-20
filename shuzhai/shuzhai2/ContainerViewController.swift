@@ -89,9 +89,16 @@ class ContainerViewController: UIViewController {
         if (dstControllerEnum.rawValue != self.currentSegueController.rawValue && dstController != nil)
         {
             self.swapTwoViewControllers(self.currentViewController, toViewController: dstController!)
+            self.currentSegueController = dstControllerEnum
             self.currentViewController = dstController
+            
+        }else if(dstControllerEnum.rawValue == self.currentSegueController.rawValue && dstController != nil)
+        {
+            self.transitionInProgress = false
+            return
         }
         
+        self.currentSegueController = dstControllerEnum
         self.performSegueWithIdentifier(dstControllerEnum.rawValue, sender: nil)
         
     }

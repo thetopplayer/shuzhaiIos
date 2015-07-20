@@ -76,7 +76,14 @@ class Util:NSObject{
         defaults.setObject(anthentication, forKey: "userAuthentication")
     }
 
-
+    
+    static func getNavigationMenuButton() -> UIButton
+    {
+        var button: UIButton = UIButton()
+        button.setImage(UIImage(named: "Berger1"), forState: .Normal)
+        button.frame = CGRectMake(0, 0, 30, 30)
+        return button
+    }
 }
 
 

@@ -22,10 +22,6 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
     @IBOutlet var bannerImgView:UIImageView?
     @IBOutlet var addNewImgView:UIButton?
     @IBOutlet var dateLabel:UILabel?
-    
-    var sliderCloseButton: UIButton = UIButton()
-    private var kvoStoryContext: UInt8 = 2
-
 
     
     let backGroundColors:[UIColor] = GlobalVariables.defaultColorGroup
@@ -79,15 +75,6 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
                 }
 
             })
-        
-        // setup slider invisible button
-        sliderCloseButton.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
-        sliderCloseButton.addTarget(self, action: "sliderButtonPressed", forControlEvents: .TouchUpInside)
-        sliderCloseButton.hidden = true
-        sliderCloseButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-        self.view.addSubview(sliderCloseButton)
-        
-        GlobalObservable.sharedInstance.addObserver(self, forKeyPath: "mainMenuOpenAndCloseStatus", options: .New, context: &kvoStoryContext)
         
     }
     
@@ -204,29 +191,6 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
         self.dateLabel?.text = self.dateLabelValues[index]
     }
     
-    
-    func sliderButtonPressed()
-    {
-        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 0
-    }
-    
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject],context: UnsafeMutablePointer<Void>) {
-        if context == &kvoStoryContext {
-            if let newValue: AnyObject = change[NSKeyValueChangeNewKey] {
-                if newValue as! Int == 1
-                {
-                    self.sliderCloseButton.hidden = false
-                }else
-                {
-                    self.sliderCloseButton.hidden = true
-                }
-            }
-        }
-    }
-    
-    deinit {
-        GlobalObservable.sharedInstance.removeObserver(self, forKeyPath: "mainMenuOpenAndCloseStatus", context: &kvoStoryContext)
-    }
     
 }
 

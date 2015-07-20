@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4569ADA51B5B361600BA6B48 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569ADA41B5B361600BA6B48 /* UserProfileViewController.swift */; };
 		4588B7F41B56037900A77B52 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F31B56037900A77B52 /* RegisterViewController.swift */; };
 		4588B7F61B5606CC00A77B52 /* RegistEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F51B5606CC00A77B52 /* RegistEditTableViewCell.swift */; };
 		4588B7F81B5607C900A77B52 /* RegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */; };
@@ -45,6 +46,7 @@
 		45B5E76B1B486E0B0054D7A8 /* StoryShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E76A1B486E0B0054D7A8 /* StoryShareIcon.png */; };
 		45B5E76D1B487CBF0054D7A8 /* StoryTextBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */; };
 		45B5E77A1B49F78D0054D7A8 /* StoryUtilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7791B49F78D0054D7A8 /* StoryUtilCell.swift */; };
+		45D4FF091B5C94920061DB3E /* UserProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4FF081B5C94920061DB3E /* UserProfileSettingsViewController.swift */; };
 		45E383AD1B4DF6F400265DDE /* GlobalObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */; };
 		45E383AF1B4E04BB00265DDE /* camera131.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383AE1B4E04BB00265DDE /* camera131.png */; };
 		45E383B31B4E05F600265DDE /* camera90.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383B01B4E05F600265DDE /* camera90.png */; };
@@ -86,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		09FCB99DEBBA372E31B56396 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4569ADA41B5B361600BA6B48 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		4588B7F31B56037900A77B52 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4588B7F51B5606CC00A77B52 /* RegistEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEditTableViewCell.swift; sourceTree = "<group>"; };
 		4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInfoViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTextBodyCell.swift; sourceTree = "<group>"; };
 		45B5E76E1B4894AF0054D7A8 /* shuzhai2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shuzhai2-Bridging-Header.h"; sourceTree = "<group>"; };
 		45B5E7791B49F78D0054D7A8 /* StoryUtilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryUtilCell.swift; sourceTree = "<group>"; };
+		45D4FF081B5C94920061DB3E /* UserProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalObservable.swift; sourceTree = "<group>"; };
 		45E383AE1B4E04BB00265DDE /* camera131.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera131.png; sourceTree = "<group>"; };
 		45E383B01B4E05F600265DDE /* camera90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera90.png; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				4588B7F31B56037900A77B52 /* RegisterViewController.swift */,
 				4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */,
 				4588B7F51B5606CC00A77B52 /* RegistEditTableViewCell.swift */,
+				4569ADA41B5B361600BA6B48 /* UserProfileViewController.swift */,
+				45D4FF081B5C94920061DB3E /* UserProfileSettingsViewController.swift */,
 			);
 			name = UserViewControllers;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				45E6089D1B3FA095004B3F50 /* ContainerViewController.swift in Sources */,
 				45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */,
 				45B5E7271B437E670054D7A8 /* StoryPageCell.swift in Sources */,
+				4569ADA51B5B361600BA6B48 /* UserProfileViewController.swift in Sources */,
 				4588B7F61B5606CC00A77B52 /* RegistEditTableViewCell.swift in Sources */,
 				45E383B91B4E0D6E00265DDE /* ImageUploadViewController.swift in Sources */,
 				45B5E7621B4864020054D7A8 /* TitleTableViewCell.swift in Sources */,
@@ -628,6 +635,7 @@
 				45E608A71B3FA3E4004B3F50 /* BaseViewController.swift in Sources */,
 				4588B7F41B56037900A77B52 /* RegisterViewController.swift in Sources */,
 				45B5E76D1B487CBF0054D7A8 /* StoryTextBodyCell.swift in Sources */,
+				45D4FF091B5C94920061DB3E /* UserProfileSettingsViewController.swift in Sources */,
 				45E383C31B4E389100265DDE /* BaiduOCRResponse.swift in Sources */,
 				4588B7F81B5607C900A77B52 /* RegisterInfoViewController.swift in Sources */,
 				45E608A01B3FA095004B3F50 /* ProfileViewController.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class UploadBookViewController: UIViewController {
+class UploadBookViewController: ContainerSubbaseViewController {
     
     @IBOutlet var takePicButton:UIButton?
     @IBOutlet var editTextButton:UIButton?
@@ -17,6 +17,13 @@ class UploadBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var button: UIButton = Util.getNavigationMenuButton()
+        button.addTarget(self, action: "showMenu:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var leftItem:UIBarButtonItem = UIBarButtonItem()
+        leftItem.customView = button
+        self.navigationItem.leftBarButtonItem = leftItem
         
     }
     
@@ -38,6 +45,11 @@ class UploadBookViewController: UIViewController {
         {
             
         }
+    }
+    
+    func showMenu(sender: UIButton!)
+    {
+        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 1
     }
     
 }
