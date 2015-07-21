@@ -11,6 +11,7 @@
 		4588B7F41B56037900A77B52 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F31B56037900A77B52 /* RegisterViewController.swift */; };
 		4588B7F61B5606CC00A77B52 /* RegistEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F51B5606CC00A77B52 /* RegistEditTableViewCell.swift */; };
 		4588B7F81B5607C900A77B52 /* RegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */; };
+		458AC4731B5DF6D600FB3C08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AC4721B5DF6D600FB3C08 /* User.swift */; };
 		45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7221B43740F0054D7A8 /* DailyReading.swift */; };
 		45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */; };
 		45B5E7271B437E670054D7A8 /* StoryPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7261B437E670054D7A8 /* StoryPageCell.swift */; };
@@ -92,6 +93,7 @@
 		4588B7F31B56037900A77B52 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4588B7F51B5606CC00A77B52 /* RegistEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEditTableViewCell.swift; sourceTree = "<group>"; };
 		4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInfoViewController.swift; sourceTree = "<group>"; };
+		458AC4721B5DF6D600FB3C08 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		45B5E7221B43740F0054D7A8 /* DailyReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReading.swift; sourceTree = "<group>"; };
 		45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaliyReadingBook.swift; sourceTree = "<group>"; };
 		45B5E7261B437E670054D7A8 /* StoryPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPageCell.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */,
 				45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */,
 				45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */,
+				458AC4721B5DF6D600FB3C08 /* User.swift */,
 				45B5E7281B4389FC0054D7A8 /* Shared.swift */,
 			);
 			name = DataManager;
@@ -623,6 +626,7 @@
 				45E6089E1B3FA095004B3F50 /* ContainerSubbaseViewController.swift in Sources */,
 				45E6089D1B3FA095004B3F50 /* ContainerViewController.swift in Sources */,
 				45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */,
+				458AC4731B5DF6D600FB3C08 /* User.swift in Sources */,
 				45B5E7271B437E670054D7A8 /* StoryPageCell.swift in Sources */,
 				4569ADA51B5B361600BA6B48 /* UserProfileViewController.swift in Sources */,
 				4588B7F61B5606CC00A77B52 /* RegistEditTableViewCell.swift in Sources */,

@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shuzhai2/Shared.swift"
-            timestampString = "458970567.48828"
+            timestampString = "459143732.114495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "fetchNumberOfBooks(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shuzhai2/Shared.swift"
-            timestampString = "458970567.48828"
+            timestampString = "459143732.114495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "fetchResultFromBaiduOCR(_:completionHandler:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -335,8 +335,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
             endingLineNumber = "230"
-            landmarkName = "jsParser(_:)"
-            landmarkType = "5">
+            landmarkName = "DataManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -385,38 +385,6 @@
             endingLineNumber = "169"
             landmarkName = "createOrLoginNewUser(_:userEmail:userPassword:funcCompletionHandler:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[4] = Dead, Arg[5] = Value Promoted from InOut&gt; of static shuzhai2.DataManager.(createOrLoginNewUser (shuzhai2.DataManager.Type) -&gt; (Swift.String, userEmail : Swift.String, userPassword : Swift.String, funcCompletionHandler : (Swift.Bool, Swift.Optional&lt;Swift.AnyObject&gt;, shuzhai2.LoginStatus) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "shuzhai2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vincentnewpro/Documents/shuzhaiIos/shuzhai/shuzhai2/Shared.swift"
-                  timestampString = "459051893.281336"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "1637">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static shuzhai2.DataManager.(createOrLoginNewUser (shuzhai2.DataManager.Type) -&gt; (Swift.String, userEmail : Swift.String, userPassword : Swift.String, funcCompletionHandler : (Swift.Bool, Swift.Optional&lt;Swift.AnyObject&gt;, shuzhai2.LoginStatus) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "shuzhai2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vincentnewpro/Documents/shuzhaiIos/shuzhai/shuzhai2/Shared.swift"
-                  timestampString = "459051893.281488"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "39">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -560,6 +528,22 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shuzhai2/AppDelegate.swift"
+            timestampString = "459144273.680218"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
