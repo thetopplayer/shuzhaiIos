@@ -15,8 +15,24 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
+        self.tableView!.contentInset = UIEdgeInsetsMake(-36,0,0,0);
+        
+        var button: UIButton = Util.getNavigationMenuButton()
+        button.addTarget(self, action: "showMenu:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var leftItem:UIBarButtonItem = UIBarButtonItem()
+        leftItem.customView = button
+        self.navigationItem.leftBarButtonItem = leftItem
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if Util.getLocalUserAuthentication() != nil
+        {
+            self.performSegueWithIdentifier("toUserProfileSegue", sender: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +94,11 @@ class RegisterViewController: UIViewController {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
          self.performSegueWithIdentifier("registerInfoSegue", sender: nil)
+    }
+    
+    func showMenu(sender: UIButton!)
+    {
+        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 1
     }
 
 }

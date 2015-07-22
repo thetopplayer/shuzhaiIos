@@ -12,6 +12,8 @@ class UserProfileViewController: ContainerSubbaseViewController {
 
     @IBOutlet var tableView:UITableView?
     
+    var user:User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
@@ -19,7 +21,7 @@ class UserProfileViewController: ContainerSubbaseViewController {
         self.edgesForExtendedLayout = UIRectEdge.None
     
         
-        
+        self.navigationController?.navigationBarHidden = false
         
         var button: UIButton = Util.getNavigationMenuButton()
         button.addTarget(self, action: "showMenu:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -28,6 +30,17 @@ class UserProfileViewController: ContainerSubbaseViewController {
         leftItem.customView = button
         self.navigationItem.leftBarButtonItem = leftItem
         
+        
+        self.user = Util.getLocalUserAsObject()
+        if self.user == nil
+        {
+            Util.syncUserInfoToLocal(Util.getLocalUserName(), complete: { (done) -> Void in
+                if done
+                {
+                    self.tableView?.reloadData()    
+                }
+            })
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -56,7 +69,11 @@ class UserProfileViewController: ContainerSubbaseViewController {
         
         if indexPath.row==0
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userPicCell") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("userPicCell") as! UserPicTableViewCell
+            if let user = self.user
+            {
+                cell.nameLabel?.text = user.userName
+            }
             return cell
         }
         
@@ -80,7 +97,11 @@ class UserProfileViewController: ContainerSubbaseViewController {
         
         if indexPath.row==4
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("likeCell") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("likeCell") as! UserTextCellWithNumberCell
+            if let user = self.user
+            {
+                cell.setCountNumber(user.followingCount)
+            }
             return cell
         }
         
@@ -90,9 +111,20 @@ class UserProfileViewController: ContainerSubbaseViewController {
             return cell
         }
         
-        if indexPath.row==6
+
+        if indexPath.row == 6
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("offLineCell") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("myFollowers") as! UserTextCellWithNumberCell
+            if let user = self.user
+            {
+                cell.setCountNumber(user.followerCount)
+            }
+            return cell
+        }
+        
+        if indexPath.row==7
+        {
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("logout") as! UITableViewCell
             return cell
         }
         

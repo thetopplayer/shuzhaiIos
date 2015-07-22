@@ -64,17 +64,27 @@ class Util:NSObject{
     static func getLocalUserAuthentication()->String?
     {
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let name = defaults.stringForKey("userAuthentication")
+        if let userMetaDict:Dictionary = defaults.dictionaryForKey("userAuthentication")
         {
-            return name
+            return userMetaDict["token"] as? String
         }
         return nil
     }
     
-    static func setLocalUserAnthentication(anthentication:String)
+    static func getLocalUserName()->String?
     {
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(anthentication, forKey: "userAuthentication")
+        if let userMetaDict:Dictionary = defaults.dictionaryForKey("userAuthentication")
+        {
+            return userMetaDict["userName"] as? String
+        }
+        return nil
+    }
+    
+    static func setLocalUserAnthentication(userName:String,anthentication:String)
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(["userName":userName,"token":anthentication], forKey: "userAuthentication")
     }
 
     
@@ -84,6 +94,45 @@ class Util:NSObject{
         button.setImage(UIImage(named: "Berger1"), forState: .Normal)
         button.frame = CGRectMake(0, 0, 30, 30)
         return button
+    }
+    
+    static func syncUserInfoToLocal(userName:String?, complete:(Bool)->Void)
+    {
+        DataManager.getUserInformation(userName, completionHandler: { (user:User?, error) -> Void in
+            if error == nil
+            {
+                if let user = user{
+                    Util.saveUserObjectToPlist(user)
+                }
+                complete(true)
+            }else
+            {
+                complete(false)
+            }
+        })
+    }
+    
+    static func getLocalUserAsObject()->User?
+    {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("userInfo.plist")
+        
+        //var JSONString = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)!
+        let user = Mapper<User>().map(NSDictionary(contentsOfFile: path))
+        return user
+    }
+    
+    static func saveUserObjectToPlist(user:User)
+    {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("userInfo.plist")
+        
+        NSDictionary(dictionary: Mapper().toJSON(user)).writeToFile(path, atomically: true)
+        
+        var text = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)!
+        println(path)
     }
 }
 
@@ -149,12 +198,11 @@ class DataManager: NSObject {
             }
     }
     
-    static func getUserInformation(userName:String, completionHandler:(User?,NSError?)->Void)
+    static func getUserInformation(userName:String?, completionHandler:(User?,NSError?)->Void)
     {
-        Alamofire.request(.POST, GlobalVariables.getUserInfoUrl, parameters: ["username": userName], encoding:ParameterEncoding.TEXT)
+        Alamofire.request(.POST, GlobalVariables.getUserInfoUrl, parameters: ["username": userName!], encoding:ParameterEncoding.TEXT)
             .debugLog()
             .responseObject { (user: User?, error: NSError?) in
-                
                 if user != nil
                 {
                     completionHandler(user,nil)
@@ -164,6 +212,7 @@ class DataManager: NSObject {
                 }
         }
     }
+    
     
     static func createOrLoginNewUser(userName:String,userEmail:String,userPassword:String,funcCompletionHandler:(Bool,AnyObject?,LoginStatus)->Void)
     {

@@ -96,6 +96,10 @@ class UserProfileSettingsViewController: UIViewController {
         }
     }
     
+    func showMenu(sender: UIButton!)
+    {
+        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 1
+    }
     
 
 

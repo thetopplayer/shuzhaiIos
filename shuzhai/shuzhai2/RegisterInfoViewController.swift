@@ -101,11 +101,10 @@ class RegisterInfoViewController: UIViewController {
                 DataManager.createOrLoginNewUser(userName!, userEmail: userEmail!, userPassword: userPassword!, funcCompletionHandler: { (success, message, status) -> Void in
                     if success
                     {
-                        println(message)
                         var messageJson = message as! NSDictionary
                         var authentication: AnyObject? = messageJson["authenticationCode"]
-                        Util.setLocalUserAnthentication(authentication as! String)
-                        
+                        Util.setLocalUserAnthentication(userName!,anthentication:authentication as! String)
+                        self.performSegueWithIdentifier("toUserProfileSegue", sender: nil)
                     }else
                     {
                         println(message)
