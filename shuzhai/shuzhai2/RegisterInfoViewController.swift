@@ -104,6 +104,10 @@ class RegisterInfoViewController: UIViewController {
                         var messageJson = message as! NSDictionary
                         var authentication: AnyObject? = messageJson["authenticationCode"]
                         Util.setLocalUserAnthentication(userName!,anthentication:authentication as! String)
+                        Util.syncUserInfoToLocal(userName, complete: { (done) -> Void in
+                            
+                        })
+                        
                         self.performSegueWithIdentifier("toUserProfileSegue", sender: nil)
                     }else
                     {

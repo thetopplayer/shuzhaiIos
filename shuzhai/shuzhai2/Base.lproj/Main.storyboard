@@ -1529,7 +1529,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Cor-am-uQA" id="k5r-pn-9uU"/>
-                        <segue destination="34s-Qz-Sd1" kind="modal" identifier="toUserProfileSegue" animates="NO" id="o4b-GJ-a6V"/>
+                        <segue destination="34s-Qz-Sd1" kind="push" identifier="toUserProfileSegue" id="o4b-GJ-a6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CT-a0-e3w" userLabel="First Responder" sceneMemberID="firstResponder"/>

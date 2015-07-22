@@ -230,7 +230,7 @@ class DataManager: NSObject {
                         // go to login user
                         Alamofire.request(.POST,GlobalVariables.loginUserUrl,parameters: paramters,encoding: ParameterEncoding.TEXT)
                         .responseJSON(options: NSJSONReadingOptions.allZeros, completionHandler: { (_, _, jsonLogin, errorLogin) -> Void in
-                            var response = json as! NSDictionary
+                            var response = jsonLogin as! NSDictionary
                             var success = response.objectForKey("response") as! Bool
                             var message: AnyObject? = response.objectForKey("message")
                             
