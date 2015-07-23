@@ -25,6 +25,11 @@ class UserProfileSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView?.reloadData()
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section==0)
@@ -37,12 +42,14 @@ class UserProfileSettingsViewController: UIViewController {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell!
+        
+        var user = Util.getLocalUserAsObject()
         
         if indexPath.row==0 && indexPath.section == 0
         {
@@ -52,7 +59,8 @@ class UserProfileSettingsViewController: UIViewController {
         
         if indexPath.row==1 && indexPath.section == 0
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("nickName") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("nickName") as! UserProfileSettingTextCell
+            cell.label?.text = user?.nickName == "" ? "未知": user?.nickName
             return cell
         }
         
@@ -64,15 +72,11 @@ class UserProfileSettingsViewController: UIViewController {
         
         if indexPath.row==0 && indexPath.section == 1
         {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("loginName") as! UITableViewCell
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("loginName") as! UserProfileSettingTextCell
+            cell.label?.text = user?.userName
             return cell
         }
         
-        if indexPath.row==0 && indexPath.section == 2
-        {
-            var cell = self.tableView!.dequeueReusableCellWithIdentifier("logout") as! UITableViewCell
-            return cell
-        }
         
         return cell
     }
@@ -90,15 +94,10 @@ class UserProfileSettingsViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 1
+        if indexPath.row==1 && indexPath.section == 0
         {
-            //self.performSegueWithIdentifier("UserSettingsSegue", sender: nil)
+            self.performSegueWithIdentifier("changeNickNameSegue", sender: nil)
         }
-    }
-    
-    func showMenu(sender: UIButton!)
-    {
-        GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 1
     }
     
 

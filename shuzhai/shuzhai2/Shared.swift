@@ -20,6 +20,7 @@ struct GlobalVariables {
     static var createUserUrl = "http://104.131.79.31/onebook/user/createUser.form"
     static var loginUserUrl = "http://104.131.79.31/onebook/user/userLogin.form"
     static var getUserInfoUrl = "http://104.131.79.31/onebook/user/getUserInfo.form"
+    static var updateUserInfoUrl = "http://104.131.79.31/onebook/user/updateUser.form"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -57,6 +58,15 @@ enum LoginStatus{
     case userLogin
     case userExsistError
     case userCreationFailedError
+}
+
+enum UserInfoModification
+{
+    case nickName
+    case password
+    case profileImg
+    case email
+    case phoneNumber
 }
 
 class Util:NSObject{
@@ -123,16 +133,18 @@ class Util:NSObject{
         return user
     }
     
-    static func saveUserObjectToPlist(user:User)
+    static func saveUserObjectToPlist(user:User?)
     {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        let path = documentsDirectory.stringByAppendingPathComponent("userInfo.plist")
-        
-        NSDictionary(dictionary: Mapper().toJSON(user)).writeToFile(path, atomically: true)
-        
-        var text = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)!
-        println(path)
+        if let user = user{
+            let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+            let documentsDirectory = paths.objectAtIndex(0) as! NSString
+            let path = documentsDirectory.stringByAppendingPathComponent("userInfo.plist")
+            
+            NSDictionary(dictionary: Mapper().toJSON(user)).writeToFile(path, atomically: true)
+            
+            var text = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)!
+            println(path)
+        }
     }
 }
 
@@ -201,7 +213,6 @@ class DataManager: NSObject {
     static func getUserInformation(userName:String?, completionHandler:(User?,NSError?)->Void)
     {
         Alamofire.request(.POST, GlobalVariables.getUserInfoUrl, parameters: ["username": userName!], encoding:ParameterEncoding.TEXT)
-            .debugLog()
             .responseObject { (user: User?, error: NSError?) in
                 if user != nil
                 {
@@ -211,6 +222,52 @@ class DataManager: NSObject {
                     completionHandler(nil,error)
                 }
         }
+    }
+    
+    static func updateUserInformation(updateType:UserInfoModification,value:String?,completionHandler:(Bool?,String?,NSError?)->Void){
+        var type:String?
+        switch updateType{
+            case .nickName:
+                type = "nickname"
+                break
+            
+            case .email:
+                type = "email"
+                break
+            
+            case .password:
+                type = "email"
+                break
+            
+            case .profileImg:
+                type = "profileImg"
+                break
+            case .phoneNumber:
+                type = "phoneNumber"
+                break
+            
+            default:
+            type = ""
+        }
+    
+        Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders=["authenticationCode":Util.getLocalUserAuthentication()!]
+        var paramters = [type!:value!]
+
+        Alamofire.request(.POST, GlobalVariables.updateUserInfoUrl, parameters: paramters,encoding:ParameterEncoding.TEXT)
+            .debugLog()
+            .responseJSON(options: NSJSONReadingOptions.allZeros) { (_, _, json, error) -> Void in
+                if error == nil
+                {
+                    var response = json as! NSDictionary
+                    var success = response.objectForKey("response") as! Bool
+                    var message = response.objectForKey("message") as! String
+                    completionHandler(success,message,nil)
+                }else
+                {
+                    completionHandler(false,nil,error)
+                }
+        }
+        
     }
     
     

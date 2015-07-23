@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Util.getLocalUserAuthentication() != nil
         {
-          // Util.syncUserInfoToLocal(Util.getLocalUserName())
+           println(Util.getLocalUserAuthentication())
+           Util.syncUserInfoToLocal(Util.getLocalUserName(), complete: { (_) -> Void in
+           })
         }
         return true
     }
