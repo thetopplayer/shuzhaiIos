@@ -30,9 +30,21 @@
 #define COCOAPODS_VERSION_MINOR_ImageLoader 3
 #define COCOAPODS_VERSION_PATCH_ImageLoader 3
 
+// Keyboardy
+#define COCOAPODS_POD_AVAILABLE_Keyboardy
+#define COCOAPODS_VERSION_MAJOR_Keyboardy 0
+#define COCOAPODS_VERSION_MINOR_Keyboardy 1
+#define COCOAPODS_VERSION_PATCH_Keyboardy 0
+
 // ObjectMapper
 #define COCOAPODS_POD_AVAILABLE_ObjectMapper
 #define COCOAPODS_VERSION_MAJOR_ObjectMapper 0
 #define COCOAPODS_VERSION_MINOR_ObjectMapper 12
 #define COCOAPODS_VERSION_PATCH_ObjectMapper 0
+
+// XCGLogger
+#define COCOAPODS_POD_AVAILABLE_XCGLogger
+#define COCOAPODS_VERSION_MAJOR_XCGLogger 2
+#define COCOAPODS_VERSION_MINOR_XCGLogger 1
+#define COCOAPODS_VERSION_PATCH_XCGLogger 1
 

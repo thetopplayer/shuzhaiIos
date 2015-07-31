@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Keyboardy
 
 
 extension UIImage {
@@ -37,6 +38,7 @@ extension Request {
         return self
     }
 }
+
 
 
 extension UIColor {

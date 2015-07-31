@@ -11,6 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 import JavaScriptCore
 import ObjectMapper
+import XCGLogger
 
 
 struct GlobalVariables {
@@ -21,6 +22,8 @@ struct GlobalVariables {
     static var loginUserUrl = "http://104.131.79.31/onebook/user/userLogin.form"
     static var getUserInfoUrl = "http://104.131.79.31/onebook/user/getUserInfo.form"
     static var updateUserInfoUrl = "http://104.131.79.31/onebook/user/updateUser.form"
+    static var likeBookUrl = "http://104.131.79.31/onebook/book/addLikeCount.form"
+    static var getBookComments = "http://104.131.79.31/onebook/book/getComments.form"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -70,6 +73,8 @@ enum UserInfoModification
 }
 
 class Util:NSObject{
+    
+    static var log:XCGLogger?
 
     static func getLocalUserAuthentication()->String?
     {
@@ -166,6 +171,56 @@ class DataManager: NSObject {
     
     }
     
+    static func fetchCommemtsForBook(bookId:Int,completionHandler:(UserComment?,NSError?)->Void)
+    {
+        Alamofire.request(.POST, GlobalVariables.getBookComments, parameters: ["bookInfoId":String(bookId)],encoding:ParameterEncoding.TEXT)
+            .responseObject { (commentResponse: UserComment?, error: NSError?) in
+                if error == nil
+                {
+                    completionHandler(commentResponse,nil)
+                }else
+                {
+                    completionHandler(nil,error)
+                }
+        }
+    }
+   
+    
+    
+    static func likeBook(parentViewController:UIViewController?, bookId:Int,completionHandler:(Bool?,NSError?)->Void)
+    {
+        var authentication = Util.getLocalUserAuthentication()
+        if authentication != nil
+        {
+            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["authenticationCode":authentication!]
+            
+            Alamofire.request(.POST, GlobalVariables.likeBookUrl, parameters: ["bookInfoId":String(bookId)],encoding:ParameterEncoding.TEXT)
+                .responseJSON(options: NSJSONReadingOptions.allZeros) { (_, _, json, error) -> Void in
+                    if error == nil
+                    {
+                        var response = json as! NSDictionary
+                        var success = response.objectForKey("response") as! Bool
+                        var message = response.objectForKey("message") as! String
+                        completionHandler(success,nil)
+                    }else
+                    {
+                        completionHandler(nil,error)
+                    }
+            }
+        }else
+        {
+            if let controller = parentViewController
+            {
+                var alert = UIAlertController(title: "牛读", message: "啊哦，请先登录吧。", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                controller.presentViewController(alert, animated: true, completion: nil)
+            }
+
+        }
+        
+
+    }
+    
     static func fetchNumberOfBooks(completionHandler:([DailyReading]?,NSError?)->Void){
         
         let calendar = NSCalendar.currentCalendar()
@@ -254,7 +309,6 @@ class DataManager: NSObject {
         var paramters = [type!:value!]
 
         Alamofire.request(.POST, GlobalVariables.updateUserInfoUrl, parameters: paramters,encoding:ParameterEncoding.TEXT)
-            .debugLog()
             .responseJSON(options: NSJSONReadingOptions.allZeros) { (_, _, json, error) -> Void in
                 if error == nil
                 {

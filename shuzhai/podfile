@@ -4,5 +4,7 @@ pod 'EasyAnimation'
 pod 'Alamofire', '~> 1.2'
 pod 'AlamofireObjectMapper', '~> 0.2'
 pod 'ImageLoader', '~> 0.3.0'
+pod 'XCGLogger'
+pod 'Keyboardy'
 
 use_frameworks!

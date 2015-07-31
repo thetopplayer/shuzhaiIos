@@ -15,6 +15,7 @@
 		4588B7F41B56037900A77B52 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F31B56037900A77B52 /* RegisterViewController.swift */; };
 		4588B7F81B5607C900A77B52 /* RegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */; };
 		458AC4731B5DF6D600FB3C08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AC4721B5DF6D600FB3C08 /* User.swift */; };
+		45A8D6B11B69C143000963AE /* errorLog in Resources */ = {isa = PBXBuildFile; fileRef = 45A8D6B01B69C143000963AE /* errorLog */; };
 		45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7221B43740F0054D7A8 /* DailyReading.swift */; };
 		45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */; };
 		45B5E7271B437E670054D7A8 /* StoryPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7261B437E670054D7A8 /* StoryPageCell.swift */; };
@@ -50,7 +51,10 @@
 		45B5E76B1B486E0B0054D7A8 /* StoryShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B5E76A1B486E0B0054D7A8 /* StoryShareIcon.png */; };
 		45B5E76D1B487CBF0054D7A8 /* StoryTextBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */; };
 		45B5E77A1B49F78D0054D7A8 /* StoryUtilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7791B49F78D0054D7A8 /* StoryUtilCell.swift */; };
+		45B69C5B1B6B278C00E73E43 /* BriefStoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B69C5A1B6B278C00E73E43 /* BriefStoryCollectionViewController.swift */; };
+		45B87B9A1B6B0FB300552FD3 /* TargetUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87B991B6B0FB300552FD3 /* TargetUserViewController.swift */; };
 		45D4FF091B5C94920061DB3E /* UserProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4FF081B5C94920061DB3E /* UserProfileSettingsViewController.swift */; };
+		45DC48771B69D13C003E7EE6 /* UIView+LQXkeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DC48761B69D13C003E7EE6 /* UIView+LQXkeyboard.m */; };
 		45E383AD1B4DF6F400265DDE /* GlobalObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */; };
 		45E383AF1B4E04BB00265DDE /* camera131.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383AE1B4E04BB00265DDE /* camera131.png */; };
 		45E383B31B4E05F600265DDE /* camera90.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383B01B4E05F600265DDE /* camera90.png */; };
@@ -77,6 +81,7 @@
 		45E608A11B3FA095004B3F50 /* ClassEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6089C1B3FA095004B3F50 /* ClassEnums.swift */; };
 		45E608A71B3FA3E4004B3F50 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E608A61B3FA3E4004B3F50 /* BaseViewController.swift */; };
 		45E608AC1B408948004B3F50 /* StoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E608AA1B408948004B3F50 /* StoryPageViewController.swift */; };
+		45E9BB281B6727F300A6464B /* UserComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9BB271B6727F300A6464B /* UserComment.swift */; };
 		8C88B6D367AE43C051A45885 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580628569F089CA21D11452A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -100,6 +105,7 @@
 		4588B7F31B56037900A77B52 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInfoViewController.swift; sourceTree = "<group>"; };
 		458AC4721B5DF6D600FB3C08 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		45A8D6B01B69C143000963AE /* errorLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = errorLog; sourceTree = "<group>"; };
 		45B5E7221B43740F0054D7A8 /* DailyReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReading.swift; sourceTree = "<group>"; };
 		45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaliyReadingBook.swift; sourceTree = "<group>"; };
 		45B5E7261B437E670054D7A8 /* StoryPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPageCell.swift; sourceTree = "<group>"; };
@@ -136,7 +142,11 @@
 		45B5E76C1B487CBF0054D7A8 /* StoryTextBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTextBodyCell.swift; sourceTree = "<group>"; };
 		45B5E76E1B4894AF0054D7A8 /* shuzhai2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shuzhai2-Bridging-Header.h"; sourceTree = "<group>"; };
 		45B5E7791B49F78D0054D7A8 /* StoryUtilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryUtilCell.swift; sourceTree = "<group>"; };
+		45B69C5A1B6B278C00E73E43 /* BriefStoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefStoryCollectionViewController.swift; sourceTree = "<group>"; };
+		45B87B991B6B0FB300552FD3 /* TargetUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetUserViewController.swift; sourceTree = "<group>"; };
 		45D4FF081B5C94920061DB3E /* UserProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSettingsViewController.swift; sourceTree = "<group>"; };
+		45DC48751B69D13C003E7EE6 /* UIView+LQXkeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LQXkeyboard.h"; sourceTree = "<group>"; };
+		45DC48761B69D13C003E7EE6 /* UIView+LQXkeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LQXkeyboard.m"; sourceTree = "<group>"; };
 		45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalObservable.swift; sourceTree = "<group>"; };
 		45E383AE1B4E04BB00265DDE /* camera131.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera131.png; sourceTree = "<group>"; };
 		45E383B01B4E05F600265DDE /* camera90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera90.png; sourceTree = "<group>"; };
@@ -167,6 +177,7 @@
 		45E6089C1B3FA095004B3F50 /* ClassEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassEnums.swift; sourceTree = "<group>"; };
 		45E608A61B3FA3E4004B3F50 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		45E608AA1B408948004B3F50 /* StoryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPageViewController.swift; sourceTree = "<group>"; };
+		45E9BB271B6727F300A6464B /* UserComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComment.swift; sourceTree = "<group>"; };
 		580628569F089CA21D11452A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F50B828A8CDE82ABBE5C72 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,8 +220,18 @@
 				45212EC11B6088C3009A1BC1 /* UserNicknameChangeController.swift */,
 				45212EBD1B5F4334009A1BC1 /* UserPicTableViewCell.swift */,
 				45212EBF1B5F464E009A1BC1 /* UserProfileTableCells.swift */,
+				45B87B991B6B0FB300552FD3 /* TargetUserViewController.swift */,
+				45B69C5A1B6B278C00E73E43 /* BriefStoryCollectionViewController.swift */,
 			);
 			name = UserViewControllers;
+			sourceTree = "<group>";
+		};
+		45A8D6AF1B69C0FA000963AE /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				45A8D6B01B69C143000963AE /* errorLog */,
+			);
+			name = Others;
 			sourceTree = "<group>";
 		};
 		45B5E7211B4373D80054D7A8 /* DataManager */ = {
@@ -221,6 +242,7 @@
 				45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */,
 				45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */,
 				458AC4721B5DF6D600FB3C08 /* User.swift */,
+				45E9BB271B6727F300A6464B /* UserComment.swift */,
 				45B5E7281B4389FC0054D7A8 /* Shared.swift */,
 			);
 			name = DataManager;
@@ -311,6 +333,15 @@
 			name = ProfileViewControllers;
 			sourceTree = "<group>";
 		};
+		45DC48741B69D0CD003E7EE6 /* OBJC */ = {
+			isa = PBXGroup;
+			children = (
+				45DC48751B69D13C003E7EE6 /* UIView+LQXkeyboard.h */,
+				45DC48761B69D13C003E7EE6 /* UIView+LQXkeyboard.m */,
+			);
+			name = OBJC;
+			sourceTree = "<group>";
+		};
 		45E383AB1B4CB15900265DDE /* UploadBookViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +422,8 @@
 		45E608901B3FA053004B3F50 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				45DC48741B69D0CD003E7EE6 /* OBJC */,
+				45A8D6AF1B69C0FA000963AE /* Others */,
 				45B5E7631B486D7E0054D7A8 /* Icons */,
 				45B5E7511B4859AD0054D7A8 /* Banners */,
 				45B5E7421B44EB0C0054D7A8 /* AddNewIcon */,
@@ -538,6 +571,7 @@
 				45B5E74B1B44EC2D0054D7A8 /* addNew2.png in Resources */,
 				45B5E7371B44EA3D0054D7A8 /* Berger2.png in Resources */,
 				45B5E74E1B44EC2D0054D7A8 /* addNew5.png in Resources */,
+				45A8D6B11B69C143000963AE /* errorLog in Resources */,
 				45B5E74C1B44EC2D0054D7A8 /* addNew3.png in Resources */,
 				45B5E75C1B485A830054D7A8 /* Banner4.png in Resources */,
 				45B5E7351B44E97F0054D7A8 /* Berger1.png in Resources */,
@@ -631,6 +665,7 @@
 				45B5E7291B4389FC0054D7A8 /* Shared.swift in Sources */,
 				45B5E7301B44CC5F0054D7A8 /* StoryDetailViewController.swift in Sources */,
 				45B5E72C1B44BBD80054D7A8 /* Extensions.swift in Sources */,
+				45B69C5B1B6B278C00E73E43 /* BriefStoryCollectionViewController.swift in Sources */,
 				45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */,
 				45E383B71B4E085E00265DDE /* UploadBookViewController.swift in Sources */,
 				45E6089E1B3FA095004B3F50 /* ContainerSubbaseViewController.swift in Sources */,
@@ -643,6 +678,7 @@
 				45E383B91B4E0D6E00265DDE /* ImageUploadViewController.swift in Sources */,
 				45B5E7621B4864020054D7A8 /* TitleTableViewCell.swift in Sources */,
 				45E6089F1B3FA095004B3F50 /* StoryViewController.swift in Sources */,
+				45B87B9A1B6B0FB300552FD3 /* TargetUserViewController.swift in Sources */,
 				45E383BF1B4E1CCD00265DDE /* ImagePreviewCell.swift in Sources */,
 				45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */,
 				45E608AC1B408948004B3F50 /* StoryPageViewController.swift in Sources */,
@@ -655,6 +691,8 @@
 				45E608A01B3FA095004B3F50 /* ProfileViewController.swift in Sources */,
 				45B5E77A1B49F78D0054D7A8 /* StoryUtilCell.swift in Sources */,
 				45212EC21B6088C3009A1BC1 /* UserNicknameChangeController.swift in Sources */,
+				45DC48771B69D13C003E7EE6 /* UIView+LQXkeyboard.m in Sources */,
+				45E9BB281B6727F300A6464B /* UserComment.swift in Sources */,
 				45E608A11B3FA095004B3F50 /* ClassEnums.swift in Sources */,
 				45E608971B3FA07F004B3F50 /* EmptySegue.swift in Sources */,
 				45E383AD1B4DF6F400265DDE /* GlobalObservable.swift in Sources */,

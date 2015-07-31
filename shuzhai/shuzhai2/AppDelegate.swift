@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XCGLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        let log = XCGLogger.defaultInstance()
+        log.setup(logLevel: .Debug, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: NSBundle.mainBundle().resourcePath!+"errorLog", fileLogLevel: .Debug)
+        Util.log = log
+        
         if Util.getLocalUserAuthentication() != nil
         {
-           println(Util.getLocalUserAuthentication())
+           Util.log!.info(Util.getLocalUserAuthentication())
            Util.syncUserInfoToLocal(Util.getLocalUserName(), complete: { (_) -> Void in
            })
         }

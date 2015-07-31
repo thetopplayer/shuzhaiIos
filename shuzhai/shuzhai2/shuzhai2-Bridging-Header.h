@@ -8,5 +8,5 @@
 
 #ifndef shuzhai2_shuzhai2_Bridging_Header_h
 #define shuzhai2_shuzhai2_Bridging_Header_h
-
+#import "UIView+LQXkeyboard.h"
 #endif

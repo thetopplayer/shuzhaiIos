@@ -22,6 +22,7 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
     @IBOutlet var bannerImgView:UIImageView?
     @IBOutlet var addNewImgView:UIButton?
     @IBOutlet var dateLabel:UILabel?
+    @IBOutlet var targetUserButton:UIButton?
 
     
     let backGroundColors:[UIColor] = GlobalVariables.defaultColorGroup
@@ -78,6 +79,9 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
@@ -87,6 +91,12 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
             
             var controller = (segue.destinationViewController as! StoryDetailViewController)
             controller.dailyReadingBook = (sender as! DailyReading).bookInfoVO
+        }
+        
+        if(segue.identifier == "gotoTargetUserSegue")
+        {
+            var controller = (segue.destinationViewController as! TargetUserViewController)
+            controller.dailyReadingBook = (sender as! DaliyReadingBook)
         }
     }
     
@@ -191,6 +201,16 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
         self.dateLabel?.text = self.dateLabelValues[index]
     }
     
+    
+    @IBAction func targetUserButtonClicked(sender:UIButton)
+    {
+        var bookData:DailyReading? = self.bookDataArray[currentIndex]
+        
+        if bookData != nil
+        {
+            self.performSegueWithIdentifier("gotoTargetUserSegue", sender: bookData?.bookInfoVO)
+        }
+    }
     
 }
 

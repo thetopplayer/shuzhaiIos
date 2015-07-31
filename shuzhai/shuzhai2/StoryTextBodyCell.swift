@@ -29,3 +29,26 @@ class StoryTextBodyCell: UITableViewCell {
     
 
 }
+
+class StoryCommentCell: UITableViewCell {
+    
+    @IBOutlet var commentTextView:UITextView?
+    @IBOutlet var profileImg:UIImageView?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    
+}

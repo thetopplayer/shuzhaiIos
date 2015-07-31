@@ -14,6 +14,9 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
     @IBOutlet var closeButton:UIButton?
     @IBOutlet var tableView:UITableView?
 
+
+
+    var userComment:UserComment?
     
     var dailyReadingBook:DaliyReadingBook?
     var textViewDict:[NSIndexPath:UITextView] = Dictionary<NSIndexPath, UITextView>()
@@ -24,9 +27,26 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
         self.tableView?.estimatedRowHeight = 100.0
         self.tableView?.rowHeight = UITableViewAutomaticDimension
         
+        if let book = dailyReadingBook{
+            DataManager.fetchCommemtsForBook(Int(book.bookInfoId!), completionHandler: { (commentObj, error) -> Void in
+                if(error == nil)
+                {
+                    self.userComment = commentObj
+                    self.tableView?.reloadData()
+                }
+            })
+
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,18 +62,34 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if section == 0
+        {
+            return 3
+        }else if(section == 1)
+        {
+            if let userComment = self.userComment
+            {
+                return userComment.messages!.count
+            }else
+            {
+                return 0
+            }
+            
+        }
+        
+        return 0
+        
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell!
         
-        if indexPath.row==0
+        if indexPath.row==0 && indexPath.section == 0
         {
             var cell = self.tableView!.dequeueReusableCellWithIdentifier("cell") as! TitleTableViewCell
             cell.titleLabel?.text = dailyReadingBook?.sectionTitle
@@ -62,14 +98,15 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
             return cell
         }
         
-        if indexPath.row==1
+        if indexPath.row==1 && indexPath.section == 0
         {
             var cell = self.tableView!.dequeueReusableCellWithIdentifier("profileCell") as! StoryUtilCell
+            cell.parentViewController = self
+            cell.dailyReadingBook = self.dailyReadingBook
             //cell.titleLabel?.text = dailyReadingBook?.sectionTitle
             var imgUrl = self.dailyReadingBook?.creator_profileImg
             //cell.profileImg?.load(NSURL(string: imgUrl!)!, placeholder: UIImage(named: "round-profile-plc"))
             //cell.profileImg!.load(NSURL(string: imgUrl!)!, placeholder:UIImage(named: "round-profile-plc"))
-            println(self.dailyReadingBook?.creator_nikeName)
             var a:String = self.dailyReadingBook!.bookTitle!
             if let useName = self.dailyReadingBook?.creator_userName{
                 cell.userNameLabel?.text = useName
@@ -78,17 +115,29 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
             return cell
         }
         
-        if indexPath.row == 2
+        if indexPath.row == 2  && indexPath.section == 0
         {
             var cell = self.tableView!.dequeueReusableCellWithIdentifier("textBodyCell") as! StoryTextBodyCell
-            //cell.titleLabel?.text = dailyReadingBook?.sectionTitle
-            //cell.textBodyLabel?.text = dailyReadingBook?.textBody
             var text:String = dailyReadingBook!.textBody!
             cell.textBodyView?.text = text
             cell.textBodyView?.setContentOffset(CGPointMake(0, 100), animated: false)
             self.textViewDict[indexPath] = cell.textBodyView
-            println(text)
             return cell
+        }
+        
+        if indexPath.section == 1
+        {
+            var cell = self.tableView!.dequeueReusableCellWithIdentifier("StoryCommentCell") as! StoryCommentCell
+            
+            if let userCommentMessages = self.userComment?.messages{
+               var commentMessage =  userCommentMessages[indexPath.row]
+               cell.commentTextView?.text = commentMessage.comment
+               self.textViewDict[indexPath] = cell.commentTextView
+                return cell
+            }
+            
+            
+
         }
         
         
@@ -136,3 +185,4 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
     */
 
 }
+
