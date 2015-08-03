@@ -15,6 +15,10 @@
 		4588B7F41B56037900A77B52 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F31B56037900A77B52 /* RegisterViewController.swift */; };
 		4588B7F81B5607C900A77B52 /* RegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */; };
 		458AC4731B5DF6D600FB3C08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AC4721B5DF6D600FB3C08 /* User.swift */; };
+		45A2A65C1B6EFDB8005D9BB9 /* BookStoryUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A65B1B6EFDB8005D9BB9 /* BookStoryUpdateViewController.swift */; };
+		45A2A65E1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A65D1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift */; };
+		45A2A6601B6F1855005D9BB9 /* UploadViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A65F1B6F1855005D9BB9 /* UploadViewCells.swift */; };
+		45A2A6621B6F18D8005D9BB9 /* BookPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A6611B6F18D8005D9BB9 /* BookPreviewViewController.swift */; };
 		45A8D6B11B69C143000963AE /* errorLog in Resources */ = {isa = PBXBuildFile; fileRef = 45A8D6B01B69C143000963AE /* errorLog */; };
 		45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7221B43740F0054D7A8 /* DailyReading.swift */; };
 		45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */; };
@@ -63,7 +67,6 @@
 		45E383B71B4E085E00265DDE /* UploadBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383B61B4E085E00265DDE /* UploadBookViewController.swift */; };
 		45E383B91B4E0D6E00265DDE /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383B81B4E0D6E00265DDE /* ImageUploadViewController.swift */; };
 		45E383BD1B4E0F9000265DDE /* plus7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E383BC1B4E0F9000265DDE /* plus7.png */; };
-		45E383BF1B4E1CCD00265DDE /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383BE1B4E1CCD00265DDE /* ImagePreviewCell.swift */; };
 		45E383C11B4E37E300265DDE /* BaiduOCRRetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */; };
 		45E383C31B4E389100265DDE /* BaiduOCRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */; };
 		45E6086F1B3F9F2E004B3F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6086E1B3F9F2E004B3F50 /* AppDelegate.swift */; };
@@ -105,6 +108,10 @@
 		4588B7F31B56037900A77B52 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4588B7F71B5607C900A77B52 /* RegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInfoViewController.swift; sourceTree = "<group>"; };
 		458AC4721B5DF6D600FB3C08 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		45A2A65B1B6EFDB8005D9BB9 /* BookStoryUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStoryUpdateViewController.swift; sourceTree = "<group>"; };
+		45A2A65D1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfoEnRicherViewController.swift; sourceTree = "<group>"; };
+		45A2A65F1B6F1855005D9BB9 /* UploadViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewCells.swift; sourceTree = "<group>"; };
+		45A2A6611B6F18D8005D9BB9 /* BookPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookPreviewViewController.swift; sourceTree = "<group>"; };
 		45A8D6B01B69C143000963AE /* errorLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = errorLog; sourceTree = "<group>"; };
 		45B5E7221B43740F0054D7A8 /* DailyReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReading.swift; sourceTree = "<group>"; };
 		45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaliyReadingBook.swift; sourceTree = "<group>"; };
@@ -155,7 +162,6 @@
 		45E383B61B4E085E00265DDE /* UploadBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadBookViewController.swift; sourceTree = "<group>"; };
 		45E383B81B4E0D6E00265DDE /* ImageUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
 		45E383BC1B4E0F9000265DDE /* plus7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus7.png; sourceTree = "<group>"; };
-		45E383BE1B4E1CCD00265DDE /* ImagePreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
 		45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaiduOCRRetData.swift; sourceTree = "<group>"; };
 		45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaiduOCRResponse.swift; sourceTree = "<group>"; };
 		45E608691B3F9F2E004B3F50 /* shuzhai2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shuzhai2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,7 +353,10 @@
 			children = (
 				45E383B61B4E085E00265DDE /* UploadBookViewController.swift */,
 				45E383B81B4E0D6E00265DDE /* ImageUploadViewController.swift */,
-				45E383BE1B4E1CCD00265DDE /* ImagePreviewCell.swift */,
+				45A2A65B1B6EFDB8005D9BB9 /* BookStoryUpdateViewController.swift */,
+				45A2A65F1B6F1855005D9BB9 /* UploadViewCells.swift */,
+				45A2A65D1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift */,
+				45A2A6611B6F18D8005D9BB9 /* BookPreviewViewController.swift */,
 			);
 			name = UploadBookViewControllers;
 			sourceTree = "<group>";
@@ -667,6 +676,9 @@
 				45B5E72C1B44BBD80054D7A8 /* Extensions.swift in Sources */,
 				45B69C5B1B6B278C00E73E43 /* BriefStoryCollectionViewController.swift in Sources */,
 				45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */,
+				45A2A65E1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift in Sources */,
+				45A2A6601B6F1855005D9BB9 /* UploadViewCells.swift in Sources */,
+				45A2A65C1B6EFDB8005D9BB9 /* BookStoryUpdateViewController.swift in Sources */,
 				45E383B71B4E085E00265DDE /* UploadBookViewController.swift in Sources */,
 				45E6089E1B3FA095004B3F50 /* ContainerSubbaseViewController.swift in Sources */,
 				45E6089D1B3FA095004B3F50 /* ContainerViewController.swift in Sources */,
@@ -679,7 +691,7 @@
 				45B5E7621B4864020054D7A8 /* TitleTableViewCell.swift in Sources */,
 				45E6089F1B3FA095004B3F50 /* StoryViewController.swift in Sources */,
 				45B87B9A1B6B0FB300552FD3 /* TargetUserViewController.swift in Sources */,
-				45E383BF1B4E1CCD00265DDE /* ImagePreviewCell.swift in Sources */,
+				45A2A6621B6F18D8005D9BB9 /* BookPreviewViewController.swift in Sources */,
 				45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */,
 				45E608AC1B408948004B3F50 /* StoryPageViewController.swift in Sources */,
 				45E608A71B3FA3E4004B3F50 /* BaseViewController.swift in Sources */,

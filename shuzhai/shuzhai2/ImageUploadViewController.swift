@@ -87,22 +87,40 @@ class ImageUploadViewController: UIViewController , UIImagePickerControllerDeleg
         {
             var resultString:String = ""
             
-            DataManager.fetchResultFromBaiduOCR(image, completionHandler: { (result, error) -> Void in
-                if let response:BaiduOCRResponse = result{
-                    for retdata:BaiduOCRRetData in response.retData!
-                    {
-                        println(retdata.word!)
-                        resultString+=retdata.word!
-                    }
-                }
-                
-                var alert = UIAlertController(title: "Alert", message: resultString, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-            })
+//            DataManager.fetchResultFromBaiduOCR(image, completionHandler: { (result, error) -> Void in
+//                if let response:BaiduOCRResponse = result{
+//                    for retdata:BaiduOCRRetData in response.retData!
+//                    {
+//                        println(retdata.word!)
+//                        resultString+=retdata.word!
+//                    }
+//                }
+//                
+//                var alert = UIAlertController(title: "Alert", message: resultString, preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+//                self.presentViewController(alert, animated: true, completion: nil)
+//                
+//                
+//                
+//            })
+            
+            self.performSegueWithIdentifier("updateStorySegue", sender: "abcd")
             
 
         }
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        
+        if(segue.identifier == "updateStorySegue")
+        {
+            
+            var controller = (segue.destinationViewController as! BookStoryUpdateViewController)
+            controller.bookText = sender as? String
+        }
+        
     }
     
     

@@ -67,9 +67,9 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
             return 3
         }else if(section == 1)
         {
-            if let userComment = self.userComment
+            if let messages = self.userComment?.messages
             {
-                return userComment.messages!.count
+                return messages.count
             }else
             {
                 return 0

@@ -24,6 +24,7 @@ struct GlobalVariables {
     static var updateUserInfoUrl = "http://104.131.79.31/onebook/user/updateUser.form"
     static var likeBookUrl = "http://104.131.79.31/onebook/book/addLikeCount.form"
     static var getBookComments = "http://104.131.79.31/onebook/book/getComments.form"
+    static var followUserUrl = "http://104.131.79.31/onebook/user/followUser.form"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -170,6 +171,48 @@ class DataManager: NSObject {
         }
     
     }
+    
+    static func followUser(userId:Int,completionHandler:(Bool?,NSError?,String)->Void)
+    {
+        var authentication = Util.getLocalUserAuthentication()
+        if authentication != nil
+        {
+            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["authenticationCode":authentication!]
+            
+            Alamofire.request(.POST, GlobalVariables.followUserUrl, parameters: ["followingUserInfoId":String(userId)],encoding:ParameterEncoding.TEXT)
+                .responseJSON(options: NSJSONReadingOptions.allZeros) { (_, _, json, error) -> Void in
+//                    if error == nil
+//                    {
+//                        var response = json as! NSDictionary
+//                        var success = response.objectForKey("response") as! Bool
+//                        var message = response.objectForKey("message") as! String
+//                        completionHandler(success,nil)
+//                    }else
+//                    {
+//                        completionHandler(nil,error)
+//                    }
+            }
+        }else
+        {
+            
+        }
+
+    }
+    
+    static func getDoubanBookInfo(query:String,resultCount:Int,completionHandler:(UserComment?,NSError?)->Void)
+    {
+        Alamofire.request(.POST, GlobalVariables.getBookComments, parameters: ["bookInfoId":String(bookId)],encoding:ParameterEncoding.TEXT)
+            .responseObject { (commentResponse: UserComment?, error: NSError?) in
+                if error == nil
+                {
+                    completionHandler(commentResponse,nil)
+                }else
+                {
+                    completionHandler(nil,error)
+                }
+        }
+    }
+
     
     static func fetchCommemtsForBook(bookId:Int,completionHandler:(UserComment?,NSError?)->Void)
     {
