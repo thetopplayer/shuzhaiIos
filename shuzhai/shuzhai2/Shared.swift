@@ -201,7 +201,8 @@ class DataManager: NSObject {
     
     static func getDoubanBookInfo(query:String,resultCount:Int,completionHandler:(UserComment?,NSError?)->Void)
     {
-        Alamofire.request(.POST, GlobalVariables.getBookComments, parameters: ["bookInfoId":String(bookId)],encoding:ParameterEncoding.TEXT)
+        Alamofire.request(.GET, "https://api.douban.com/v2/book/search", parameters: ["q":String("活着"),"count":String(1)],encoding:ParameterEncoding.URL)
+            .debugLog()
             .responseObject { (commentResponse: UserComment?, error: NSError?) in
                 if error == nil
                 {
