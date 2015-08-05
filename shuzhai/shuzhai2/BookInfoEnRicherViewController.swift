@@ -12,11 +12,12 @@ class BookInfoEnRicherViewController: UIViewController {
     
     @IBOutlet var bookTitleField:UITextField?
     @IBOutlet var bookSectionSummaryView:UITextView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        var nextButton : UIBarButtonItem = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.Plain, target: self, action: "goNext")
+        self.navigationItem.rightBarButtonItem = nextButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +25,34 @@ class BookInfoEnRicherViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func goNext()
+    {
+        
+        if let bookTitle = self.bookTitleField?.text{
+            if count(bookTitle) > 0
+            {
+                DataManager.getDoubanBookInfo(bookTitle, resultCount: 1, completionHandler: { (book, error) -> Void in
+                    if let book = book{
+                        //
+                        self.performSegueWithIdentifier("bookPreviewSegue", sender: book)
+                    }
+                })
+            }
+        }
+        
+        //self.performSegueWithIdentifier("enricherSegue", sender: bookText)
     }
-    */
+
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "bookPreviewSegue")
+        {
+            var controller = (segue.destinationViewController as! BookPreviewViewController)
+            controller.doubanBook = sender as? DoubanBook
+        }
+    }
+    
 
 }

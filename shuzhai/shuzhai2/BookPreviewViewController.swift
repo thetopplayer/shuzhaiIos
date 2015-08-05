@@ -11,6 +11,7 @@ import UIKit
 class BookPreviewViewController: UIViewController {
     
     @IBOutlet var tableView:UITableView?
+    var doubanBook: DoubanBook?
     var bookInfoDataDictArray:NSMutableArray?
 
     override func viewDidLoad() {

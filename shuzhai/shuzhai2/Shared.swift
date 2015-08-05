@@ -25,6 +25,7 @@ struct GlobalVariables {
     static var likeBookUrl = "http://104.131.79.31/onebook/book/addLikeCount.form"
     static var getBookComments = "http://104.131.79.31/onebook/book/getComments.form"
     static var followUserUrl = "http://104.131.79.31/onebook/user/followUser.form"
+    static var doubanReadingUrl = "http://api.douban.com/v2/book/search"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -199,10 +200,11 @@ class DataManager: NSObject {
 
     }
     
-    static func getDoubanBookInfo(query:String,resultCount:Int,completionHandler:(UserComment?,NSError?)->Void)
+    static func getDoubanBookInfo(query:String,resultCount:Int,completionHandler:(DoubanBook?,NSError?)->Void)
     {
-        Alamofire.request(.POST, GlobalVariables.getBookComments, parameters: ["bookInfoId":String(bookId)],encoding:ParameterEncoding.TEXT)
-            .responseObject { (commentResponse: UserComment?, error: NSError?) in
+        Alamofire.request(.GET, GlobalVariables.doubanReadingUrl, parameters:["q":query,"count":String(resultCount)],encoding:ParameterEncoding.URL)
+            .debugLog()
+            .responseObject { (commentResponse:DoubanBook?, error: NSError?) in
                 if error == nil
                 {
                     completionHandler(commentResponse,nil)

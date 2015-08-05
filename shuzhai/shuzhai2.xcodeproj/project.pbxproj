@@ -19,6 +19,7 @@
 		45A2A65E1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A65D1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift */; };
 		45A2A6601B6F1855005D9BB9 /* UploadViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A65F1B6F1855005D9BB9 /* UploadViewCells.swift */; };
 		45A2A6621B6F18D8005D9BB9 /* BookPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A6611B6F18D8005D9BB9 /* BookPreviewViewController.swift */; };
+		45A2A6641B706798005D9BB9 /* DoubanBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A6631B706798005D9BB9 /* DoubanBook.swift */; };
 		45A8D6B11B69C143000963AE /* errorLog in Resources */ = {isa = PBXBuildFile; fileRef = 45A8D6B01B69C143000963AE /* errorLog */; };
 		45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7221B43740F0054D7A8 /* DailyReading.swift */; };
 		45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */; };
@@ -112,6 +113,7 @@
 		45A2A65D1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfoEnRicherViewController.swift; sourceTree = "<group>"; };
 		45A2A65F1B6F1855005D9BB9 /* UploadViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewCells.swift; sourceTree = "<group>"; };
 		45A2A6611B6F18D8005D9BB9 /* BookPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookPreviewViewController.swift; sourceTree = "<group>"; };
+		45A2A6631B706798005D9BB9 /* DoubanBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubanBook.swift; sourceTree = "<group>"; };
 		45A8D6B01B69C143000963AE /* errorLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = errorLog; sourceTree = "<group>"; };
 		45B5E7221B43740F0054D7A8 /* DailyReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReading.swift; sourceTree = "<group>"; };
 		45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaliyReadingBook.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */,
 				45E383C01B4E37E300265DDE /* BaiduOCRRetData.swift */,
 				45E383C21B4E389100265DDE /* BaiduOCRResponse.swift */,
+				45A2A6631B706798005D9BB9 /* DoubanBook.swift */,
 				458AC4721B5DF6D600FB3C08 /* User.swift */,
 				45E9BB271B6727F300A6464B /* UserComment.swift */,
 				45B5E7281B4389FC0054D7A8 /* Shared.swift */,
@@ -710,6 +713,7 @@
 				45E383AD1B4DF6F400265DDE /* GlobalObservable.swift in Sources */,
 				45212EBE1B5F4334009A1BC1 /* UserPicTableViewCell.swift in Sources */,
 				45E383C11B4E37E300265DDE /* BaiduOCRRetData.swift in Sources */,
+				45A2A6641B706798005D9BB9 /* DoubanBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

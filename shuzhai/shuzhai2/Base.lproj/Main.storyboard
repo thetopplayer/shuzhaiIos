@@ -1124,7 +1124,7 @@
                     <connections>
                         <outlet property="bookSectionSummaryView" destination="BY3-Qh-1Fs" id="vDT-HP-Iyf"/>
                         <outlet property="bookTitleField" destination="s8V-1C-5K8" id="Wbb-ok-qsy"/>
-                        <segue destination="3Fc-to-YR6" kind="push" id="vYV-Tq-TK7"/>
+                        <segue destination="3Fc-to-YR6" kind="push" identifier="bookPreviewSegue" id="vYV-Tq-TK7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yx8-Tb-glr" userLabel="First Responder" sceneMemberID="firstResponder"/>
