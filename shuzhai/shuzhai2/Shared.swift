@@ -173,7 +173,7 @@ class DataManager: NSObject {
     
     }
     
-    static func followUser(userId:Int,completionHandler:(Bool?,NSError?,String)->Void)
+    static func followUser(userId:Int,completionHandler:(Bool?,NSError?)->Void)
     {
         var authentication = Util.getLocalUserAuthentication()
         if authentication != nil
@@ -182,16 +182,16 @@ class DataManager: NSObject {
             
             Alamofire.request(.POST, GlobalVariables.followUserUrl, parameters: ["followingUserInfoId":String(userId)],encoding:ParameterEncoding.TEXT)
                 .responseJSON(options: NSJSONReadingOptions.allZeros) { (_, _, json, error) -> Void in
-//                    if error == nil
-//                    {
-//                        var response = json as! NSDictionary
-//                        var success = response.objectForKey("response") as! Bool
-//                        var message = response.objectForKey("message") as! String
-//                        completionHandler(success,nil)
-//                    }else
-//                    {
-//                        completionHandler(nil,error)
-//                    }
+                    if error == nil
+                    {
+                        var response = json as! NSDictionary
+                        var success = response.objectForKey("response") as! Bool
+                        var message = response.objectForKey("message") as! String
+                        completionHandler(success,nil)
+                    }else
+                    {
+                        completionHandler(nil,error)
+                    }
             }
         }else
         {
@@ -212,6 +212,7 @@ class DataManager: NSObject {
                 {
                     completionHandler(nil,error)
                 }
+                
         }
     }
 

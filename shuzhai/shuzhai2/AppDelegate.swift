@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
         let log = XCGLogger.defaultInstance()
         log.setup(logLevel: .Debug, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: NSBundle.mainBundle().resourcePath!+"errorLog", fileLogLevel: .Debug)
         Util.log = log

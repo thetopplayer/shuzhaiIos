@@ -12,7 +12,7 @@ class BookPreviewViewController: UIViewController {
     
     @IBOutlet var tableView:UITableView?
     var doubanBook: DoubanBook?
-    var bookInfoDataDictArray:NSMutableArray?
+    var bookInfoDataDictArray:[(String,String)]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +31,13 @@ class BookPreviewViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let bookInfoArray = self.bookInfoDataDictArray
+        if let count = bookInfoDataDictArray?.count{
+            return count
+        }else
         {
-            return bookInfoArray.count
-        }else{
-            
             return 0
         }
-        
     }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
@@ -52,15 +49,34 @@ class BookPreviewViewController: UIViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.Value2,reuseIdentifier: "BookInfoCell")
         }
         
-        var infoDict = self.bookInfoDataDictArray?.objectAtIndex(indexPath.row) as! (String,String)
+        if let dictArray = self.bookInfoDataDictArray{
+            var infoDict = dictArray[0]
+            cell?.textLabel?.text   = infoDict.0
+            cell?.detailTextLabel?.text = infoDict.1
+        }
 
-        cell?.textLabel?.text   = infoDict.0
-        cell?.detailTextLabel?.text = infoDict.1
+
         
         return cell!
         
     }
     
+    
+    func bookInfoConvertor(doubanBook:DoubanBook)->[(String,String)]{
+        var bookInfo = doubanBook.books?.first
+        
+        var bookinfoarray = [(String,String)]()
+        if let bookInfo = bookInfo{
+//            bookinfoarray.append(("书名",bookInfo.title) as! (String,String))
+//            bookinfoarray.append(("作者",bookInfo.author?.first) as! (String,String))
+
+        }
+        
+        
+        
+        return bookinfoarray
+    
+    }
 
     /*
     // MARK: - Navigation

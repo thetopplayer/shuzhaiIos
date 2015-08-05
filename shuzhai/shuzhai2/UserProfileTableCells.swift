@@ -36,6 +36,8 @@ class UserTextCellWithNumberAndBotton:UserTextCellWithNumberCell
 {
     @IBOutlet var button:UIButton?
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -46,12 +48,15 @@ class UserTextCellWithNumberAndBotton:UserTextCellWithNumberCell
         
         // Configure the view for the selected state
     }
+    var buttonCall:(() -> ())?
     
     @IBAction func buttonClicked(sender:UIButton)
     {
         if sender.tag == 0 // like
         {
-            
+            if let buttonCall = buttonCall{
+                buttonCall()
+            }
         }
     }
     

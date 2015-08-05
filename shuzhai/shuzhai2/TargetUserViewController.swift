@@ -70,6 +70,7 @@ class TargetUserViewController: UIViewController {
             if let user = self.user
             {
                 cell.setCountNumber(user.followingCount)
+                cell.buttonCall = { () -> () in return self.followThisUser() }
             }
             return cell
         }
@@ -111,6 +112,33 @@ class TargetUserViewController: UIViewController {
         {
             self.performSegueWithIdentifier("storyCollectionSegue", sender: nil)
         }
+    }
+    
+    
+    func followThisUser()
+    {
+        if let user = self.user{
+            
+            DataManager.followUser(user.userInfoId!, completionHandler: { (success, error) -> Void in
+                if(success != nil && success == true)
+                {
+                    var alert = UIAlertController(title: "牛读", message: "关注用户成功", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }else if(success != nil && success == false)
+                {
+                    var alert = UIAlertController(title: "牛读", message: "关注用户失败", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }else
+                {
+                    var alert = UIAlertController(title: "牛读", message: "网络出现问题", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
+        }
+
     }
 
     /*
