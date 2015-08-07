@@ -110,7 +110,7 @@ class TargetUserViewController: UIViewController {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 3
         {
-            self.performSegueWithIdentifier("storyCollectionSegue", sender: nil)
+            self.performSegueWithIdentifier("storyCollectionSegue", sender: self)
         }
     }
     
@@ -141,14 +141,32 @@ class TargetUserViewController: UIViewController {
 
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "storyCollectionSegue")
+        {
+            
+            var controller = (segue.destinationViewController as! BriefStoryCollectionViewController)
+            
+            var selfController = sender as! TargetUserViewController
+            
+            let copiedUser = selfController.user
+            
+            var userBooks:[DaliyReadingBook]? = copiedUser?.userBooks
+            controller.books = selfController.user?.userBooks
+            
+            var count = 0
+            if let countBook = userBooks?.count{
+                count = countBook
+            }
+            var users:[User]? = [User](count:count, repeatedValue:copiedUser!)
+            controller.users = users
+            
+            println()
+        }
     }
-    */
+    
 
 }

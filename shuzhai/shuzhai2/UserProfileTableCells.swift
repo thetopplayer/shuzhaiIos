@@ -112,3 +112,21 @@ class UserProfileSettingTextCell: UITableViewCell  {
         // Configure the view for the selected state
     }
 }
+
+class BriefStoryCollectionCell:UITableViewCell{
+    @IBOutlet var storyImgView:UIImageView?
+    @IBOutlet var profileImageView:UIImageView?
+    @IBOutlet var bookTitleLabel:UILabel?
+    @IBOutlet var userName:UILabel?
+    var book:DaliyReadingBook?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
+    
+}
