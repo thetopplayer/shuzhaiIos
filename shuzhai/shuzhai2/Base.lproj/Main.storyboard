@@ -1298,7 +1298,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="markCell" rowHeight="50" id="oh4-43-5QX">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="markCell" rowHeight="50" id="oh4-43-5QX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oh4-43-5QX" id="omc-Cp-Ni2">
@@ -1312,6 +1312,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="HHs-EE-3nW" kind="push" identifier="storyCollectionSegue" id="SOl-fO-4bn"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="likeCell" rowHeight="50" id="krG-q8-PUe" customClass="UserTextCellWithNumberCell" customModule="shuzhai2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1442,7 +1445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dI5-LJ-Jy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2445" y="1256"/>
+            <point key="canvasLocation" x="-2753" y="2267"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="bdw-nW-658">
@@ -1806,7 +1809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjK-Bd-Qll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2462" y="2339"/>
+            <point key="canvasLocation" x="-2274" y="2267"/>
         </scene>
         <!--Title-->
         <scene sceneID="ufH-fE-jNg">
@@ -1874,7 +1877,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjw-kh-PTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1738" y="2339"/>
+            <point key="canvasLocation" x="-1768" y="2267"/>
         </scene>
         <!--Title-->
         <scene sceneID="Y0t-0q-6iJ">
@@ -2169,7 +2172,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kGK-Y7-Wng"/>
         <segue reference="o4b-GJ-a6V"/>
+        <segue reference="SOl-fO-4bn"/>
+        <segue reference="kGK-Y7-Wng"/>
     </inferredMetricsTieBreakers>
 </document>

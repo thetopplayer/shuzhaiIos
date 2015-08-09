@@ -38,8 +38,14 @@ class BriefStoryCollectionViewController: UIViewController {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let count = self.books?.count
+        {
+            return count;
+        }else{
+            return 0;
+        }
         
-        return self.books!.count
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

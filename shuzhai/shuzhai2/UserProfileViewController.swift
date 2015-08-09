@@ -149,6 +149,11 @@ class UserProfileViewController: ContainerSubbaseViewController {
         {
            self.performSegueWithIdentifier("UserSettingsSegue", sender: nil)
         }
+        
+        if indexPath.row == 5
+        {
+            self.performSegueWithIdentifier("storyCollectionSegue", sender: self)
+        }
     }
     
     
@@ -158,14 +163,31 @@ class UserProfileViewController: ContainerSubbaseViewController {
         GlobalObservable.sharedInstance.mainMenuOpenAndCloseStatus = 1
     }
     
-    /*
+
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "storyCollectionSegue")
+        {
+            
+            var controller = (segue.destinationViewController as! BriefStoryCollectionViewController)
+            
+            let copiedBook = self.user?.userBooks
+            
+            var userBooks:[DaliyReadingBook]? = copiedBook
+            controller.books = userBooks
+            
+            var count = 0
+            if let countBook = userBooks?.count{
+                count = countBook
+            }
+            var users:[User]? = [User](count:count, repeatedValue:self.user!)
+            controller.users = users
+        }
     }
-    */
+
 
 }

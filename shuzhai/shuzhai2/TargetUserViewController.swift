@@ -163,8 +163,7 @@ class TargetUserViewController: UIViewController {
             }
             var users:[User]? = [User](count:count, repeatedValue:copiedUser!)
             controller.users = users
-            
-            println()
+        
         }
     }
     
