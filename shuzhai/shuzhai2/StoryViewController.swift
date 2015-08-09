@@ -64,6 +64,7 @@ class StoryViewController: ContainerSubbaseViewController,UICollectionViewDataSo
             
                 if let todayReadings = todayReadings {
                     self.bookDataArray.extend(todayReadings)
+                    self.bookDataArray = self.bookDataArray.reverse()
                     self.setOutLayColorByIndex(0)
                     self.pageController?.numberOfPages = todayReadings.count
                     self.dateLabelValues = self.generateDateLabelValuesByNumbOfDays(todayReadings.count)
