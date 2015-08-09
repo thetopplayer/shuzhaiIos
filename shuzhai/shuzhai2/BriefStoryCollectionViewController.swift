@@ -29,6 +29,9 @@ class BriefStoryCollectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = false
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -52,7 +55,7 @@ class BriefStoryCollectionViewController: UIViewController {
                 //var bookImgUrl = NSURL(string: imgUrl[0]!)
                 var bookImgUrl: NSURL = NSURL(string: imgUrl!)!
                 cell.storyImgView?.load(bookImgUrl, placeholder: UIImage(named: "82.jpg"))
-                cell.bookTitleLabel?.text = book.bookTitle
+                cell.bookTitleLabel?.text = book.sectionTitle
                 
             }
             
@@ -76,24 +79,45 @@ class BriefStoryCollectionViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 165
+        return 105
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 3
+        
+        
+        if let books = self.books
         {
-            self.performSegueWithIdentifier("storyCollectionSegue", sender: nil)
+            var book = books[indexPath.section];
+            DataManager.fetchSingleBook(Int(book.bookInfoId!), completionHandler: { (fetchedBook, error) -> Void in
+                if(error == nil)
+                {
+                    self.performSegueWithIdentifier("BookDetailSegue", sender: fetchedBook)
+                }
+            })
+            
         }
+        
+//        
+//        if indexPath.row == 3
+//        {
+//            self.performSegueWithIdentifier("storyCollectionSegue", sender: nil)
+//        }
     }
     
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        
+        if(segue.identifier == "BookDetailSegue")
+        {
+            
+            var controller = (segue.destinationViewController as! StoryDetailViewController)
+            controller.dailyReadingBook = sender as? DaliyReadingBook
+        }
+        
     }
-    */
+
 
 }

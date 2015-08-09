@@ -26,6 +26,7 @@ struct GlobalVariables {
     static var getBookComments = "http://104.131.79.31/onebook/book/getComments.form"
     static var followUserUrl = "http://104.131.79.31/onebook/user/followUser.form"
     static var doubanReadingUrl = "http://api.douban.com/v2/book/search"
+    static var getSingleBookUrl = "http://104.131.79.31/onebook/book/getSingleBookInfo.form"
     static var readingFetchDefaultNumb = 5
     static var defaultColorGroup = [UIColor.peterRiverColor(),UIColor.carrotColor(),UIColor.nephritisColor(),UIColor.sunflowerColor(),UIColor.wisteriaColor(),UIColor.midnightBlueColor(),UIColor.turquoiseColor()]
 }
@@ -157,11 +158,38 @@ class Util:NSObject{
 
 
 class DataManager: NSObject {
+    static func fetchSingleBook(bookId:Int,completionHandler:(DaliyReadingBook?,NSError?)->Void){
+        Alamofire.request(.POST, GlobalVariables.getSingleBookUrl, parameters: ["bookInfoId": String(bookId)])
+            .responseJSON(options: NSJSONReadingOptions.allZeros) { (_, _, json, error) -> Void in
+                if error == nil
+                {
+                    var response = json as! NSDictionary
+                    var success = response.objectForKey("response") as! Bool
+                    var message: AnyObject? = response.objectForKey("message")
+                    if success
+                    {
+                        var book = Mapper<DaliyReadingBook>().map(message)
+                        if let book = book
+                        {
+                            completionHandler(book,nil)
+                            return
+                        }
+                    
+                    }
+                   completionHandler(nil,error)
+                }else
+                {
+                    completionHandler(nil,error)
+                }
+        }
+    
+    }
+    
+    
     static func fetchTodayBook(completionHandler:(DailyReading?,NSError?)->Void){
         
         Alamofire.request(.POST, GlobalVariables.dailyStoryUrl, parameters: ["requestDate": "2015-06-17"])
             .responseObject { (response: DailyReading?, error: NSError?) in
-                
                 if response != nil
                 {
                     completionHandler(response,nil)
@@ -170,8 +198,11 @@ class DataManager: NSObject {
                     completionHandler(nil,error)
                 }
         }
-    
+        
     }
+    
+    
+    
     
     static func followUser(userId:Int,completionHandler:(Bool?,NSError?)->Void)
     {
