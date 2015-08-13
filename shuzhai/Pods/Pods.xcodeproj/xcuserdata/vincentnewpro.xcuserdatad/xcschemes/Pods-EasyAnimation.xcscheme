@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE56C3C666AD4F21C4872DA6"
+               BlueprintIdentifier = "88B061B56B190FBA277CCD4A"
                BuildableName = "EasyAnimation.framework"
                BlueprintName = "Pods-EasyAnimation"
                ReferencedContainer = "container:Pods.xcodeproj">

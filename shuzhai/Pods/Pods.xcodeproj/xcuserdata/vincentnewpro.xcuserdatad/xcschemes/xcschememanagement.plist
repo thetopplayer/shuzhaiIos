@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-ActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>Pods-ImageLoader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KMPlaceholderTextView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2FC322B20D15604C1D7E9D48</key>
+		<key>03DF31879731445F34453B14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>46E6441BE5EE11CC98E6E3CD</key>
+		<key>09DC593BEC73715C4F663CB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61CD808FA833AB63A97D3034</key>
+		<key>5F20433385AAD8B38E8E1D85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65717AA015E5BF768BB49B3B</key>
+		<key>736F5D1D43C03B9FD0C22C54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CCE0B3CDC10EB94FF390CA90</key>
+		<key>886870573D87CABDE64A1C85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D09F8C084BD5889F537FB0AC</key>
+		<key>88B061B56B190FBA277CCD4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC08B10F2CFA257AB54BAB0A</key>
+		<key>B5ADCA662A293FDFCB077CAE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE56C3C666AD4F21C4872DA6</key>
+		<key>C3A25C61E0EC5BE36DE9376C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D103EBFE0C95108A996C9157</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D88EF37A1B7E2A3D97AECA5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

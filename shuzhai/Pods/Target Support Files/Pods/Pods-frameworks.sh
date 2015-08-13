@@ -48,19 +48,23 @@ code_sign() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'ActionButton.framework'
   install_framework 'Alamofire.framework'
   install_framework 'AlamofireObjectMapper.framework'
   install_framework 'EasyAnimation.framework'
   install_framework 'ImageLoader.framework'
+  install_framework 'KMPlaceholderTextView.framework'
   install_framework 'Keyboardy.framework'
   install_framework 'ObjectMapper.framework'
   install_framework 'XCGLogger.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'ActionButton.framework'
   install_framework 'Alamofire.framework'
   install_framework 'AlamofireObjectMapper.framework'
   install_framework 'EasyAnimation.framework'
   install_framework 'ImageLoader.framework'
+  install_framework 'KMPlaceholderTextView.framework'
   install_framework 'Keyboardy.framework'
   install_framework 'ObjectMapper.framework'
   install_framework 'XCGLogger.framework'

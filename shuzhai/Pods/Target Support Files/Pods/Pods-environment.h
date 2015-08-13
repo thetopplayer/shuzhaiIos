@@ -6,6 +6,12 @@
 // project.
 
 
+// ActionButton
+#define COCOAPODS_POD_AVAILABLE_ActionButton
+#define COCOAPODS_VERSION_MAJOR_ActionButton 0
+#define COCOAPODS_VERSION_MINOR_ActionButton 1
+#define COCOAPODS_VERSION_PATCH_ActionButton 2
+
 // Alamofire
 #define COCOAPODS_POD_AVAILABLE_Alamofire
 #define COCOAPODS_VERSION_MAJOR_Alamofire 1
@@ -29,6 +35,12 @@
 #define COCOAPODS_VERSION_MAJOR_ImageLoader 0
 #define COCOAPODS_VERSION_MINOR_ImageLoader 3
 #define COCOAPODS_VERSION_PATCH_ImageLoader 3
+
+// KMPlaceholderTextView
+#define COCOAPODS_POD_AVAILABLE_KMPlaceholderTextView
+#define COCOAPODS_VERSION_MAJOR_KMPlaceholderTextView 0
+#define COCOAPODS_VERSION_MINOR_KMPlaceholderTextView 1
+#define COCOAPODS_VERSION_PATCH_KMPlaceholderTextView 2
 
 // Keyboardy
 #define COCOAPODS_POD_AVAILABLE_Keyboardy

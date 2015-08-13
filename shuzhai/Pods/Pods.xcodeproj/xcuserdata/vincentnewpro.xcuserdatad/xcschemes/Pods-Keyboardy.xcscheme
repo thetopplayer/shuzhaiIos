@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46E6441BE5EE11CC98E6E3CD"
+               BlueprintIdentifier = "886870573D87CABDE64A1C85"
                BuildableName = "Keyboardy.framework"
                BlueprintName = "Pods-Keyboardy"
                ReferencedContainer = "container:Pods.xcodeproj">

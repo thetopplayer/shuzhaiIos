@@ -20,6 +20,10 @@
 		45A2A6601B6F1855005D9BB9 /* UploadViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A65F1B6F1855005D9BB9 /* UploadViewCells.swift */; };
 		45A2A6621B6F18D8005D9BB9 /* BookPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A6611B6F18D8005D9BB9 /* BookPreviewViewController.swift */; };
 		45A2A6641B706798005D9BB9 /* DoubanBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2A6631B706798005D9BB9 /* DoubanBook.swift */; };
+		45A71C341B7C2B1A004C32F0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A71C331B7C2B1A004C32F0 /* StringExtensions.swift */; };
+		45A71C361B7C2DFA004C32F0 /* twitter_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A71C351B7C2DFA004C32F0 /* twitter_icon.png */; };
+		45A71C381B7C2E03004C32F0 /* googleplus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A71C371B7C2E03004C32F0 /* googleplus_icon.png */; };
+		45A71C3C1B7C3693004C32F0 /* StoryChatIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A71C3B1B7C3693004C32F0 /* StoryChatIcon.png */; };
 		45A8D6B11B69C143000963AE /* errorLog in Resources */ = {isa = PBXBuildFile; fileRef = 45A8D6B01B69C143000963AE /* errorLog */; };
 		45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7221B43740F0054D7A8 /* DailyReading.swift */; };
 		45B5E7251B4376890054D7A8 /* DaliyReadingBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */; };
@@ -114,6 +118,10 @@
 		45A2A65F1B6F1855005D9BB9 /* UploadViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewCells.swift; sourceTree = "<group>"; };
 		45A2A6611B6F18D8005D9BB9 /* BookPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookPreviewViewController.swift; sourceTree = "<group>"; };
 		45A2A6631B706798005D9BB9 /* DoubanBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubanBook.swift; sourceTree = "<group>"; };
+		45A71C331B7C2B1A004C32F0 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		45A71C351B7C2DFA004C32F0 /* twitter_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_icon.png; sourceTree = "<group>"; };
+		45A71C371B7C2E03004C32F0 /* googleplus_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleplus_icon.png; sourceTree = "<group>"; };
+		45A71C3B1B7C3693004C32F0 /* StoryChatIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StoryChatIcon.png; sourceTree = "<group>"; };
 		45A8D6B01B69C143000963AE /* errorLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = errorLog; sourceTree = "<group>"; };
 		45B5E7221B43740F0054D7A8 /* DailyReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReading.swift; sourceTree = "<group>"; };
 		45B5E7241B4376890054D7A8 /* DaliyReadingBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaliyReadingBook.swift; sourceTree = "<group>"; };
@@ -260,6 +268,7 @@
 		45B5E72A1B44BBBB0054D7A8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				45A71C331B7C2B1A004C32F0 /* StringExtensions.swift */,
 				45B5E72B1B44BBD80054D7A8 /* Extensions.swift */,
 				45E383AC1B4DF6F400265DDE /* GlobalObservable.swift */,
 			);
@@ -322,11 +331,14 @@
 		45B5E7631B486D7E0054D7A8 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				45A71C371B7C2E03004C32F0 /* googleplus_icon.png */,
+				45A71C351B7C2DFA004C32F0 /* twitter_icon.png */,
 				45E383BC1B4E0F9000265DDE /* plus7.png */,
 				45E383B01B4E05F600265DDE /* camera90.png */,
 				45E383B11B4E05F600265DDE /* notepads1.png */,
 				45E383B21B4E05F600265DDE /* round68.png */,
 				45E383AE1B4E04BB00265DDE /* camera131.png */,
+				45A71C3B1B7C3693004C32F0 /* StoryChatIcon.png */,
 				45B5E7641B486DDD0054D7A8 /* StoryLikeIcon.png */,
 				45B5E7651B486DDD0054D7A8 /* StoryMarkIcon.png */,
 				45B5E76A1B486E0B0054D7A8 /* StoryShareIcon.png */,
@@ -577,6 +589,8 @@
 				45E383B51B4E05F600265DDE /* round68.png in Resources */,
 				45B5E75D1B485A830054D7A8 /* Banner5.png in Resources */,
 				45B5E7411B44EB040054D7A8 /* Berger7.png in Resources */,
+				45A71C361B7C2DFA004C32F0 /* twitter_icon.png in Resources */,
+				45A71C381B7C2E03004C32F0 /* googleplus_icon.png in Resources */,
 				45B5E72E1B44C0070054D7A8 /* Rectangle 37.png in Resources */,
 				45B5E76B1B486E0B0054D7A8 /* StoryShareIcon.png in Resources */,
 				45B5E74D1B44EC2D0054D7A8 /* addNew4.png in Resources */,
@@ -592,6 +606,7 @@
 				45B5E7321B44D2A00054D7A8 /* 82.jpg in Resources */,
 				45B5E75F1B485A830054D7A8 /* Banner7.png in Resources */,
 				45B5E7671B486DDD0054D7A8 /* StoryLikeIcon.png in Resources */,
+				45A71C3C1B7C3693004C32F0 /* StoryChatIcon.png in Resources */,
 				45B5E73E1B44EB040054D7A8 /* Berger4.png in Resources */,
 				45B5E73F1B44EB040054D7A8 /* Berger5.png in Resources */,
 				45B5E75A1B485A830054D7A8 /* Banner2.png in Resources */,
@@ -681,6 +696,7 @@
 				45B5E7231B43740F0054D7A8 /* DailyReading.swift in Sources */,
 				45A2A65E1B6F1154005D9BB9 /* BookInfoEnRicherViewController.swift in Sources */,
 				45A2A6601B6F1855005D9BB9 /* UploadViewCells.swift in Sources */,
+				45A71C341B7C2B1A004C32F0 /* StringExtensions.swift in Sources */,
 				45A2A65C1B6EFDB8005D9BB9 /* BookStoryUpdateViewController.swift in Sources */,
 				45E383B71B4E085E00265DDE /* UploadBookViewController.swift in Sources */,
 				45E6089E1B3FA095004B3F50 /* ContainerSubbaseViewController.swift in Sources */,

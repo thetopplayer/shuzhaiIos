@@ -5,6 +5,8 @@ pod 'Alamofire', '~> 1.2'
 pod 'AlamofireObjectMapper', '~> 0.2'
 pod 'ImageLoader', '~> 0.3.0'
 pod 'XCGLogger'
+pod 'ActionButton'
+pod 'KMPlaceholderTextView', '~> 0.1.2'
 pod 'Keyboardy'
 
 use_frameworks!

@@ -8,6 +8,7 @@
 
 import UIKit
 import ImageLoader
+import ActionButton
 
 class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
@@ -20,6 +21,7 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
     
     var dailyReadingBook:DaliyReadingBook?
     var textViewDict:[NSIndexPath:UITextView] = Dictionary<NSIndexPath, UITextView>()
+    var actionButton: ActionButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,31 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
 
         }
         
+        let likeImg = UIImage(named: "StoryLikeIcon.png")!
+        let markImg = UIImage(named: "StoryMarkIcon.png")!
+        let shareImg = UIImage(named: "StoryShareIcon.png")!
+        let chatImg = UIImage(named: "StoryChatIcon.png")!
+        
+        let likeButton = ActionButtonItem(title: "", image: likeImg)
+        
+        likeButton.action = { item in
+            DataManager.likeBook(self, bookId: Int(self.dailyReadingBook!.bookInfoId!), completionHandler: { (success, error) -> Void in
+            
+            })
+            self.actionButton.toggleMenu()
+        }
+        
+        let markButton = ActionButtonItem(title: "", image: markImg)
+        markButton.action = { item in println("Google Plus...") }
+        
+        let shareButton = ActionButtonItem(title: "", image: shareImg)
+        shareButton.action = { item in println("Google Plus...") }
+        
+        let chatButton = ActionButtonItem(title: "", image: chatImg)
+        chatButton.action = { item in println("Google Plus...") }
+        
+        actionButton = ActionButton(attachedToView: self.view, items: [markButton,likeButton ,shareButton,chatButton])
+        actionButton.action = { button in button.toggleMenu() }
         
         // Do any additional setup after loading the view.
     }
@@ -176,7 +203,7 @@ class StoryDetailViewController: UIViewController,UITableViewDataSource,UITableV
     }
 
     
-
+    
 
 
     /*

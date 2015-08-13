@@ -1,4 +1,5 @@
 PODS:
+  - ActionButton (0.1.2)
   - Alamofire (1.2.3)
   - AlamofireObjectMapper (0.2):
     - Alamofire (~> 1.2)
@@ -6,23 +7,28 @@ PODS:
   - EasyAnimation (0.6.4)
   - ImageLoader (0.3.3)
   - Keyboardy (0.1.0)
+  - KMPlaceholderTextView (0.1.2)
   - ObjectMapper (0.12)
   - XCGLogger (2.1.1)
 
 DEPENDENCIES:
+  - ActionButton
   - Alamofire (~> 1.2)
   - AlamofireObjectMapper (~> 0.2)
   - EasyAnimation
   - ImageLoader (~> 0.3.0)
   - Keyboardy
+  - KMPlaceholderTextView (~> 0.1.2)
   - XCGLogger
 
 SPEC CHECKSUMS:
+  ActionButton: a9396194eee90f4a0ec1cc4ee7bc419d916abdc1
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
   AlamofireObjectMapper: 0ed3f7b154a9b35bded72b2fa6adeee7ac49a9a2
   EasyAnimation: edff812cf57cc4251c1705a813ed9ad226860c6e
   ImageLoader: 79b78c059f237b7213089da90717c9148885cca7
   Keyboardy: b56dee7d2cd6b1b779bd3acb8aa460655c56f628
+  KMPlaceholderTextView: cd2ff604e9fad9b42d1e690de1060c98d3d129f2
   ObjectMapper: ef4a369cbab75546029ceb7e8155772b5f8e8841
   XCGLogger: 8df921bcf88abbd511b887c8febde8163d624d81
 

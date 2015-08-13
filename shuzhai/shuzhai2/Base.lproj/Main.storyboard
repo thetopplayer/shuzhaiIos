@@ -716,69 +716,15 @@
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oK-fp-J0D">
                                                                     <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
-                                                                    <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyq-K1-Idg">
-                                                                            <rect key="frame" x="2" y="4" width="36" height="36"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="Oyq-K1-Idg" secondAttribute="height" multiplier="48:47" id="bNi-NI-E0A"/>
-                                                                            </constraints>
-                                                                            <state key="normal" title="Button" image="StoryLikeIcon.png">
-                                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                            </state>
-                                                                            <connections>
-                                                                                <action selector="likeBook" destination="JH9-dg-c0f" eventType="touchUpInside" id="HT9-mx-Hix"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                    </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="Oyq-K1-Idg" secondAttribute="bottom" constant="4" id="GO8-jm-KI9"/>
-                                                                        <constraint firstItem="Oyq-K1-Idg" firstAttribute="top" secondItem="2oK-fp-J0D" secondAttribute="top" constant="4" id="STx-4x-cFl"/>
-                                                                        <constraint firstAttribute="centerX" secondItem="Oyq-K1-Idg" secondAttribute="centerX" constant="0.75" id="X1V-zi-Ykc"/>
-                                                                        <constraint firstAttribute="centerY" secondItem="Oyq-K1-Idg" secondAttribute="centerY" id="mJ8-dp-e3k"/>
-                                                                    </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUh-fy-ACv">
                                                                     <rect key="frame" x="86" y="0.0" width="43" height="44"/>
-                                                                    <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n99-cO-qlH">
-                                                                            <rect key="frame" x="3" y="4" width="36" height="36"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="n99-cO-qlH" secondAttribute="height" multiplier="1:1" id="DbM-2D-lg6"/>
-                                                                            </constraints>
-                                                                            <state key="normal" title="Button" image="StoryShareIcon.png">
-                                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                            </state>
-                                                                        </button>
-                                                                    </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <constraints>
-                                                                        <constraint firstItem="n99-cO-qlH" firstAttribute="top" secondItem="xUh-fy-ACv" secondAttribute="top" constant="4" id="639-Wx-zF6"/>
-                                                                        <constraint firstAttribute="centerY" secondItem="n99-cO-qlH" secondAttribute="centerY" id="6WD-sE-kd4"/>
-                                                                        <constraint firstAttribute="centerX" secondItem="n99-cO-qlH" secondAttribute="centerX" constant="0.75" id="fUK-Uu-rtW"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="n99-cO-qlH" secondAttribute="bottom" constant="4" id="rxm-aK-xBS"/>
-                                                                    </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t8-6X-V7E">
                                                                     <rect key="frame" x="44" y="0.0" width="43" height="44"/>
-                                                                    <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7D-Rg-D49">
-                                                                            <rect key="frame" x="2" y="4" width="36" height="36"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="w7D-Rg-D49" secondAttribute="height" multiplier="1:1" id="ZgZ-Em-vTx"/>
-                                                                            </constraints>
-                                                                            <state key="normal" title="Button" image="StoryMarkIcon.png">
-                                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                            </state>
-                                                                        </button>
-                                                                    </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="centerX" secondItem="w7D-Rg-D49" secondAttribute="centerX" constant="0.75" id="Ijp-nk-aSY"/>
-                                                                        <constraint firstItem="w7D-Rg-D49" firstAttribute="top" secondItem="4t8-6X-V7E" secondAttribute="top" constant="4" id="REX-da-A3W"/>
-                                                                        <constraint firstAttribute="centerY" secondItem="w7D-Rg-D49" secondAttribute="centerY" id="aAk-vg-2FV"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="w7D-Rg-D49" secondAttribute="bottom" constant="4" id="sdy-U9-8xH"/>
-                                                                    </constraints>
                                                                 </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -829,10 +775,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="6iT-2E-0zb" id="fSq-lK-s27"/>
-                                            <outlet property="likeButton" destination="Oyq-K1-Idg" id="s1i-lq-4wf"/>
-                                            <outlet property="markButton" destination="w7D-Rg-D49" id="dRy-6U-gHi"/>
                                             <outlet property="profileImg" destination="rqk-yi-Kvt" id="nXc-mC-9aW"/>
-                                            <outlet property="shareButton" destination="n99-cO-qlH" id="F8m-3A-eJm"/>
                                             <outlet property="userNameLabel" destination="tDS-0s-jcf" id="hIL-Y6-XZY"/>
                                         </connections>
                                     </tableViewCell>
@@ -2156,9 +2099,6 @@
         <image name="82.jpg" width="500" height="333"/>
         <image name="Banner1.png" width="490" height="126"/>
         <image name="Berger1.png" width="152" height="152"/>
-        <image name="StoryLikeIcon.png" width="120" height="120"/>
-        <image name="StoryMarkIcon.png" width="120" height="120"/>
-        <image name="StoryShareIcon.png" width="120" height="120"/>
         <image name="addNew1.png" width="432" height="432"/>
         <image name="camera90.png" width="128" height="128"/>
         <image name="notepads1.png" width="128" height="128"/>

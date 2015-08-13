@@ -243,5 +243,133 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ActionButton/Source/ActionButton.swift"
+            timestampString = "461124199.83098"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "animateMenu()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shuzhai2/StoryDetailViewController.swift"
+            timestampString = "461126721.013522"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shuzhai2.StoryDetailViewController.(viewDidLoad (shuzhai2.StoryDetailViewController) -&gt; () -&gt; ()).(closure #2)"
+                  moduleName = "shuzhai2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentnewpro/Documents/shuzhaiIos/shuzhai/shuzhai2/StoryDetailViewController.swift"
+                  timestampString = "461126721.022324"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shuzhai2.StoryDetailViewController.(viewDidLoad (shuzhai2.StoryDetailViewController) -&gt; () -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "shuzhai2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentnewpro/Documents/shuzhaiIos/shuzhai/shuzhai2/StoryDetailViewController.swift"
+                  timestampString = "461126721.022548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shuzhai2/StoryDetailViewController.swift"
+            timestampString = "461126730.447464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shuzhai2.StoryDetailViewController.(viewDidLoad (shuzhai2.StoryDetailViewController) -&gt; () -&gt; ()).(closure #2)"
+                  moduleName = "shuzhai2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentnewpro/Documents/shuzhaiIos/shuzhai/shuzhai2/StoryDetailViewController.swift"
+                  timestampString = "461126823.403511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "589">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shuzhai2.StoryDetailViewController.(viewDidLoad (shuzhai2.StoryDetailViewController) -&gt; () -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "shuzhai2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentnewpro/Documents/shuzhaiIos/shuzhai/shuzhai2/StoryDetailViewController.swift"
+                  timestampString = "461126823.403831"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shuzhai2/Shared.swift"
+            timestampString = "461126748.497439"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "likeBook(_:bookId:completionHandler:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
